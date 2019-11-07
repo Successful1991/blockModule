@@ -1,0 +1,38 @@
+a(href="/" class="logo")
+	img(src="./assets/images/logo.svg" alt="logo" title="")
+ul.top-menu
+	each list in menu
+		if list.href
+			li.top-menu__list.js-hover
+				a("href"=list.href).top-menu__list--item= list.name
+		else
+			li.top-menu__list.js-hover
+				div.top-menu__list--item= list.name
+				ul.top-menu__nested(class=list.clas)
+					each el in list.nested
+						li.top-menu__nested--item
+							a(href= el.href).top-menu__nested--link= el.name
+				img(src='./assets/images/arrowDown.svg').top-menu__arrow
+.top-menu__phone.js-hover
+	.phone__list--arrow
+		img(src='./assets/images/arrowDown.svg' alt='arrow').top-menu__arrow
+	ul.phone__list
+		li.phone__list__tel
+			img(src='./assets/images/Kyivstar.svg' alt='Kyivstar').phone__list--icon
+			a(href='(098)8534040').phone__list--number (098)853-40-40
+		li.phone__list__tel
+			img(src='./assets/images/Vodafone.svg' alt='Vodafone').phone__list--icon
+			a(href='(095)8534040').phone__list--number (095)853-40-40
+		li.phone__list__tel
+			img(src='./assets/images/Lifecell.svg' alt='Lifecell').phone__list--icon
+			a(href='(063)8534040').phone__list--number (063)853-40-40
+		li.phone__list__tel
+			img(src='./assets/images/Phone.svg' alt='Phone').phone__list--icon
+			a(href='(044)3620710').phone__list--number (044) 362-07-10
+
+ul.lang-list
+	li.lang-list__item
+		a(href='#') Ru
+	li.lang-list__item.active
+		a(href='#') Uk
+
