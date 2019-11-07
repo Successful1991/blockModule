@@ -1,0 +1,47 @@
+.footer{
+  padding:0 45px;
+  background: $gray;
+}
+.footer-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 30px 0;
+  border-top: 1px solid $grayBorder;
+  &__logo{
+
+  }
+  &__quote{
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.quote{
+  &__img{
+    display: inline-block;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  &__content{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 14px;
+    line-height: 1.8em;
+    width: 70%;
+    padding: 0 20px;
+  }
+  &__text{
+    text-align: right;
+    font-style: italic;
+    font-weight: 500;
+  }
+  &__author{
+    font-weight: 600;
+  }
+}
