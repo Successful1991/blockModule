@@ -9,6 +9,47 @@ block head
 block scripts
 	script(src='./assets/scripts/index.js')
 block content
+	section.main
+		.first-screen
+			a(href="#").first-screen__location
+				img(src="./assets/images/icon/Map.svg").first-screen__location--img
+			a(href="#").first-screen__mail
+				img(src="./assets/images/icon/E-mail.svg").first-screen__mail--img
+			.first-screen__mouse
+				span.first-screen__mouse--text Смотреть сайт
+				img(src="./assets/images/icon/mouse.svg").first-screen__mouse--img
+			.first-screen__messages
+				span.first-screen__messages--text Месседжеры
+				a(href='#').first-screen__messages--viber
+					img(src="./assets/images/icon/viber.svg").first-screen__img
+				a(href='#').first-screen__messages--telegram
+					img(src="./assets/images/icon/telegram.svg").first-screen__img
+			.first-screen__slider
+				.sl
+					.sl__element
+						.sl__element--img
+						.sl__element--content
+							.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
+							.sl__element--text Реализованные проекты
+					.sl__element
+						.sl__element--img
+						.sl__element--content
+							.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
+							.sl__element--text Реализованные проекты
+					.sl__element
+						.sl__element--img
+						.sl__element--content
+							.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
+							.sl__element--text Реализованные проекты
+					.sl__element
+						.sl__element--img
+						.sl__element--content
+							.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
+							.sl__element--text Реализованные проекты
+				.sl__buttons
+					button(type="button").sl__button.sl__button--left
+					button(type="button").sl__button.sl__button--right
+
 block footer
 	footer.footer
 		include ../includes/footer-top

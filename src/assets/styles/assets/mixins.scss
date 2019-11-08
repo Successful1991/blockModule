@@ -17,3 +17,9 @@
     $remSize: $size / 14px;
     @return #{$remSize}rem;
   }
+
+@mixin flexCenter(){
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

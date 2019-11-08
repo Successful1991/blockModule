@@ -1,0 +1,83 @@
+.first-screen{
+  display: grid;
+  grid-template-areas: 'location sl messages'
+                       'mail sl messages'
+                       'mouse sl messages';
+  grid-template-columns: 12% 1fr 12%;
+  grid-template-rows: 1fr 1fr 1.5fr;
+  height: calc(100vh - 72px);
+  padding: 40px 0;
+  &__location{
+    grid-area: location;
+    @include flexCenter();
+    background: $mc3;
+    &--img{
+      max-width: none;
+      max-height: none;
+      height: auto;
+      width: 13%;
+    }
+  }
+  &__mail{
+    grid-area: mail;
+    @include flexCenter();
+    background: $mc3;
+    &--img{
+      max-width: none;
+      max-height: none;
+      height: auto;
+      width: 13%;
+    }
+  }
+  &__mouse{
+    grid-area:mouse;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    &--text{
+      display: inline-block;
+      height: 1px;
+      width: 1px;
+      white-space: nowrap;
+      line-height: 1px;
+      margin-bottom: 30px;
+      transform: rotate(-90deg);
+    }
+    &--img{
+      max-width: none;
+      max-height: none;
+      height: auto;
+      width: 13%;
+    }
+  }
+  &__sl{
+    grid-area:sl;
+  }
+  &__messages{
+    grid-area: messages;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &--text{
+      display: inline-block;
+      height: 1px;
+      width: 1px;
+      white-space: nowrap;
+      line-height: 1px;
+      margin-bottom: 20px;
+      transform: rotate(-90deg);
+    }
+  }
+  &__img{
+    display: inline-block;
+    max-height: 30px;
+    max-width: 30px;
+    height: auto;
+    width: auto;
+  }
+}
+
+

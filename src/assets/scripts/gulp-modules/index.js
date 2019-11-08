@@ -1,5 +1,4 @@
 @@include('./libs.js');
-
 (function () {
 	var loader = function () {
 		$(".loader-wrap").delay(500).fadeOut(500);
@@ -14,11 +13,20 @@ const wow = new WOW({
 	live: true
 });
 wow.init();
-// валидация формы
 
-    // $(".js-hover__menu .top-menu__nested").hide();
     $(".js-hover").hover(
         function(){
             $(this).toggleClass('hover')}
     );
+
+    $('.sl').slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        // appendArrows: $('.sl__button'),
+        prevArrow: $('.sl__button--left'),
+        nextArrow: $('.sl__button--right'),
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    });
 })();
