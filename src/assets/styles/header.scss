@@ -89,8 +89,8 @@
 		height: 100%;
 		&.hover{
 			.phone__list__tel{
-				visibility: visible;
-				opacity:1;
+				visibility: visible!important;
+				opacity:1!important;
 			}
 		}
 	}
@@ -134,13 +134,8 @@
 		align-items: center;
 		height: 100%;
 		padding: 10px 0;
-		background: $wc;
 		z-index: 5;
-		&:nth-child(1n+2){
-			visibility: hidden;
-			opacity: 0;
-			z-index: 2;
-		}
+
 	}
 	&--icon{
 		height: 20px;
@@ -159,6 +154,11 @@
 		cursor: pointer;
 		padding: 10px;
 	}
+}
+.header .phone__list__tel:nth-child(1n+2){
+	visibility: hidden;
+	opacity: 0;
+	z-index: 2;
 }
 
 

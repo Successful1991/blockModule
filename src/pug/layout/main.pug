@@ -2,16 +2,27 @@ include ../includes/mixins.pug
 block variable
 -
     var menu = {
+
         about: {
             name: 'О компании',
             nested: {
+                index: {
+                    name: 'Главная',
+                    href: '/',
+                    top: false,
+                    bottom: true
+                },
                 about: {
                     href: '#',
-                    name: 'О компании'
+                    name: 'О компании',
+                    top: true,
+                    bottom: true
                 },
                 client: {
                     href: '#',
-                    name: 'Наши клиенты'
+                    name: 'Наши клиенты',
+                    top: true,
+                    bottom: true
                 }
             }
         },
@@ -21,90 +32,169 @@ block variable
             nested: {
                 prefabricatedHouse: {
                     href: '#',
-                    name: 'Сборные дома'
+                    name: 'Сборные дома',
+                    top: true,
+                    bottom: true
                 },
                 moduleHouse: {
                     href: '#',
-                    name: 'модульные дома'
+                    name: 'модульные дома',
+                    top: true,
+                    bottom: true
                 },
                 countryHouses: {
                     href: '#',
-                    name: 'дачные дома'
+                    name: 'дачные дома',
+                    top: true,
+                    bottom: true
                 },
                 stalls: {
                     href: '#',
-                    name: 'киоски и ларьки'
+                    name: 'киоски и ларьки',
+                    top: true,
+                    bottom: true
                 },
                 tradePavilions: {
                     href: '#',
-                    name: 'Торговые павильоны'
+                    name: 'Торговые павильоны',
+                    top: true,
+                    bottom: true
                 },
                 modularBuildings: {
                     href: '#',
-                    name: 'Модульные здания'
+                    name: 'Модульные здания',
+                    top: true,
+                    bottom: true
                 },
                 modularOffices: {
                     href: '#',
-                    name: 'Модульные офисы'
+                    name: 'Модульные офисы',
+                    top: true,
+                    bottom: true
                 },
                 hostelsHotels: {
                     href: '#',
-                    name: 'Общежития и отели'
+                    name: 'Общежития и отели',
+                    top: true,
+                    bottom: true
                 },
                 blockContainer: {
                     href: '#',
-                    name: 'Блок-контейнер/бытовка'
+                    name: 'Блок-контейнер/бытовка',
+                    top: true,
+                    bottom: true
                 },
                 household: {
                     href: '#',
-                    name: 'Бытовые дачные'
+                    name: 'Бытовые дачные',
+                    top: true,
+                    bottom: true
                 },
                 constructionBoxes: {
                     href: '#',
-                    name: 'Строительные вагончики'
+                    name: 'Строительные вагончики',
+                    top: true,
+                    bottom: true
                 },
                 protectionPosts: {
                     href: '#',
-                    name: 'Блок-посты охраны'
+                    name: 'Блок-посты охраны',
+                    top: true,
+                    bottom: true
                 },
                 hangars: {
                     href: '#',
-                    name: 'Ангары'
+                    name: 'Ангары',
+                    top: true,
+                    bottom: true
                 },
                 sanitaryBlocks: {
                     href: '#',
-                    name: 'Санитарные блоки'
+                    name: 'Санитарные блоки',
+                    top: true,
+                    bottom: true
                 }
             }
         },
         works: {
             name: 'Наши работы',
-            href: '#'
+            href: '#',
+            top: true,
+            bottom: true
         },
         infoCenter: {
             name: 'Инфоцентр',
             nested: {
                 technologies: {
                     href: '#',
-                    name: 'Технологии'
+                    name: 'Технологии',
+                    top: true,
+                    bottom: true
                 },
                 delivery: {
                     href: '#',
-                    name: 'Доставка и монтаж'
+                    name: 'Доставка и монтаж',
+                    top: true,
+                    bottom: true
                 },
                 news: {
                     href: '#',
-                    name: 'Новости'
+                    name: 'Новости',
+                    top: true,
+                    bottom: true
                 },
                 FAQ: {
                     href: '#',
-                    name: 'чаво'
+                    name: 'чаво',
+                    top: true,
+                    bottom: true
                 }
             }
         },
         contact: {
             name: 'контакты',
-            href: '#'
+            href: '#',
+            top: true,
+            bottom: true
+        }
+    }
+    var contact = {
+        phone: {
+            kievstar: {
+                img: 'Kyivstar',
+                name: '(098)853-40-40',
+                href: '(098)8534040'
+            },
+            vodafone: {
+                img: 'Vodafone',
+                name: '(095)853-40-40',
+                href: '(095)8534040'
+            },
+            lifecell: {
+                img: 'Lifecell',
+                name: '(063)853-40-40',
+                href: '(063)8534040'
+            },
+            phone: {
+                img: 'Phone',
+                name: '(044)362-07-10',
+                href: '(044)3620710'
+            },
+        },
+        address: {
+            mail: {
+                img: 'mail',
+                name: 'info@blockmodul.com.ua',
+                href: 'info@blockmodul.com.ua'
+            },
+            address: {
+                img: 'marker',
+                name: 'Офис: г. Киев, ул Ильинская 12'
+            },
+            timeOpen: {
+                img: 'time',
+                name: 'Пн-Пт: 9:00-18:00 / Сб: 9:00-16:00'
+            }
         }
     }
 doctype html
