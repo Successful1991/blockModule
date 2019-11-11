@@ -22,8 +22,7 @@ wow.init();
     $('.sl').slick({
         dots: false,
         infinite: true,
-        speed: 300,
-        // appendArrows: $('.sl__button'),
+        speed: 1000,
         prevArrow: $('.sl__button--left'),
         nextArrow: $('.sl__button--right'),
         slidesToShow: 1,

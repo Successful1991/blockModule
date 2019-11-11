@@ -3,14 +3,14 @@
 	position: fixed;
 	top: 0;
 	left: 0;
-	@include row-flex();
+	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	width: 100%;
 	height: 72px;
 	padding: 10px 45px;
 	z-index: 49;
-	background-color: transparent;
+	background-color: $wc;
 	.logo{
 		overflow: hidden;
 		}
