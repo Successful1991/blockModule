@@ -85,7 +85,13 @@
     width: auto;
   }
 }
-
+.main__title{
+  color: $textDark;
+  font-weight: 500;
+  font-size: 24px;
+  text-align: center;
+  line-height: 1.3em;
+}
 .sl{
   display: inline-block;
   height: 100%;
@@ -155,11 +161,6 @@
   width: 100%;
   padding: 0 0 30px 45px;
   &__title{
-    color: $textDark;
-    font-weight: 500;
-    font-size: 24px;
-    text-align: center;
-    line-height: 1.3em;
     margin-bottom: 40px;
   }
   &__gallery {
@@ -306,10 +307,6 @@
   padding: 70px 45px 40%;
   &__title{
     width: 100%;
-    text-align: center;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 36px;
     color: #FFFFFF;
     margin-bottom: 60px;
   }
@@ -347,5 +344,61 @@
     font-size: 14px;
     line-height: 1.3em;
     margin-bottom: 20px;
+  }
+}
+
+.works{
+  padding: 60px 45px;
+  background: url("../images/main/proces__bg.jpg")no-repeat center /cover;
+  &__title{
+    color: $textLight;
+    margin-bottom: 50px;
+  }
+}
+.work{
+  position: relative;
+  width: 50%;
+  &__numb{
+    @include flexCenter();
+    height: 65px;
+    width: 65px;
+    background: $mc2;
+    color: $textLight;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 36px;
+    margin: 0 -65px 0 auto;
+  }
+  &__head{
+    display: flex;
+    align-items: center;
+    height: 65px;
+    background: $wc;
+    padding: 0 30px;
+    &--text{
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 1.5em;
+      color: $textDark;
+      text-transform: uppercase;
+    }
+    &--img{
+      display: inline-block;
+      width: auto;
+      max-height: 80%;
+      margin-right: 20px;
+    }
+  }
+  &__list{
+    padding: 30px;
+
+    &--el{
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 2em;
+      list-style: disc;
+      color: $textLight;
+      margin-bottom: 20px;
+    }
   }
 }

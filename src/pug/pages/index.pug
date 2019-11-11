@@ -51,7 +51,7 @@ block content
 					button(type="button").sl__button.sl__button--right
 
 		.make
-			h3.make__title Мы производим
+			h3.make__title.main__title Мы производим
 			.make__gallery
 				a(href='#').card.card-1
 					.card__img
@@ -127,7 +127,7 @@ block content
 					.card__desc Административно бытовые здания
 			button(type='button').make__button Смотреть все категории
 		.advantages
-			p.advantages__title Почему именно мы
+			p.advantages__title.main__title Почему именно мы
 			.advantages__element
 				.advant__img
 					img(src='./assets/images/icon/Group.svg')
@@ -164,6 +164,55 @@ block content
 						li.advant__elem Работаем только по договору, от 12 месяцев гарантийного обслуживания на все здания
 						li.advant__elem Доставляем и монтируем свои здания в любом регионе Украины
 						li.advant__elem Бесплатно консультируем по вопросам планирования, строительства и дальнейшей эксплуатации
+		.works
+			.main__title.works__title Как мы работаем?
+			.works__list
+				.work
+					.work__head
+						img(src='./assets/images/icon/handshake.svg').work__head--img
+						span.work__head--text Знакомство, консультация
+						.work__numb 1
+					ul.work__list
+						li.work__list--el Вы связываетесь с нами любым удобным для Вас способом, получаете предварительную консультацию
+						li.work__list--el Формулируете техническое задание и отправляете его к нам на электронную почту
+				.work
+					.work__head
+						img(src='./assets/images/icon/word.svg').work__head--img
+						span.work__head--text Коммерческое предложение
+						.work__numb 2
+					ul.work__list
+						li.work__list--el Если проект типовой, то вносятся необходимые правки. Если нет, то разрабатывается индивидуальный проекте нуля.
+						li.work__list--el Составляется коммерческое предложение с описанием сооружения, его комплектацией планировкой, ценой и сроком поставки.
+						li.work__list--el После согласования мы приглашаем Вас в наш офис на Подоле
+				.work
+					.work__head
+						img(src='./assets/images/icon/circle.svg').work__head--img
+						span.work__head--text Договор: подписание и предоплата
+						.work__numb 3
+					ul.work__list
+						li.work__list--el Составляем и подписываем договор
+						li.work__list--el Мы выставляем счет на предоплату (80%)
+						li.work__list--el Вы вносите предоплату
+				.work
+					.work__head
+						img(src='./assets/images/icon/work.svg').work__head--img
+						span.work__head--text Сборка и монтаж
+						.work__numb 4
+					ul.work__list
+						li.work__list--el Закупка стройматериалов и оборудования
+						li.work__list--el Сборка модулей на производстве
+						li.work__list--el Транспортировка на участок заказчика
+						li.work__list--el Монтаж
+				.work
+					.work__head
+						img(src='./assets/images/icon/end.svg').work__head--img
+						span.work__head--text Завершение проекта
+						.work__numb 5
+					ul.work__list
+						li.work__list--el Прием работ по договору и окончательная оплата
+						li.work__list--el  Вы получаете ключи от готового дома, все документы и инструктаж
+						li.work__list--el  Новоселье! :)
+
 
 block footer
 	footer.footer
