@@ -63,40 +63,17 @@
 }
 // BUTTON
 .button {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 11px;
-  text-transform: uppercase;
-	color: $text;
-	background: transparent;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	height: 50px;
+	width: 255px;
+	background: $mc2;
+	color: $textLight;
 	border: none;
-	&:hover{
-		.button__text{
-			margin-left: -45px;
-			letter-spacing: 0.2em;
-			color: $mc;
-		}
-		.button__sircle, svg{
-			stroke: $mc;
-
-		}
-	}
-	&__sircle, svg{
-		width: 80px;
-		height: 80px;
-		fill: transparent;
-		stroke: $text;
-		transform: rotate(45deg);
-		transition: all 0.3s;
-	}
-	&__text{
-		margin-left: -40px;
-		letter-spacing: 0.8em;
-		text-transform: uppercase;
-		transition: all 0.3s;
-	}
+	margin: 0 auto;
+	cursor: pointer;
 }
 
 // LINK HOVER

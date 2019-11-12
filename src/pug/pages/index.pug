@@ -25,7 +25,7 @@ block content
 				a(href='#').first-screen__messages--telegram
 					img(src="./assets/images/icon/telegram.svg").first-screen__img
 			.first-screen__slider
-				.sl
+				.sl.js-sl
 					.sl__element
 						img(src="./assets/images/main/slider/Rectangle1.jpg" alt='photo').sl__element--img
 						.sl__element--content
@@ -125,7 +125,7 @@ block content
 								img(src="./assets/images/logo-m.svg").card__hover--logo
 								p.card__hover--text Смотреть объекты
 					.card__desc Административно бытовые здания
-			button(type='button').make__button Смотреть все категории
+			button(type='button').button.make__button Смотреть все категории
 		.advantages
 			p.advantages__title.main__title Почему именно мы
 			.advantages__element
@@ -164,57 +164,161 @@ block content
 						li.advant__elem Работаем только по договору, от 12 месяцев гарантийного обслуживания на все здания
 						li.advant__elem Доставляем и монтируем свои здания в любом регионе Украины
 						li.advant__elem Бесплатно консультируем по вопросам планирования, строительства и дальнейшей эксплуатации
-		.works
-			.main__title.works__title Как мы работаем?
-			.works__list
-				.work.work1
-					.work__head
-						img(src='./assets/images/icon/handshake.svg').work__head--img
-						span.work__head--text Знакомство, консультация
-						.work__numb 1
-					ul.work__list
-						li.work__list--el Вы связываетесь с нами любым удобным для Вас способом, получаете предварительную консультацию
-						li.work__list--el Формулируете техническое задание и отправляете его к нам на электронную почту
-				.work.work2.num-left
-					.work__head
-						img(src='./assets/images/icon/word.svg').work__head--img
-						span.work__head--text Коммерческое предложение
-						.work__numb 2
-					ul.work__list
-						li.work__list--el Если проект типовой, то вносятся необходимые правки. Если нет, то разрабатывается индивидуальный проекте нуля.
-						li.work__list--el Составляется коммерческое предложение с описанием сооружения, его комплектацией планировкой, ценой и сроком поставки.
-						li.work__list--el После согласования мы приглашаем Вас в наш офис на Подоле
-				.work.work3
-					.work__head
-						img(src='./assets/images/icon/circle.svg').work__head--img
-						span.work__head--text Договор: подписание и предоплата
-						.work__numb 3
-					ul.work__list
-						li.work__list--el Составляем и подписываем договор
-						li.work__list--el Мы выставляем счет на предоплату (80%)
-						li.work__list--el Вы вносите предоплату
-				.work.work4.num-left
-					.work__head
-						img(src='./assets/images/icon/work.svg').work__head--img
-						span.work__head--text Сборка и монтаж
-						.work__numb 4
-					ul.work__list
-						li.work__list--el Закупка стройматериалов и оборудования
-						li.work__list--el Сборка модулей на производстве
-						li.work__list--el Транспортировка на участок заказчика
-						li.work__list--el Монтаж
-				.work.work5
-					.work__head
-						img(src='./assets/images/icon/end.svg').work__head--img
-						span.work__head--text Завершение проекта
-						.work__numb 5
-					ul.work__list
-						li.work__list--el Прием работ по договору и окончательная оплата
-						li.work__list--el  Вы получаете ключи от готового дома, все документы и инструктаж
-						li.work__list--el  Новоселье! :)
-				.work__line(style={ 'grid-row-end':'9' })
-				// grid-row-end  = .work5 + 4 || .work7 + 4 = 11
+		.processes
+			.main__title.processes__title Как мы работаем?
+			.processes__list
+				// repeat
+				.process.process1
+					.process__head
+						img(src='./assets/images/icon/handshake.svg').process__head--img
+						span.process__head--text Знакомство, консультация
+						.process__numb 1
+					ul.process__list
+						li.process__list--el Вы связываетесь с нами любым удобным для Вас способом, получаете предварительную консультацию
+						li.process__list--el Формулируете техническое задание и отправляете его к нам на электронную почту
+				.process.process2.num-left
+					.process__head
+						img(src='./assets/images/icon/word.svg').process__head--img
+						span.process__head--text Коммерческое предложение
+						.process__numb 2
+					ul.process__list
+						li.process__list--el Если проект типовой, то вносятся необходимые правки. Если нет, то разрабатывается индивидуальный проекте нуля.
+						li.process__list--el Составляется коммерческое предложение с описанием сооружения, его комплектацией планировкой, ценой и сроком поставки.
+						li.process__list--el После согласования мы приглашаем Вас в наш офис на Подоле
+				.process.process3
+					.process__head
+						img(src='./assets/images/icon/circle.svg').process__head--img
+						span.process__head--text Договор: подписание и предоплата
+						.process__numb 3
+					ul.process__list
+						li.process__list--el Составляем и подписываем договор
+						li.process__list--el Мы выставляем счет на предоплату (80%)
+						li.process__list--el Вы вносите предоплату
+				.process.process4.num-left
+					.process__head
+						img(src='./assets/images/icon/process.svg').process__head--img
+						span.process__head--text Сборка и монтаж
+						.process__numb 4
+					ul.process__list
+						li.process__list--el Закупка стройматериалов и оборудования
+						li.process__list--el Сборка модулей на производстве
+						li.process__list--el Транспортировка на участок заказчика
+						li.process__list--el Монтаж
+				.process.process5
+					.process__head
+						img(src='./assets/images/icon/end.svg').process__head--img
+						span.process__head--text Завершение проекта
+						.process__numb 5
+					ul.process__list
+						li.process__list--el Прием работ по договору и окончательная оплата
+						li.process__list--el  Вы получаете ключи от готового дома, все документы и инструктаж
+						li.process__list--el  Новоселье! :)
+				.process__line(style={ 'grid-row-end':'9' })
+				// grid-row-end  = .process5 + 4 || .process7 + 4 = 11
 
+
+		.stages
+			.main__title Этапы сборки и монтажа
+			.main__title.stages__title Модульный дом за
+				span 22 дня
+			.stage__wrap
+				.stage.stage1
+					.stage__name Сварка каркаса
+					.stage__time 2 дня
+					.stage__number 1
+				.stage__line--hor.line_hor1
+				.stage.stage2
+					.stage__name Утепление, гидро-пароизоляция
+					.stage__time 2 дня
+					.stage__number 2
+				.stage__line--hor.line__hor2
+				.stage__line--vert.line__vert1
+				.stage__line--hor.line__hor--big.line__hor--big1
+				.stage__line--vert.line__vert2
+				.stage.stage3
+					.stage__name Окна и двери
+					.stage__time 3 дня
+					.stage__number 3
+				.stage__line--hor.line__hor3
+				.stage.stage4
+					.stage__name Инженерия (электрика,сантехника, климат)
+					.stage__time 5 дня
+					.stage__number 4
+				.stage__line--hor.line-hor4
+				.stage__line--vert.line__vert3
+				.stage__line--hor.line__hor--big.line__hor--big2
+				.stage__line--vert.line__vert4
+				.stage.stage5
+					.stage__name Отделка внутри: стены, потолки
+					.stage__time 3 дня
+					.stage__number 5
+				.stage__line--hor.line__hor5
+				.stage.stage6
+					.stage__name Отделка снаружи: кровля и фасад
+					.stage__time 5 дня
+					.stage__number 6
+				.stage__line--hor.line__hor6
+				.stage__line--vert.line__vert5
+				.stage__line--hor.line__hor--big.line__hor--big3
+				.stage__line--vert.line__vert6
+				.stage.stage7
+					.stage__name Транспортировка
+					.stage__time 1 дня
+					.stage__number 7
+				.stage__line--hor.line__hor7
+				.stage.stage8
+					.stage__name Монтаж на участке
+					.stage__time 1 дня
+					.stage__number 8
+				//.stage__line--hor.line__hor8
+		.works
+			.works__top
+				.main__title.works__title Реализованные объекты
+				button(type='button').button.works__button Больше объектов
+			a(href='#').work
+				.work__img
+					img(src='./assets/images/main/obj1.jpg')
+					.work__data 2019-08-15
+				.work__text Модульные операторские (3шт) для солнечных электростанций
+			a(href='#').work
+				.work__img
+					img(src='./assets/images/main/obj2.jpg')
+					.work__data 2019-08-15
+				.work__text Модульный дом 8.5х6м для отдыха с комфортом.
+			a(href='#').work
+				.work__img
+					img(src='./assets/images/main/obj3.jpg')
+					.work__data 2019-08-15
+				.work__text Быстровозводимое административно-бытовое здание для ТзОВ «УКРАЇНСЬКІ СИСТЕМИ СОЛАР»
+			a(href='#').work
+				.work__img
+					img(src='./assets/images/main/obj4.jpg')
+					.work__data 2019-08-15
+				.work__text Модульный дом с верандой
+			.works__description
+				h4.works__description--title Реализованные объекты
+				p.works__description--text Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичный образ жизни. Однажды одна маленькая строчка рыбного текста по имени Lorem ipsum решила выйти в большой мир грамматики. Великий Оксмокс предупреждал ее о злых запятых, диких знаках вопроса и коварных точках с запятой, но текст не дал сбить себя с толку.
+				h4.works__description--title Выполненные работы
+				p.works__description--text Он собрал семь своих заглавных букв, подпоясал инициал за пояс и пустился в дорогу. Взобравшись на первую вершину курсивных гор, бросил он последний взгляд назад, на силуэт своего родного города Буквоград, на заголовок деревни Алфавит и на подзаголовок своего переулка Строчка. Грустный риторический вопрос скатился по его щеке и он продолжил свой путь. По дороге встретил текст рукопись. Она предупредила его: «В моей стране все переписывается по несколько раз. Единственное, что от меня осталось, это приставка «и». Возвращайся ты лучше в свою безопасную страну». Не послушавшись рукописи, наш текст продолжил свой путь.
+				h4.works__description--title Строительный процесс
+				p.works__description--text Вскоре ему повстречался коварный составитель рекламных текстов, напоивший его языком и речью и заманивший в свое агенство, которое использовало его снова и снова в своих проектах. И если его не переписали, то живет он там до сих пор. Далеко-далеко за словесными горами в стране гласных и согласных живут рыбные тексты. Вдали от всех живут они в буквенных домах на берегу Семантика большого языкового океана. Маленький ручеек Даль журчит по всей стране и обеспечивает ее всеми необходимыми правилами. Эта парадигматическая страна, в которой жаренные члены предложения залетают прямо в рот. Даже всемогущая пунктуация не имеет власти над рыбными текстами, ведущими безорфографичны.
+		.clients
+			.clients__title.main__title Наши клиенты
+			.clients-slider.js-clients-slider
+				.clients-slider__element
+					img(src='./assets/images/logos/Logo.svg').clients__img
+				.clients-slider__element
+					img(src='./assets/images/smarto.svg').clients__img
+				.clients-slider__element
+					img(src='./assets/images/logos/Logo.svg').clients__img
+				.clients-slider__element
+					img(src='./assets/images/smarto.svg').clients__img
+				.clients-slider__element
+					img(src='./assets/images/logos/Logo.svg').clients__img
+				.clients-slider__element
+					img(src='./assets/images/smarto.svg').clients__img
+				.clients-slider__element
+					img(src='./assets/images/logos/Logo.svg').clients__img
 
 block footer
 	footer.footer

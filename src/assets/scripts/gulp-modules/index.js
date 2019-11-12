@@ -19,13 +19,23 @@ wow.init();
             $(this).toggleClass('hover')}
     );
 
-    $('.sl').slick({
+    $('.js-sl').slick({
         dots: false,
         infinite: true,
         speed: 1000,
         prevArrow: $('.sl__button--left'),
         nextArrow: $('.sl__button--right'),
         slidesToShow: 1,
+        slidesToScroll: 1,
+    });
+
+    $('.js-clients-slider').slick({
+        dots: false,
+        infinite: true,
+        speed: 1000,
+        // prevArrow: $('.sl__button--left'),
+        // nextArrow: $('.sl__button--right'),
+        slidesToShow: 5,
         slidesToScroll: 1,
     });
 })();
