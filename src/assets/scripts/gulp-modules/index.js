@@ -33,9 +33,20 @@ wow.init();
         dots: false,
         infinite: true,
         speed: 1000,
-        // prevArrow: $('.sl__button--left'),
-        // nextArrow: $('.sl__button--right'),
+        prevArrow: $('.clients-slider__button--left'),
+        nextArrow: $('.clients-slider__button--right'),
         slidesToShow: 5,
         slidesToScroll: 1,
+        responsive: [{
+            breakpoint: 769,
+            settings: {
+                slidesToShow: 3
+            }
+        },{
+            breakpoint: 469,
+            settings: {
+                slidesToShow: 1
+            }
+        }]
     });
 })();

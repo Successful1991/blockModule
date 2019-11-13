@@ -74,6 +74,12 @@
 	border: none;
 	margin: 0 auto;
 	cursor: pointer;
+	text-decoration: none;
+	transition: background 0.2s linear;
+	&:hover{
+		background: $mc3;
+		color: $mc2;
+	}
 }
 
 // LINK HOVER

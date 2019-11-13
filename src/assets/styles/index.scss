@@ -8,10 +8,20 @@
   height: calc(100vh - 72px);
   width: 100%;
   padding: 40px 0;
+  @include to(1024px){
+    height: 100%;
+    grid-template-columns: 10% 80% 10%;
+  }
+  &__link{
+    background: $mc3;
+    transition: background 0.2s linear;
+    &:hover{
+      background: $mc2;
+    }
+  }
   &__location{
     grid-area: location;
     @include flexCenter();
-    background: $mc3;
     &--img{
       max-width: none;
       max-height: none;
@@ -22,7 +32,6 @@
   &__mail{
     grid-area: mail;
     @include flexCenter();
-    background: $mc3;
     &--img{
       max-width: none;
       max-height: none;
@@ -37,6 +46,9 @@
     justify-content: flex-end;
     align-items: center;
     padding: 20px;
+    @include to(768px){
+      padding: 0;
+    }
     &--text{
       display: inline-block;
       height: 1px;
@@ -44,13 +56,21 @@
       white-space: nowrap;
       line-height: 1px;
       margin-bottom: 30px;
+      font-size: 1vw;
       transform: rotate(-90deg);
+      @include to(1024px) {
+        margin: 0;
+      }
     }
     &--img{
       max-width: none;
       max-height: none;
       height: auto;
       width: 13%;
+      @include to(1024px){
+        width: 30%;
+        height: 50%;
+      }
     }
   }
   &__slider{
@@ -69,12 +89,16 @@
     align-items: center;
     &--text{
       display: inline-block;
-      height: 1px;
-      width: 1px;
       white-space: nowrap;
       line-height: 1px;
       margin-bottom: 20px;
+      padding: 50% 0;
+      transform-origin: center;
       transform: rotate(-90deg);
+      font-weight: 500;
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
   }
   &__img{
@@ -91,6 +115,9 @@
   font-size: 24px;
   text-align: center;
   line-height: 1.3em;
+  @include to(480px){
+    font-size: 14px;
+  }
 }
 .sl{
   display: inline-block;
@@ -121,6 +148,9 @@
       line-height: 1.5em;
       padding: 0 0 10% 16%;
       background: #ffffff;
+      @include to(1024px) {
+        font-size: 2vw;
+      }
     }
     &--title{
       padding: 13px 35px;
@@ -129,6 +159,10 @@
       line-height: 1.3em;
       background: $mc2;
       color: $wc;
+      text-decoration: none;
+      @include to(1024px) {
+        font-size: 1.2vw;
+      }
     }
   }
   &__buttons{
@@ -143,11 +177,24 @@
     width: 70px;
     background: $mc3;
     border: none;
+    transition: background 0.2s linear;
+    span{
+      display: inline-block;
+      height: 15px;
+      width: 15px;
+    }
+    &:hover{
+      background: $mc2;
+    }
+    @include to(768px) {
+      height: 50px;
+      width: 50px;
+    }
     &--left{
-      background: $mc3 url('../images/icon/arrow-white.svg')no-repeat center;
+      background: url('../images/icon/arrow-white.svg')no-repeat center;
     }
     &--right{
-      background: $mc3 url('../images/icon/arrow-white.svg')no-repeat center;
+      background: url('../images/icon/arrow-white.svg')no-repeat center;
       transform: rotate(180deg);
     }
   }
@@ -159,7 +206,10 @@
 
 .make {
   width: 100%;
-  padding: 0 0 30px 45px;
+  padding: 0 20px 45px;
+  @include to(480px) {
+    padding: 0 0 30px;
+  }
   &__title{
     margin-bottom: 40px;
   }
@@ -167,11 +217,43 @@
     display: grid;
     grid-template-areas: 'card-1 card-2 card-3 card-3' 'card-4 card-4 card-5 card-6' 'card-7 card-8 card-9 card-9';
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+    grid-auto-rows: auto;
+    //grid-template-rows: repeat(3, 1fr);
     grid-gap: 30px;
     width: 100%;
     height: auto;
     padding: 0 45px 45px;
+    @include to(992px){
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas:
+      'card-1 card-3 card-3'
+      'card-4 card-4 card-2'
+      'card-5 card-9 card-9'
+      'card-6 card-7 card-8';
+    }
+    @include to(768px){
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+              'card-1 card-2'
+              'card-3 card-3'
+              'card-4 card-4'
+              'card-5 card-6'
+              'card-9 card-9'
+              'card-7 card-8';
+      padding: 0 0 45px;
+    }
+    @include to(480px){
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-areas:
+              'card-1''card-2'
+              'card-3'
+              'card-4'
+              'card-5''card-6'
+              'card-7''card-8'
+              'card-9';
+      padding: 0 25px 25px;
+    }
+
   }
   &__button{
     font-weight: 500;
@@ -189,19 +271,22 @@
   &__desc{
     font-weight: 500;
     font-size: 14px;
-    line-height: 35px;
+    line-height: 35px; // height block
     text-align: center;
     color: $textDark;
     border: 1px solid #C4C4C4;
+    @include to(480px) {
+      font-size: 10px;
+      line-height: 25px;
+    }
   }
   &__img{
     position: relative;
     width: 100%;
-    height: calc(100% - 40px);
-    img{
+    //height: calc(100% - 40px);
+    & + img{
       display: inline-block;
       height: 100%;
-      width: 100%;
       object-fit: cover;
     }
   }
@@ -210,6 +295,9 @@
     margin-top: auto;
     height: 38%;
     justify-content: flex-end;
+    @include to(768px) {
+      height: 100%;
+    }
   }
   &-2{
     grid-area: card-2;
@@ -222,6 +310,9 @@
     margin-top: auto;
     height: 77%;
     justify-content: flex-end;
+    @include to(768px) {
+      height: 100%;
+    }
   }
   &-4{
     grid-area: card-4;
@@ -245,6 +336,9 @@
     grid-area: card-7;
     justify-content: flex-start;
     height: 38%;
+    @include to(768px) {
+      height: 100%;
+    }
   }
   &-8{
     grid-area: card-8;
@@ -255,6 +349,9 @@
     grid-area: card-9;
     justify-content: flex-start;
     height: 77%;
+    @include to(768px) {
+      height: 100%;
+    }
   }
 
   &__hover{
@@ -267,6 +364,7 @@
     background: $mc2;
     z-index: 105;
     opacity: 0;
+    transition: all 0.2s ease-in;
     &--wrap{
       @include flexCenter();
       flex-direction: column;
@@ -276,6 +374,8 @@
     }
     &--logo{
       width: 40px;
+      height: auto;
+      max-height: 50%;
     }
     &--text{
       font-weight: 600;
@@ -287,6 +387,11 @@
       letter-spacing: 0.1em;
     }
   }
+  &.hover{
+    .card__hover{
+      opacity: 1;
+    }
+  }
 }
 
 .advantages{
@@ -295,6 +400,9 @@
   background: $mc4 url('../images/main/house__bg.jpg')no-repeat center bottom /contain;
   color: $textLight;
   padding: 70px 45px 40%;
+  @include to(480px) {
+    padding: 70px 20px 30%;
+  }
   &__title{
     width: 100%;
     color: #FFFFFF;
@@ -304,6 +412,12 @@
     display: flex;
     width: 50%;
     margin-bottom: 70px;
+    @include to(769px){
+      width: 100%;
+    }
+    @include to(480px){
+      margin-bottom: 30px;
+    }
   }
 }
 .advant{
@@ -316,6 +430,10 @@
     line-height: 2em;
     list-style: disc;
     margin-bottom: 10px;
+    @include to(480px) {
+      font-size: 10px;
+      line-height: 1.2em;
+    }
   }
   &__img{
     @include flexCenter();
@@ -324,6 +442,11 @@
     flex-shrink: 0;
     background: $mc2;
     margin-right: 30px;
+    @include to(480px) {
+      margin-right: 10px;
+      height: 40px;
+      width: 40px;
+    }
     img{
       max-height: 80%;
       max-width: 80%;
@@ -340,6 +463,9 @@
 .processes{
   padding: 60px 45px;
   background: url("../images/main/proces__bg.jpg")no-repeat center /cover;
+  @include to(480px) {
+    padding: 40px 20px;
+  }
   &__title{
     color: $textLight;
     margin-bottom: 50px;
@@ -347,7 +473,11 @@
   &__list{
     display: grid;
     grid-template-columns: calc(50% - 1px) 2px calc(50% - 1px);
-    grid-auto-rows: auto;
+    grid-template-rows: 65px auto 65px auto 65px auto 65px auto [pre-last] 65px auto ;
+    @include to(769px){
+      grid-template-rows: auto auto auto auto [pre-last]auto ;
+      grid-template-columns: calc(100% - 32px) 2px 30px;
+    }
   }
 }
 .process{
@@ -362,7 +492,13 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 36px;
+    flex-shrink: 0;
     margin: 0 -63px 0 auto;
+    @include to(769px) {
+      height: 45px;
+      width: 45px;
+      margin: 0 -22px 0 auto;
+    }
   }
   &__head{
     display: flex;
@@ -370,23 +506,35 @@
     height: 65px;
     background: $wc;
     padding: 0 30px;
+    @include to(769px) {
+      height: 45px;
+      padding: 0 0 0 30px;
+    }
     &--text{
       font-weight: 600;
       font-size: 14px;
       line-height: 1.5em;
       color: $textDark;
       text-transform: uppercase;
+      @include to(768px) {
+        font-size: 10px;
+      }
     }
     &--img{
       display: inline-block;
       width: auto;
       max-height: 80%;
       margin-right: 20px;
+      @include to(769px) {
+        margin: 0 20px 0 auto;
+      }
     }
   }
   &__list{
     padding: 30px 10% 30px 20%;
-
+    @include to(768px) {
+      padding: 20px 5% 20px 10%;
+    }
     &--el{
       font-weight: 500;
       font-size: 12px;
@@ -394,6 +542,9 @@
       list-style: disc;
       color: $textLight;
       margin-bottom: 20px;
+      @include to(768px) {
+        margin-bottom: 10px;
+      }
     }
   }
   &__line{
@@ -403,51 +554,92 @@
     background: $mc2;
     grid-column: 2;
     grid-row-start: 2;
-    grid-row-end: 9;
+    grid-row-end: pre-last;
+    &__pre-last{
+      grid-area: last;
+    }
+    @include to(789px) {
+      grid-row-start: 1;
+    }
   }
   &1{
     grid-row: 1/5;
     grid-column: 1;
+    @include to(769px) {
+      grid-column: 1;
+      grid-row: auto/auto;
+    }
   }
   &2{
     grid-row: 3/7;
     grid-column: 3;
+    @include to(769px) {
+      grid-column: 1;
+      grid-row: auto/auto;
+    }
   }
   &3{
     grid-row: 5/9;
     grid-column: 1;
+    @include to(769px) {
+      grid-column: 1;
+      grid-row: auto/auto;
+    }
   }
   &4{
     grid-row: 7/11;
     grid-column: 3;
+    @include to(769px) {
+      grid-column: 1;
+      grid-row: auto/auto;
+    }
   }
   &5{
     grid-row: 9/13;
     grid-column: 1;
+    @include to(769px) {
+      grid-column: 1;
+      grid-row: auto/auto;
+    }
   }
   &6{
     grid-row: 11/15;
     grid-column: 1;
+    @include to(769px) {
+      grid-column: 1;
+      grid-row: auto/auto;
+    }
   }
   &7{
     grid-row: 13/17;
     grid-column: 3;
+    @include to(769px) {
+      grid-column: 1;
+      grid-row: auto/auto;
+    }
   }
   &8{
     grid-row: 15/19;
     grid-column: 1;
+    @include to(769px) {
+      grid-column: 1;
+      grid-row: auto/auto;
+    }
   }
 }
 .num-left{
-
-  .work__numb{
+  .process__numb{
     order: -1;
     margin: 0 0 0 -63px;
+    @include to(769px) {
+      order: 0;
+      margin: 0 -22px 0 0;
+    }
   }
-  .work__head--img{
+  .process__head--img{
     margin-left: auto;
   }
-  .work__head--text{
+  .process__head--text{
     margin-right: auto;
   }
 }
@@ -455,6 +647,9 @@
 .stages{
   padding: 45px 45px 0;
   background: url("../images/main/line__bg.png")no-repeat center bottom / contain;
+  @include to(480px) {
+    padding: 30px 20px;
+  }
   &__title{
     font-weight: 700;
     text-transform: uppercase;
@@ -469,11 +664,20 @@
   position: relative;
   padding: 20px 10%;
   border: 1px solid #D4D6DA;
+  @include to(480px){
+    padding: 10px;
+  }
   &__wrap{
     display: grid;
     grid-template-columns: 1fr 30px 1fr 30px 1fr 30px 1fr;
     grid-auto-rows: auto;
     padding: 0 0 90px;
+    @include to(992px){
+      grid-template-columns: 1fr 30px 1fr;
+    }
+    @include to(480px){
+      grid-template-columns: 1fr 10px 1fr;
+    }
   }
   &__number{
     position: absolute;
@@ -489,6 +693,13 @@
     font-size: 14px;
     line-height: 1em;
     box-shadow:0 0 0 7px rgba(248,90,0,0.5);
+    @include to(480px){
+      top: -10px;
+      left: 5px;
+      height: 20px;
+      width: 20px;
+      box-shadow:0 0 0 5px rgba(248,90,0,0.5);
+    }
   }
   &__name{
     font-weight: 500;
@@ -496,6 +707,9 @@
     line-height: 1.8em;
     text-align: center;
     color: $textDark;
+    @include to(480px){
+      font-size: 9px;
+    }
   }
   &__time{
     font-weight: 600;
@@ -511,12 +725,21 @@
       height: 1px;
       background: #D4D6DA;
       margin: auto;
+      @include to(480px){
+        width: 10px;
+      }
     }
     &--vert{
       grid-column: 1/ span end;
       width: 1px;
       height: 30px;
       background: #D4D6DA;
+      @include to(992px){
+        grid-column: 1/ span 3;
+      }
+      @include to(480px){
+        height: 10px;
+      }
     }
   }
 }
@@ -524,6 +747,9 @@
   &__hor--big{
     width: calc(100% - 60px);
     grid-column: 1/ span 7;
+    @include to(992px){
+      grid-column: 1/ span 3;
+    }
   }
   &__vert1,&__vert3,&__vert5{
     margin: 0 30px 0 auto;
@@ -531,10 +757,18 @@
   &__vert2,&__vert4,&__vert6{
     margin: 0 auto 0 30px;
   }
+  &__hor2,&__hor4,&__hor6{
+    @include to(992px){
+      display: none;
+    }
+  }
 
 }
 .line__vert1,.line__hor--big1,.line__vert2,.line__vert5,.line__hor--big3,.line__vert6,.line-hor4{
    display: none;
+  @include to(992px){
+    display: inline-block;
+  }
  }
 
 
@@ -543,6 +777,9 @@
   flex-wrap: wrap;
   padding: 40px 30px 40%;
   background: url("../images/main/work__bg.jpg")no-repeat center bottom /contain;
+  @include to(480px) {
+    padding: 30px 20px 20%;
+  }
   &__top{
     display: flex;
     align-items: center;
@@ -550,6 +787,9 @@
     margin-bottom: 20px;
     width: 100%;
     padding: 0 15px;
+    @include to(480px) {
+      padding: 0;
+    }
   }
   &__title{
     width: auto;
@@ -569,6 +809,10 @@
       line-height: 1.8em;
       margin-bottom: 25px;
     }
+    @include to(992px){
+      width: 100%;
+      margin: 35px auto 0;
+    }
   }
   &__button{
     margin: 0;
@@ -582,12 +826,24 @@
   margin: 0 15px;
   text-decoration: none;
   color: $textDark;
+  &:hover{
+    color: $mc2;
+    text-decoration: underline;
+  }
+  @include to(768px){
+    width: calc(50% - 10px);
+    margin: 0 5px 20px;
+  }
   &__text{
     position: relative;
     padding: 10px 0 0 18px;
     font-weight: 500;
     font-size: 12px;
     line-height: 2em;
+
+    @include to(480px) {
+      line-height: 1.5em;
+    }
     &:before{
       content: '';
       position: absolute;
@@ -602,14 +858,26 @@
     position: relative;
     display: inline-block;
     width: 100%;
+    overflow: hidden;
     &:before{
       content: '';
       position: absolute;
       bottom: 0;
       left:0;
       right:0;
+      z-index: 50;
       height: 50%;
       background: linear-gradient(0, #293044 0%, rgba(41, 48, 68, 0) 100%);
+    }
+    img{
+      display: inline-block;
+      transition: transform 0.2s linear;
+    }
+    &:hover{
+      img{
+        transform: scale(1.1);
+        z-index: 0;
+      }
     }
   }
   &__data{
@@ -621,11 +889,19 @@
     line-height: 2.4em;
     color: $textLight;
   }
-
 }
 
 .clients{
-  padding: 45px 140px 80px;
+  display: inline-block;
+  width: 100%;
+  padding: 45px 11.6% 90px;
+  @include to(480px) {
+    padding: 25px 60px 40px;
+  }
+  &__title{
+    margin-bottom: 45px;
+    line-height: 1.5em;
+  }
   &-slider{
     height: 60px;
     width: 100%;
@@ -635,6 +911,36 @@
       padding: 0 15px;
       img{
         margin: auto 0;
+        display: inline-block;
+        max-height: 100%;
+        height: auto;
+        width: auto;
+        max-width: 100%;
+        object-fit: contain;
+      }
+    }
+    &__buttons{
+      display: flex;
+      justify-content: space-between;
+      height: 0;
+      width: 100%;
+    }
+    &__button{
+      height: 50px;
+      width: 50px;
+      cursor: pointer;
+      background: url(../images/icon/arrowDown.svg) no-repeat center/ 14px;
+      &--left{
+        transform: translate(-150%, -100%)rotate(90deg);
+        @include to(480px) {
+        transform: translate(-100%, -100%)rotate(90deg);
+        }
+      }
+      &--right{
+        transform: translate(150%, -100%)rotate(-90deg);
+        @include to(480px) {
+        transform: translate(100%, -100%)rotate(-90deg);
+        }
       }
     }
   }

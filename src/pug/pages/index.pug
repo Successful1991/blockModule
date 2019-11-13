@@ -11,9 +11,9 @@ block scripts
 block content
 	section.main
 		.first-screen
-			a(href="#").first-screen__location
+			a(href="#").first-screen__link.first-screen__location
 				img(src="./assets/images/icon/Map.svg").first-screen__location--img
-			a(href="#").first-screen__mail
+			a(href="#").first-screen__link.first-screen__mail
 				img(src="./assets/images/icon/E-mail.svg").first-screen__mail--img
 			.first-screen__mouse
 				span.first-screen__mouse--text Смотреть сайт
@@ -30,30 +30,32 @@ block content
 						img(src="./assets/images/main/slider/Rectangle1.jpg" alt='photo').sl__element--img
 						.sl__element--content
 							.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
-							.sl__element--title Реализованные проекты
+							a(href='#').sl__element--title Реализованные проекты
 					.sl__element
 						img(src="./assets/images/main/slider/Rectangle1.jpg" alt='photo').sl__element--img
 						.sl__element--content
 							.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
-							.sl__element--title Реализованные проекты
+							a(href='#').sl__element--title Реализованные проекты
 					.sl__element
 						img(src="./assets/images/main/slider/Rectangle1.jpg" alt='photo').sl__element--img
 						.sl__element--content
 							.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
-							.sl__element--title Реализованные проекты
+							a(href='#').sl__element--title Реализованные проекты
 					.sl__element
 						img(src="./assets/images/main/slider/Rectangle1.jpg" alt='photo').sl__element--img
 						.sl__element--content
 							.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
-							.sl__element--title Реализованные проекты
+							a(href='#').sl__element--title Реализованные проекты
 				.sl__buttons
-					button(type="button").sl__button.sl__button--left
-					button(type="button").sl__button.sl__button--right
+					button(type="button").sl__button
+						span.sl__button--left
+					button(type="button").sl__button
+						span.sl__button--right
 
 		.make
 			h3.make__title.main__title Мы производим
 			.make__gallery
-				a(href='#').card.card-1
+				a(href='#').card.card-1.js-hover
 					.card__img
 						img(src='./assets/images/main/make/angar.jpg' alt='angar')
 						.card__hover
@@ -61,7 +63,7 @@ block content
 								img(src="./assets/images/logo-m.svg").card__hover--logo
 								p.card__hover--text Смотреть объекты
 					.card__desc Ангары
-				a(href='#').card.card-2
+				a(href='#').card.card-2.js-hover
 					.card__img
 						img(src='./assets/images/main/make/san-block.jpg' alt='Санитарные блоки')
 						.card__hover
@@ -69,7 +71,7 @@ block content
 								img(src="./assets/images/logo-m.svg").card__hover--logo
 								p.card__hover--text Смотреть объекты
 					.card__desc Санитарные блоки
-				a(href='#').card.card-3
+				a(href='#').card.card-3.js-hover
 					.card__img
 						img(src='./assets/images/main/make/module-build.jpg' alt='Модульные здания')
 						.card__hover
@@ -77,7 +79,7 @@ block content
 								img(src="./assets/images/logo-m.svg").card__hover--logo
 								p.card__hover--text Смотреть объекты
 					.card__desc Модульные здания
-				a(href='#').card.card-4
+				a(href='#').card.card-4.js-hover
 					.card__img
 						img(src='./assets/images/main/make/house.jpg' alt='house')
 						.card__hover
@@ -85,7 +87,7 @@ block content
 								img(src="./assets/images/logo-m.svg").card__hover--logo
 								p.card__hover--text Смотреть объекты
 					.card__desc Дома: сборные, модульные, дачные
-				a(href='#').card.card-5
+				a(href='#').card.card-5.js-hover
 					.card__img
 						img(src='./assets/images/main/make/offices.jpg' alt='Модульные офисы')
 						.card__hover
@@ -93,7 +95,7 @@ block content
 								img(src="./assets/images/logo-m.svg").card__hover--logo
 								p.card__hover--text Смотреть объекты
 					.card__desc Модульные офисы
-				a(href='#').card.card-6
+				a(href='#').card.card-6.js-hover
 					.card__img
 						img(src='./assets/images/main/make/security-post.jpg' alt='Посты охраны')
 						.card__hover
@@ -101,7 +103,7 @@ block content
 								img(src="./assets/images/logo-m.svg").card__hover--logo
 								p.card__hover--text Смотреть объекты
 					.card__desc Посты охраны
-				a(href='#').card.card-7
+				a(href='#').card.card-7.js-hover
 					.card__img
 						img(src='./assets/images/main/make/trade-house.jpg' alt='trade-house')
 						.card__hover
@@ -109,7 +111,7 @@ block content
 								img(src="./assets/images/logo-m.svg").card__hover--logo
 								p.card__hover--text Смотреть объекты
 					.card__desc Торговые павильоны
-				a(href='#').card.card-8
+				a(href='#').card.card-8.js-hover
 					.card__img
 						img(src='./assets/images/main/make/hotels.jpg' alt='hotels')
 						.card__hover
@@ -117,7 +119,7 @@ block content
 								img(src="./assets/images/logo-m.svg").card__hover--logo
 								p.card__hover--text Смотреть объекты
 					.card__desc Общежития и отели
-				a(href='#').card.card-9
+				a(href='#').card.card-9.js-hover
 					.card__img
 						img(src='./assets/images/main/make/admin-house.jpg' alt='admin-house')
 						.card__hover
@@ -125,7 +127,7 @@ block content
 								img(src="./assets/images/logo-m.svg").card__hover--logo
 								p.card__hover--text Смотреть объекты
 					.card__desc Административно бытовые здания
-			button(type='button').button.make__button Смотреть все категории
+			a(href='#').button.make__button Смотреть все категории
 		.advantages
 			p.advantages__title.main__title Почему именно мы
 			.advantages__element
@@ -204,7 +206,8 @@ block content
 						li.process__list--el Сборка модулей на производстве
 						li.process__list--el Транспортировка на участок заказчика
 						li.process__list--el Монтаж
-				.process.process5
+				// add last element class "process__line__pre-last"
+				.process.process5.process__line__pre-last
 					.process__head
 						img(src='./assets/images/icon/end.svg').process__head--img
 						span.process__head--text Завершение проекта
@@ -213,8 +216,7 @@ block content
 						li.process__list--el Прием работ по договору и окончательная оплата
 						li.process__list--el  Вы получаете ключи от готового дома, все документы и инструктаж
 						li.process__list--el  Новоселье! :)
-				.process__line(style={ 'grid-row-end':'9' })
-				// grid-row-end  = .process5 + 4 || .process7 + 4 = 11
+				.process__line
 
 
 		.stages
@@ -274,7 +276,7 @@ block content
 		.works
 			.works__top
 				.main__title.works__title Реализованные объекты
-				button(type='button').button.works__button Больше объектов
+				a(href='#').button.works__button Больше объектов
 			a(href='#').work
 				.work__img
 					img(src='./assets/images/main/obj1.jpg')
@@ -319,6 +321,9 @@ block content
 					img(src='./assets/images/smarto.svg').clients__img
 				.clients-slider__element
 					img(src='./assets/images/logos/Logo.svg').clients__img
+			.clients-slider__buttons
+				.clients-slider__button.clients-slider__button--left
+				.clients-slider__button.clients-slider__button--right
 
 block footer
 	footer.footer
