@@ -1,0 +1,39 @@
+.menu
+    .menu__top
+        p меню
+        p каталог
+        button(type='button').menu__close.js-menu__close
+            span.menu__close--line
+            span.menu__close--line
+    .menu__middle
+        ul.menu__list
+            each list in menu.about.nested
+                if list.bottom
+                    li.footer-menu__list
+                        a("href"=list.href).footer-menu__list--item= list.name
+            if menu.works.bottom
+                li.footer-menu__list
+                    a("href"=menu.works.href).footer-menu__list--item= menu.works.name
+            each list in menu.infoCenter.nested
+                if list.bottom
+                    li.footer-menu__list
+                        a("href"=list.href).footer-menu__list--item= list.name
+            if menu.contact.bottom
+                li.footer-menu__list
+                     a("href"=menu.contact.href).footer-menu__list--item= menu.contact.name
+        .menu__middle--line
+        ul.menu__list
+            each list in menu.catalog.nested
+                if list.bottom
+                    li.footer-catalog__list
+                        a("href"=list.href).footer-catalog__list--item= list.name
+    ul.menu__bottom
+        each list in contact.phone
+            if list.href
+                li.menu__bottom__tel
+                    img(src='./assets/images/icon/' + list.img + '.svg' alt=list.img).phone__list--icon
+                    a(href= list.href ).footer-contact__tel= list.name
+            else
+                li.menu__bottom__tel
+                    img(src='./assets/images/icon/' + list.img + '.svg' alt=list.img).phone__list--icon
+                    span.footer-contact__tel= list.name

@@ -5,18 +5,22 @@
 	};
 	loader();
 
-
-const wow = new WOW({
-	boxClass: 'wow',
-	animateClass: 'animated',
-	offset: 0,
-	live: true
-});
-wow.init();
+    $('.js-burger').on('click', function () {
+        $('.menu').addClass('active');
+    });
+    $('.js-menu__close').on('click', function () {
+        $('.menu').removeClass('active');
+    });
+// const wow = new WOW({
+// 	boxClass: 'wow',
+// 	animateClass: 'animated',
+// 	offset: 0,
+// 	live: true
+// });
+// wow.init();
 
     $(".js-hover").hover(
-        function(){
-            $(this).toggleClass('hover')}
+        function(){$(this).toggleClass('hover')}
     );
 
     $('.js-sl').slick({
@@ -28,7 +32,6 @@ wow.init();
         slidesToShow: 1,
         slidesToScroll: 1,
     });
-
     $('.js-clients-slider').slick({
         dots: false,
         infinite: true,

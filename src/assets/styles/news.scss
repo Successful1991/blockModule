@@ -1,0 +1,103 @@
+.news{
+  padding: 0 45px;
+  @extend .main;
+  @include to(768px) {
+    padding: 0 20px;
+  }
+  &__title{
+    padding: 10px;
+  }
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  &__element{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 0 15px 30px;
+    background: $wc;
+    margin-bottom: 20px;
+    color: $textDark;
+    overflow: hidden;
+    @include to(768px){
+      width: 100%;
+      padding: 0 15px 15px;
+      margin-bottom: 10px;
+    }
+    &:hover{
+      box-shadow: 0 40px 40px rgba(41, 48, 68, 0.25) ;
+      z-index: 5;
+      .news__element__img img{
+        transform: scale(1.05);
+      }
+    }
+    &__data{
+      font-style: italic;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 2.4em;
+      margin: 7px 0 7px 35px;
+      @include to(768px) {
+        margin: 7px 0 7px 20px;
+      }
+    }
+    &__title{
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.4em;
+      text-transform: uppercase;
+      padding: 0 25px 0 35px;
+      margin-bottom: 10px;
+      @include to(768px) {
+        padding: 0 10px 0 20px;
+      }
+    }
+    &__text{
+      font-style: normal;
+      font-weight: 500;
+      font-size: 12px;
+      line-height: 1.7em;
+      color: #7D8795;
+      margin-bottom: 15px;
+      padding: 0 25px 0 35px;
+      @include to(768px) {
+        padding: 0 10px 0 20px;
+      }
+    }
+    &__img{
+      position: relative;
+      @include flexCenter();
+      height: 100%;
+      overflow: hidden;
+      background: #eaeaea;
+      img{
+        max-height: 25vh;
+        object-fit: contain;
+        z-index: 5;
+        transition: translate 0.3s linear;
+      }
+      &--blur{
+        position: absolute;
+        top:0;
+        left: 0;
+        display: flex;
+        filter: blur(10px)!important;
+        object-fit: cover!important;
+        height: 100%!important;
+        z-index: 2!important;
+      }
+    }
+    &__button{
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.7em;
+      margin: 0 25px 0 auto;
+      @include to(768px) {
+        margin: 0 10px 0 auto;
+      }
+    }
+  }
+}
