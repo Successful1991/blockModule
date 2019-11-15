@@ -1,0 +1,30 @@
+// pagination start
+.news__pagination
+    // first
+    a(href='#').disabled.pagination__arrow.pagination__arrow--left
+        include arrow.html
+        include arrow.html
+    // prev
+    a(href='#').disabled.pagination__arrow.pagination__arrow--left
+        include arrow.html
+    ul.dots
+        li.dots__element.active
+            a(href='#') 1
+        li.dots__element
+            a(href='#') 2
+        li.dots__element
+            a(href='#') 3
+        // circle default
+        li.dots__element.dots__place . . .
+        // last page
+        li.dots__element
+            a(href='#') 8
+    // next
+    a(href='#').pagination__arrow.pagination__arrow--right
+        include arrow.html
+    // last
+    a(href='#').pagination__arrow.pagination__arrow--right
+        include arrow.html
+        include arrow.html
+
+// pagination start

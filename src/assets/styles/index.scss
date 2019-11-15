@@ -655,7 +655,7 @@
 
 .stages{
   padding: 45px 45px 0;
-  background: url("../images/main/line__bg.png")no-repeat center bottom / contain;
+  background: url("../images/main/line__bg.png")no-repeat center bottom / cover;
   @include to(480px) {
     padding: 30px 20px;
   }
@@ -785,7 +785,7 @@
   display: flex;
   flex-wrap: wrap;
   padding: 40px 30px 40%;
-  background: url("../images/main/work__bg.jpg")no-repeat center bottom /contain;
+  background: url("../images/main/work__bg.jpg")no-repeat center bottom /cover;
   @include to(480px) {
     padding: 30px 20px 20%;
   }
@@ -874,7 +874,7 @@
       bottom: 0;
       left:0;
       right:0;
-      z-index: 50;
+      z-index: 10;
       height: 50%;
       background: linear-gradient(0, #293044 0%, rgba(41, 48, 68, 0) 100%);
     }

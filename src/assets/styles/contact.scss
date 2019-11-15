@@ -1,0 +1,104 @@
+.contacts{
+  display: flex;
+  flex-wrap: wrap;
+  @extend .main;
+  padding: 0 45px 40px;
+  &__news{
+    width: 100%;
+  }
+}
+.contact{
+  display: flex;
+  width: 100%;
+  &__content{
+    width: 100%;
+    display: flex;
+    padding: 40px 0 0;
+  }
+  &__element{
+    display: flex;
+    align-items: center;
+  }
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    width: 50%;
+    &--icon{
+      height: 25px;
+      width: 25px;
+      margin-right: 10px;
+    }
+    &--phone{
+      .contact__element{
+        width: 50%;
+      }
+    }
+    &--address{
+      .contact{
+        &__element{
+          width: 100%;
+        }
+        &__tel{
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 1.8em;
+          color: $bc;
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  &__tel{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.8em;
+    color: $mc3;
+    text-decoration: none;
+    &--title{
+      color: $mc2;
+      font-weight: 600;
+    }
+  }
+}
+.map{
+  display: inline-block;
+  min-height: 25vh;
+  width: 50%;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 0 30px;
+  padding: 24px 34px;
+  box-shadow: 0 10px 40px $mc3;
+  legend{
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 1.5em;
+    color: $mc3;
+    margin-bottom: 20px;
+  }
+  &__input{
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: #F4F5F6;
+    padding: 0 30px;
+    margin-bottom: 20px;
+  }
+  &__textarea{
+    height: 130px;
+    padding: 20px 30px 0;
+  }
+  &__submit{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.8em;
+    margin: 0 0 0 auto;
+  }
+}
+.capcha{
+  width: auto;
+  height: auto;
+}

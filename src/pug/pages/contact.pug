@@ -1,0 +1,59 @@
+extends ../layout/main
+block variable
+
+block meta
+    title= 'Contact'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/index.js')
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrUcTar2ARlRKSogEQVIlWaPnmVIM_xVE&callback=initMap")
+
+block content
+    section.contacts
+        h1.main__title.contacts__title Контакты
+        include includes/breadcrumb
+        .contact
+            ul.contact__list.contact__list--phone
+                each el in contact.phone
+                    if el.href
+                        li.contact__element
+                            img(src='./assets/images/icon/' + el.img + '.svg' alt=el.img).contact__list--icon
+                            a(href= el.href ).contact__tel= el.name
+                    else
+                        li.contact__element
+                            img(src='./assets/images/icon/' + el.img + '.svg' alt=el.img).contact__list--icon
+                            span.contact__tel= el.name
+            ul.contact__list.contact__list--address
+                each el in contact.address
+                    if el.href
+                        li.contact__element
+                            span.contact__tel--title=  el.title
+                            a(href= el.href ).contact__tel= el.name
+                    else
+                        li.contact__element
+                            span.contact__tel--title=  el.title
+                            span.contact__tel= el.name
+        .contact__content
+            .map(id='contact__map')
+            form.form
+                legend Обратная связь
+                input(type='text' placeholder='Имя:*').form__input
+                span.form__info
+                input(type='tel' placeholder='Телефон:*').form__input
+                span.form__info
+                textarea(placeholder='Сообщение:*').form__input.form__textarea
+                span.form__info
+                .captcha
+                input(type='submit' value='отправить').form__submit.button-xl
+
+block footer
+    footer.footer
+        include ../includes/footer-top
+        include ../includes/footer-middle
+        include ../includes/footer-bottom
+
+block header
+    header.header
+        include ../includes/header.pug

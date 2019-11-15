@@ -29,7 +29,7 @@ const svgSprites = require("gulp-svg-sprites");
 const paths = {
     root: './dist',
     templates: {
-        pages: './src/pug/pages/*.pug',
+        pages: ['./src/pug/pages/*.pug','./src/pug/pages/includes/*.pug'],
         src: './src/pug/**/*.pug',
         dest: './dist'
     },

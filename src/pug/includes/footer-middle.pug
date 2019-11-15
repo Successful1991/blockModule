@@ -31,9 +31,12 @@
                         if el.href
                             li.phone__list__tel
                                 img(src='./assets/images/icon/' + el.img + '.svg' alt=el.img).phone__list--icon
-                                a(href= el.href ).footer-contact__tel= el.name
+                                a(href= el.href ).footer-contact__tel
+                                    span= el.name
                         else
                             li.phone__list__tel
                                 img(src='./assets/images/icon/' + el.img + '.svg' alt=el.img).phone__list--icon
+                                if el.title
+                                    span.footer-contact__tel= el.title
                                 span.footer-contact__tel= el.name
 

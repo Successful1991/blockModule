@@ -11,7 +11,7 @@ block scripts
 block content
     section.news
         h1.main__title.news__title Новости
-        include breadcrumb
+        include includes/breadcrumb
         ul.news__list
             li.news__element
                 .news__element__img
@@ -118,21 +118,7 @@ block content
                 .news__element__text Нами по заказу ТОВ «Солен енерджи», ТОВ «Широке солар парк» и ПП «Нацпрод» изготовлены и поставлены 3 модульные операторские для...
                 a(href='#').news__element__button.button-l Подробнее
 
-        .news__pagination
-            // first
-            .pagination__arrow.arrow__duble--left
-            // prev
-            a(href='#').pagination__arrow.pagination__arrow--left
-            ul
-                li
-                    a(href='#') 1
-                    a(href='#') 2
-                    a(href='#') 3
-            // next
-            .pagination__arrow.pagination__arrow--right
-            // last
-            .pagination__arrow.arrow__duble--right
-
+        include includes/pagination
 
 block footer
     footer.footer
