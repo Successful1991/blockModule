@@ -211,7 +211,6 @@ gulp.task('default', gulp.series(
 		gulp.parallel(watch, server)
 ));
 
-
 // -- BUILD PRODUCTION
 const pathsProd = {
 	root: './prod',

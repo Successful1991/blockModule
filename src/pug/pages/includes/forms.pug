@@ -1,0 +1,61 @@
+form.form__commercial
+        legend Запрос на коммерческое предложение
+            span.form__close.js-form__close
+        // обязательно
+        input(type='text' placeholder='Имя:*').form__input
+        span.form__info
+        // обязательно
+        input(type='tel' placeholder='Телефон:*').form__input
+        span.form__info
+
+        // обязательно
+        input(type='email' placeholder='E-mail:*').form__input
+        span.form__info
+        // обязательно
+        input(type='text' placeholder='Код изделия:*').form__input
+        span.form__info
+        // обязательно
+        input(type='text' placeholder='Регион строительства:*').form__input
+        span.form__info
+
+        textarea(placeholder='Укажите назначение здания: желаемые габариты, класс исполнения и необходимое оборудование. Если у Вас свой проект - прикрепите его ниже.').form__input.form__commercial--textarea
+
+        label.form__file
+            img(src='assets/images/icon/attach.svg').form__file-img
+            | Прикрепить файл
+            input(type='file' value='value')
+        img(src='assets/images/newCaptchaAnchor.gif').captcha
+
+        input(type='submit' value='отправить').form__submit.button-xxxl
+
+
+
+
+form.form__project
+    legend Расчитать свой проект
+        span.form__close.js-form__close
+    // обязательно
+    input(type='text' placeholder='Имя:*').form__input
+    span.form__info
+    // обязательно
+    input(type='tel' placeholder='Телефон:*').form__input
+    span.form__info
+
+    // обязательно
+    input(type='email' placeholder='E-mail:*').form__input
+    span.form__info
+
+    // обязательно
+    input(type='text' placeholder='Регион строительства:*').form__input
+    span.form__info
+
+    textarea(placeholder='Укажите назначение здания: желаемые габариты, класс исполнения и необходимое оборудование. Если у Вас свой проект - прикрепите его ниже.').form__input.form__commercial--textarea
+
+    label.form__file
+        img(src='assets/images/icon/attach.svg').form__file-img
+        | Прикрепить файл
+        span.form__file--description Для быстрого взаимопонимания - от Вас нужна планировка, можно от руки
+        input(type='file' value='value')
+    img(src='assets/images/newCaptchaAnchor.gif').captcha
+
+    input(type='submit' value='отправить').form__submit.button-xxxl

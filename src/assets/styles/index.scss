@@ -406,11 +406,15 @@
 .advantages{
   display: flex;
   flex-wrap: wrap;
-  background: $mc4 url('../images/main/house__bg.jpg')no-repeat center bottom /contain;
+  @extend .wrap1200;
   color: $textLight;
   padding: 70px 45px 40%;
   @include to(480px) {
     padding: 70px 20px 30%;
+  }
+  &--wrap{
+    width: 100%;
+    background: $mc4 url('../images/main/house__bg.jpg')no-repeat center bottom /cover;
   }
   &__title{
     width: 100%;
@@ -471,9 +475,12 @@
 
 .processes{
   padding: 60px 45px;
-  background: url("../images/main/proces__bg.jpg")no-repeat center /cover;
+  @extend .wrap1200;
   @include to(480px) {
     padding: 40px 20px;
+  }
+  &--wrap{
+    background: url("../images/main/proces__bg.jpg")no-repeat center /cover;
   }
   &__title{
     color: $textLight;
@@ -655,9 +662,13 @@
 
 .stages{
   padding: 45px 45px 0;
-  background: url("../images/main/line__bg.png")no-repeat center bottom / cover;
+  @extend .wrap1200;
+
   @include to(480px) {
     padding: 30px 20px;
+  }
+  &--wrap{
+    background: url("../images/main/line__bg.png")no-repeat center bottom / cover;
   }
   &__title{
     font-weight: 700;

@@ -6,23 +6,40 @@
   &__news{
     width: 100%;
   }
+  @include to(600px){
+    padding: 0 20px 20px;
+  }
+  &__title{
+    margin: 18px auto 0;
+  }
 }
 .contact{
   display: flex;
   width: 100%;
+  @include to(1024px){
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  margin: 10px 0;
   &__content{
     width: 100%;
     display: flex;
     padding: 40px 0 0;
+    @include to(992px){
+      flex-direction: column;
+    }
   }
   &__element{
     display: flex;
     align-items: center;
+    @include to(600px){
+      justify-content: center;
+    }
   }
   &__list{
     display: flex;
     flex-wrap: wrap;
-    width: 50%;
+    flex-basis: 50%;
     &--icon{
       height: 25px;
       width: 25px;
@@ -30,10 +47,19 @@
     }
     &--phone{
       .contact__element{
-        width: 50%;
+        flex-basis: 50%;
+        @include to(600px){
+          flex-basis: 100%;
+          width: 100%;
+        }
       }
     }
     &--address{
+      padding: 0 20px;
+      @include to(1024px){
+        margin-bottom: 20px;
+        padding: 0;
+      }
       .contact{
         &__element{
           width: 100%;
@@ -54,30 +80,62 @@
     line-height: 1.8em;
     color: $mc3;
     text-decoration: none;
+    white-space: nowrap;
     &--title{
       color: $mc2;
       font-weight: 600;
     }
   }
+  &__wrap{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  &__message{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    transform: translate(0 , 100%);
+    a{
+      @include flexCenter();
+      text-decoration: none;
+      color: #000;
+    }
+  }
+}
+.mobile__order-1{
+  @include to(600px){
+    order: 1;
+  }
+
 }
 .map{
   display: inline-block;
   min-height: 25vh;
   width: 50%;
+  @include to(992px){
+    width: 100%;
+    margin-bottom: 30px;
+  }
 }
 .form{
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  //flex-direction: column;
   width: 50%;
   margin: 0 30px;
   padding: 24px 34px;
-  box-shadow: 0 10px 40px $mc3;
+  box-shadow: 0 10px 40px rgba(41, 48, 68, 0.25);
+  @include to(992px){
+    width: auto;
+    margin: 0 auto;
+  }
   legend{
     font-weight: 500;
     font-size: 24px;
     line-height: 1.5em;
     color: $mc3;
-    margin-bottom: 20px;
   }
   &__input{
     width: 100%;
@@ -85,9 +143,10 @@
     border: none;
     background: #F4F5F6;
     padding: 0 30px;
-    margin-bottom: 20px;
+    margin-top: 20px;
   }
   &__textarea{
+    width: 100%;
     height: 130px;
     padding: 20px 30px 0;
   }
@@ -95,10 +154,28 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 1.8em;
-    margin: 0 0 0 auto;
+    margin: 20px 0 0 auto;
+    @include to(480px){
+      width: 100%;
+    }
+    @include to(670px) {
+      margin: 20px auto 0;
+    }
+  }
+  &__info{
+    width: 100%;
+    height: 0;
+    font-size: 10px;
+    color: red;
+    padding: 0 20px;
   }
 }
-.capcha{
-  width: auto;
-  height: auto;
+.captcha{
+  width: 220px;
+  height: 70px;
+  background: #eeeeee;
+  margin: 6px 10px 0 0;
+  @include to(670px) {
+    margin: 6px auto 0;
+  }
 }

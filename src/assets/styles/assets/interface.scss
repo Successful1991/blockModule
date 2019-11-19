@@ -87,7 +87,11 @@
 	height: 50px;
 	width: 255px;
 }
-
+.button-xxxl{
+	@extend .button;
+	height: 50px;
+	width: 100%;
+}
 // LINK HOVER
 .hover-underline {
   position: relative;
@@ -211,4 +215,13 @@
 	svg{
 		fill: #333333!important;
 	}
+}
+
+.hidden{
+	visibility: hidden;
+}
+
+.wrap1200{
+	max-width: 1200px;
+	margin: 0 auto;
 }

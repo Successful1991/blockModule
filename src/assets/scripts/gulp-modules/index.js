@@ -1,4 +1,4 @@
-@@include('./libs.js');
+@@include('./libs.js')
 (function () {
 	var loader = function () {
 		$(".loader-wrap").delay(500).fadeOut(500);
@@ -45,7 +45,13 @@
             }
         }]
     });
-})();
+
+    console.log('s');
+    $('.js-form__close').on('click', function (e) {
+        $(this.closest('form')).addClass('hidden');
+    });
+
+})()
 
 
 function initMap() {
