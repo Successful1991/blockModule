@@ -1,9 +1,10 @@
 .news{
-  padding: 0 45px 40px;
+  @extend .padding-wrap;
+  padding-bottom: 40px;
   @extend .main;
-  @include to(768px) {
-    padding: 0 20px 20px;
-  }
+  //@include to(768px) {
+    //padding: 0 20px 20px;
+  //}
   &__title{
     padding: 10px;
   }
@@ -28,7 +29,7 @@
       margin-bottom: 10px;
     }
     &:hover{
-      box-shadow: 0 40px 40px $mc3 ;
+      box-shadow: 0 40px 40px rgba(41, 48, 68, 0.25);
       z-index: 5;
       .news__element__img img{
         transform: scale(1.05);

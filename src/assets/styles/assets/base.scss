@@ -36,6 +36,7 @@ body {
 	font-family: $default-font;
 	overflow-x: hidden;
 	font-size: 14px;
+	color: $mc3;
 	background: #fff;
 	background-size: contain;
 	@include to(1200px){
