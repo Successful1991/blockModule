@@ -1,6 +1,6 @@
 .page404 {
   &-wrap {
-    height: 100vh;
+    height: calc(100vh - 64px);
     background-color: lighten($mc, 5%);
     display: flex;
     justify-content: center;
@@ -55,7 +55,7 @@
       align-items: center;
       text-decoration: none;
       border: 1px solid $wc;
-
+      color: $wc;
       span {
         z-index: 1;
       }

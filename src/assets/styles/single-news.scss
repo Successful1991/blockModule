@@ -1,10 +1,13 @@
 .single-news{
+  @extend .wrap1200;
   @extend .main;
   display: flex;
   flex-wrap: wrap;
-  padding: 20px 45px 40px;
+  //margin: 72px auto 0;
+  //max-width: 1200px;
+  padding: 20px $padding-wrap 40px;
   @include to(768px) {
-    padding: 10px 20px 20px;
+    padding: 10px $padding-wrap--small 20px;
   }
   &__title{
     width: 100%;

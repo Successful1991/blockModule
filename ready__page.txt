@@ -1,0 +1,7 @@
+404
+index (главная)
+news
+single-news
+contact
+catalog-group
+table (для popup in page catalog-group-single тех.характеристики and page 'tehnology')

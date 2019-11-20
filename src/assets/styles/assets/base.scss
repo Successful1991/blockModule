@@ -29,6 +29,7 @@ html{
 	}
 }
 body {
+	display: none;
 	position: relative;
 	margin: 0;
 	min-width: 320px;
@@ -198,7 +199,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .main{
 	display: inline-block;
-	margin-top: 72px;
+	margin: 72px auto 0;
 	width: 100vw;
 }
 a,button,input{

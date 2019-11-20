@@ -1,0 +1,87 @@
+extends ../layout/main
+block variable
+
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/index.js')
+block content
+    section.blog
+        h1.blog__title Блог
+        include includes/breadcrumb
+        .blog__list
+            .blog__element
+                .blog-element__img
+                    img(src='./assets/images/blog/Rectangle1.jpg')
+                .blog-element__title Как построить модульный дом
+                .blog-element__data 2019-08-15
+                .blog-element__text В последние годы модульное строительство становится всё более популярным как в Украине так ми во всем мире, и имеет достаточно неплохие перспективы.
+                a(href='/single-blog.html').blog-element__link Читать далее
+            .blog__element
+                .blog-element__img
+                    img(src='./assets/images/blog/Rectangle1.jpg')
+                .blog-element__title Как построить модульный дом
+                .blog-element__data 2019-08-15
+                .blog-element__text В последние годы модульное строительство становится всё более популярным как в Украине так ми во всем мире, и имеет достаточно неплохие перспективы.
+                a(href='/single-blog.html').blog-element__link Читать далее
+            .blog__element
+                .blog-element__img
+                    img(src='./assets/images/blog/Rectangle1.jpg')
+                .blog-element__title Как построить модульный дом
+                .blog-element__data 2019-08-15
+                .blog-element__text В последние годы модульное строительство становится всё более популярным как в Украине так ми во всем мире, и имеет достаточно неплохие перспективы.
+                a(href='/single-blog.html').blog-element__link Читать далее
+            .blog__element--wrap
+                .blog__element
+                    .blog-element__img
+                        img(src='./assets/images/blog/Rectangle1.jpg')
+                    .blog-element__title Советы по выбору бытовки: на что стоит обратить внимание
+                    .blog-element__data 2019-08-15
+                    .blog-element__text В последние годы модульное строительство становится всё более популярным как в Украине так ми во всем мире, и имеет достаточно неплохие перспективы.
+                    a(href='/single-blog.html').blog-element__link Читать далее
+                .blog__element
+                    .blog-element__img
+                        img(src='./assets/images/blog/Rectangle1.jpg')
+                    .blog-element__title Как построить модульный дом
+                    .blog-element__data 2019-08-15
+                    .blog-element__text В последние годы модульное строительство становится всё более популярным как в Украине так ми во всем мире, и имеет достаточно неплохие перспективы.
+                    a(href='/single-blog.html').blog-element__link Читать далее
+                .blog__element
+                    .blog-element__img
+                        img(src='./assets/images/blog/Rectangle1.jpg')
+                    .blog-element__title Как построить модульный дом
+                    .blog-element__data 2019-08-15
+                    .blog-element__text В последние годы модульное строительство становится всё более популярным как в Украине так ми во всем мире, и имеет достаточно неплохие перспективы.
+                    a(href='/single-blog.html').blog-element__link Читать далее
+            .blog__element.blog__element--big
+                .blog-element__img
+                    img(src='./assets/images/blog/Rectangle2.jpg')
+                .blog-element__title Как построить модульный дом
+                .blog-element__data 2019-08-15
+                .blog-element__text В последние годы модульное строительство становится всё более популярным как в Украине так ми во всем мире, и имеет достаточно неплохие перспективы.
+                a(href='/single-blog.html').blog-element__link Читать далее
+            .blog__element.blog__element--big
+                .blog-element__img
+                    img(src='./assets/images/blog/Rectangle2.jpg')
+                .blog-element__title Как построить модульный дом
+                .blog-element__data 2019-08-15
+                .blog-element__text В последние годы модульное строительство становится всё более популярным как в Украине так ми во всем мире, и имеет достаточно неплохие перспективы.
+                a(href='/single-blog.html').blog-element__link Читать далее
+
+
+
+
+        include includes/pagination
+
+block footer
+    footer.footer
+        include ../includes/footer-top
+        include ../includes/footer-middle
+        include ../includes/footer-bottom
+
+block header
+    header.header
+        include ../includes/header.pug

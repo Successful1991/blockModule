@@ -1,9 +1,10 @@
 @@include('./libs.js')
 (function () {
-	var loader = function () {
-		$(".loader-wrap").delay(500).fadeOut(500);
-	};
-	loader();
+    $("body").fadeIn(800);
+	// var loader = function () {
+	// 	$(".loader-wrap").delay(500).fadeOut(500);
+	// };
+	// loader();
 
     $('.js-burger').on('click', function () {
         $('.menu').addClass('active');
