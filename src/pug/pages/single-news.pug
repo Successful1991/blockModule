@@ -1,37 +1,37 @@
 extends ../layout/main
-        block variable
+block variable
 
-        block meta
-            title= 'Home'
-            meta(name='description', content='')
-        block head
-            link(rel='stylesheet', href="./assets/styles/main.min.css")
-        block scripts
-            script(src='./assets/scripts/index.js')
-        block content
-            section.single-news
-                h1.main__title.single-news__title Модульные операторские (3шт) для солнечных электростанций
-                include includes/breadcrumb
-                .single-news__date 2019-08-15
-                .single-news__img.single-news__img--big
-                    img(src='./assets/images/single-news/Rectangle1.jpg')
-                p Нами по заказу ТОВ «Солен енерджи», ТОВ «Широке солар парк» и ПП «Нацпрод» изготовлены и поставлены 3 модульные операторские для солнечных электростанций расположенных в различных локациях Запорожской области.
-                .single-news__img.single-news__img--small
-                    img(src='./assets/images/single-news/Rectangle2.jpg')
-                .single-news__img.single-news__img--small
-                    img(src='./assets/images/single-news/Rectangle3.jpg')
-                p Здания выполнены в классе "Премиум+, габариты - ДШВ 7.5х6х2.5м. Каждое здание монтируется их 3х блок контейнеров полной заводской готовности в течении 1 дня.
-                p Наружной обшивкой операторских служит высококачественный металлический сайдинг "Доска с микрорибером” с матовым покрытием в цвете Графит.
-                .single-news__img.single-news__img--big
-                    img(src='./assets/images/single-news/Rectangle4.jpg')
-                p Модульные операторские предназначены для комфортного размещение инженеров, обеспечивающих бесперебойное, круглогодичное наблюдение и обслуживание солнечных электростанций.
-                p Для удобства сотрудников в таком модульном здании предусмотрена кухня, санузел с душевой и большая комната для операторов 30м2.
-        block footer
-            footer.footer
-                include ../includes/footer-top
-                include ../includes/footer-middle
-                include ../includes/footer-bottom
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/index.js')
+block content
+    section.single-news
+        h1.main__title.single-news__title Модульные операторские (3шт) для солнечных электростанций
+        include includes/breadcrumb
+        .single-news__date 2019-08-15
+        .single-news__img.single-news__img--big
+            img(src='./assets/images/single-news/Rectangle1.jpg')
+        p Нами по заказу ТОВ «Солен енерджи», ТОВ «Широке солар парк» и ПП «Нацпрод» изготовлены и поставлены 3 модульные операторские для солнечных электростанций расположенных в различных локациях Запорожской области.
+        .single-news__img.single-news__img--small
+            img(src='./assets/images/single-news/Rectangle2.jpg')
+        .single-news__img.single-news__img--small
+            img(src='./assets/images/single-news/Rectangle3.jpg')
+        p Здания выполнены в классе "Премиум+, габариты - ДШВ 7.5х6х2.5м. Каждое здание монтируется их 3х блок контейнеров полной заводской готовности в течении 1 дня.
+        p Наружной обшивкой операторских служит высококачественный металлический сайдинг "Доска с микрорибером” с матовым покрытием в цвете Графит.
+        .single-news__img.single-news__img--big
+            img(src='./assets/images/single-news/Rectangle4.jpg')
+        p Модульные операторские предназначены для комфортного размещение инженеров, обеспечивающих бесперебойное, круглогодичное наблюдение и обслуживание солнечных электростанций.
+        p Для удобства сотрудников в таком модульном здании предусмотрена кухня, санузел с душевой и большая комната для операторов 30м2.
+block footer
+    footer.footer
+        include ../includes/footer-top
+        include ../includes/footer-middle
+        include ../includes/footer-bottom
 
-        block header
-            header.header
-                include ../includes/header.pug
+block header
+    header.header
+        include ../includes/header.pug

@@ -12,8 +12,8 @@
     display: flex;
     width: 100%;
     padding: 70px 45px;
-    background: url("../images/main/make/module-build.jpg")no-repeat center /cover;
-    min-height: 300px;
+    background: url("../images/product/country_house.jpg")no-repeat center /cover;
+    min-height: 30vw;
     &--description{
       display: flex;
       flex-direction: column;
@@ -136,26 +136,79 @@
 .ct-desc{
   display: flex;
   width: 100%;
-  padding: 60px 95px;
-  background: url("../images/product/bg-top.jpg")no-repeat center top /contain, url("../images/product/bg-bottom.jpg")no-repeat center top /contain;
+  padding: 60px 45px;
+  background: url("../images/product/bg-top.jpg")no-repeat center top /contain, url("../images/product/bg-bottom.jpg")no-repeat center bottom /contain;
+  @include to(550px) {
+    padding:30px 20px;
+  }
   &--wrap{
-    display: flex;
-    flex-wrap: wrap;
-    padding:60px 30px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
+    grid-gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding:60px 95px;
     background: $wc;
+    @include to(1024px) {
+      padding:40px 60px;
+      grid-gap: 20px;
+    }
+    @include to(768px) {
+      grid-template-columns: 1fr;
+    }
+    @include to(550px) {
+      padding:20px 20px;
+    }
+    .grid-row-2{
+      @include to(768px) {
+        grid-row: span 1;
+      }
+    }
+    .grid-col-2{
+      @include to(768px) {
+        grid-column: span 1;
+      }
+    }
   }
   &__content{
-    width: 50%;
-    padding: 0 15px;
+    width: 100%;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.9em;
+    color: $mc3;
+    @include to(1024px) {
+      font-size: 12px;
+      line-height: 1.5em;
+    }
   }
   &__title{
     @extend .main__title;
     line-height: 1.5em;
     text-align: left;
     color: $mc3;
+    margin-bottom: 15px;
+    @include to(1024px) {
+      font-size: 18px;
+    }
   }
   &__img{
-    width: 50%;
+    width: 100%;
+  }
+  &__list{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.9em;
+    padding-left: 20px;
+    @include to(1024px) {
+      font-size: 12px;
+      line-height: 1.5em;
+    }
+    li{
+      list-style: disc;
+      margin-bottom: 10px;
+    }
   }
 }
 .marg--title{
