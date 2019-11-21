@@ -1,5 +1,6 @@
 @@include('./libs.js')
 (function () {
+
     $("body").fadeIn(800);
 	// var loader = function () {
 	// 	$(".loader-wrap").delay(500).fadeOut(500);
@@ -26,12 +27,12 @@
         slidesToShow: 1,
         slidesToScroll: 1,
     });
-    $('.js-clients-slider').slick({
+    $('.js-index-clients-slider').slick({
         dots: false,
         infinite: true,
         speed: 1000,
-        prevArrow: $('.clients-slider__button--left'),
-        nextArrow: $('.clients-slider__button--right'),
+        prevArrow: $('.index-clients-slider__button--left'),
+        nextArrow: $('.index-clients-slider__button--right'),
         slidesToShow: 5,
         slidesToScroll: 1,
         responsive: [{
@@ -46,14 +47,17 @@
             }
         }]
     });
-
-    console.log('s');
     $('.js-form__close').on('click', function (e) {
         $(this.closest('form')).addClass('hidden');
     });
 
+    $('.js-filter').on('click', function (e) {
+        let category = $(e.target).data('category');
+        filterCategory.push( category);
+        filter('.js-filter__category',  category);
+    });
 })()
-
+var filterCategory = [];
 
 function initMap() {
     var uluru = {lat: 50.464756, lng: 30.522190};
@@ -213,5 +217,16 @@ function initMap() {
     google.maps.event.addListener(map, "zoom_changed", function() {
         newlong = marker.getPosition().lng() + (-0.00283 * Math.pow(2, (17 - map.getZoom())));
         newLat = marker.getPosition().lat() + (0.00013 * Math.pow(2, (17 - map.getZoom())));
+    });
+}
+
+function filter(element, category) {
+    var list = $(element);
+    list.map(function (i, cat) {
+        if( filterCategory.includes($(cat).data('category')) ){
+            $(cat).show();
+        }else {
+            $(cat).hide();
+        }
     });
 }

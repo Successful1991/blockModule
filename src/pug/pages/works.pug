@@ -1,0 +1,136 @@
+extends ../layout/main
+block variable
+    -
+       var filter = [
+       {name:'Дома: сборные, модульные',
+        category: 'house'
+       },
+       {name:'Модульные здания',
+        category: 'tui'
+       },
+       {name:'Офисы',
+        category: 'rut'
+       },
+       {name:'Павильоны и киоски',
+        category: 'house'
+       },
+       {name:'Санитарные блоки',
+        category: 'tui'
+       },
+       {name:'Посты охраны',
+        category: 'rut'
+       },
+       {name:'Блок контейнеры',
+        category: 'rut'
+       },
+       {name:'Ангары',
+        category: 'tui'
+       }
+       ];
+
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/index.js')
+block content
+    section.works
+        h1.works__title Новости
+        include includes/breadcrumb
+        ul.works__filters.js-filter
+            each el in filter
+                li(data-category= el.category).works-filter__elem= el.name
+                    .works-filter__remove
+        ul.works__list
+            li.works__element.js-filter__category(data-category='house')
+                a(href="#").works__link
+                    .works-element__img
+                        img(src='./assets/images/single-news/Rectangle1.jpg')
+                    .works-element__data 2019-08-15
+                    .works-element__title Модульные операторские (3шт) для солнечных электростанций
+            li.works__element.js-filter__category(data-category='rut')
+                a(href="#").works__link
+                    .works-element__img
+                        img(src='./assets/images/single-news/Rectangle1.jpg')
+                    .works-element__data 2019-08-15
+                    .works-element__title Модульные операторские (3шт) для солнечных электростанций
+            li.works__element.js-filter__category(data-category='tui')
+                a(href="#").works__link
+                    .works-element__img
+                        img(src='./assets/images/single-news/Rectangle1.jpg')
+                    .works-element__data 2019-08-15
+                    .works-element__title Модульные операторские (3шт) для солнечных электростанций
+            li.works__element.js-filter__category(data-category='rut')
+                a(href="#").works__link
+                    .works-element__img
+                        img(src='./assets/images/single-news/Rectangle1.jpg')
+                    .works-element__data 2019-08-15
+                    .works-element__title Модульные операторские (3шт) для солнечных электростанций
+            li.works__element.js-filter__category(data-category='tui')
+                a(href="#").works__link
+                    .works-element__img
+                        img(src='./assets/images/single-news/Rectangle1.jpg')
+                    .works-element__data 2019-08-15
+                    .works-element__title Модульные операторские (3шт) для солнечных электростанций
+            li.works__element.js-filter__category(data-category='house')
+                a(href="#").works__link
+                    .works-element__img
+                        img(src='./assets/images/single-news/Rectangle1.jpg')
+                    .works-element__data 2019-08-15
+                    .works-element__title Модульные операторские (3шт) для солнечных электростанций
+            li.works__element.js-filter__category(data-category='tui')
+                a(href="#").works__link
+                    .works-element__img
+                        img(src='./assets/images/single-news/Rectangle1.jpg')
+                    .works-element__data 2019-08-15
+                    .works-element__title Модульные операторские (3шт) для солнечных электростанций
+            li.works__element.js-filter__category(data-category='house')
+                a(href="#").works__link
+                    .works-element__img
+                        img(src='./assets/images/single-news/Rectangle1.jpg')
+                    .works-element__data 2019-08-15
+                    .works-element__title Модульные операторские (3шт) для солнечных электростанций
+            li.works__element.js-filter__category(data-category='tui')
+                a(href="#").works__link
+                    .works-element__img
+                        img(src='./assets/images/single-news/Rectangle1.jpg')
+                    .works-element__data 2019-08-15
+                    .works-element__title Модульные операторские (3шт) для солнечных электростанций
+            li.works__element.js-filter__category(data-category='house')
+                a(href="#").works__link
+                    .works-element__img
+                        img(src='./assets/images/single-news/Rectangle1.jpg')
+                    .works-element__data 2019-08-15
+                    .works-element__title Модульные операторские (3шт) для солнечных электростанций
+            li.works__element.js-filter__category(data-category='house')
+                a(href="#").works__link
+                    .works-element__img
+                        img(src='./assets/images/single-news/Rectangle1.jpg')
+                    .works-element__data 2019-08-15
+                    .works-element__title Модульные операторские (3шт) для солнечных электростанций
+            li.works__element.js-filter__category(data-category='house')
+                a(href="#").works__link
+                    .works-element__img
+                        img(src='./assets/images/single-news/Rectangle1.jpg')
+                    .works-element__data 2019-08-15
+                    .works-element__title Модульные операторские (3шт) для солнечных электростанций
+            li.works__element.js-filter__category(data-category='house')
+                a(href="#").works__link
+                    .works-element__img
+                        img(src='./assets/images/single-news/Rectangle1.jpg')
+                    .works-element__data 2019-08-15
+                    .works-element__title Модульные операторские (3шт) для солнечных электростанций
+
+        include includes/pagination
+
+block footer
+    footer.footer
+        include ../includes/footer-top
+        include ../includes/footer-middle
+        include ../includes/footer-bottom
+
+block header
+    header.header
+        include ../includes/header.pug

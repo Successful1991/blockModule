@@ -1,0 +1,44 @@
+.clients{
+  @extend .padding-wrap;
+  @extend .main;
+  padding-top: 20px;
+  padding-bottom: 60px;
+  &__wrap{
+    @extend .wrap1200;
+  }
+  &__title{
+    @extend .main__title;
+    text-align: center;
+  }
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+}
+.client{
+  @include flexCenter();
+  width: calc(25% - 30px);
+  height: 170px;
+  margin: 15px;
+  background: $bg-col-1;
+  @include to(768px) {
+    width: calc(33.33% - 30px);
+    height: 170px;
+  }
+  @include to(580px) {
+    width: calc(50% - 30px);
+    height: 170px;
+  }
+  @include to(480px) {
+    width: calc(100% - 30px);
+    height: 170px;
+  }
+  img{
+    display: inline-block;
+    height: auto;
+    width: auto;
+    max-width: 90%;
+    max-height: 65%;
+  }
+}

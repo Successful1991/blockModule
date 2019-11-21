@@ -1,0 +1,49 @@
+extends ../layout/main
+block variable
+
+block meta
+    title= 'Contact'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/index.js')
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrUcTar2ARlRKSogEQVIlWaPnmVIM_xVE&callback=initMap")
+
+block content
+    section.clients
+        .clients__wrap
+            h1.main__title.clients__title Наши клиенты
+            include includes/breadcrumb
+            ul.clients__list
+                li.client
+                    img(src='./assets/images/clients/Naftogaz.png')
+                li.client
+                    img(src='./assets/images/clients/esu.png')
+                li.client
+                    img(src='./assets/images/clients/Bayer.png')
+                li.client
+                    img(src='./assets/images/clients/Kyivstar.png')
+                li.client
+                    img(src='./assets/images/clients/nemiroff.png')
+                li.client
+                    img(src='./assets/images/clients/novarka.png')
+                li.client
+                    img(src='./assets/images/clients/ukrNafta.png')
+                li.client
+                    img(src='./assets/images/clients/niko.png')
+                li.client
+                    img(src='./assets/images/clients/Naftogaz.png')
+                li.client
+                    img(src='./assets/images/clients/esu.png')
+
+
+block footer
+    footer.footer
+        include ../includes/footer-top
+        include ../includes/footer-middle
+        include ../includes/footer-bottom
+
+block header
+    header.header
+        include ../includes/header.pug

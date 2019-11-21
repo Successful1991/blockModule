@@ -790,7 +790,7 @@
  }
 
 
-.works{
+.index-works{
   display: flex;
   flex-wrap: wrap;
   padding: 40px 30px 40%;
@@ -839,7 +839,7 @@
     line-height: 1.3em;
   }
 }
-.work{
+.index-work{
   width: calc(25% - 30px);
   margin: 0 15px;
   text-decoration: none;
@@ -909,7 +909,7 @@
   }
 }
 
-.clients{
+.index-clients{
   display: inline-block;
   width: 100%;
   padding: 45px 11.6% 90px;
@@ -963,6 +963,6 @@
     }
   }
 }
-.main .clients-slider__element{
+.main .index-clients-slider__element{
   @include flexCenter();
 }
