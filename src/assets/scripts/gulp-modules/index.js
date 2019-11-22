@@ -1,4 +1,7 @@
 @@include('./libs.js')
+@@include('./pagination.js')
+@@include('./filter.js')
+
 (function () {
 
     $("body").fadeIn(800);
@@ -50,14 +53,10 @@
     $('.js-form__close').on('click', function (e) {
         $(this.closest('form')).addClass('hidden');
     });
-
-    $('.js-filter').on('click', function (e) {
-        let category = $(e.target).data('category');
-        filterCategory.push( category);
-        filter('.js-filter__category',  category);
-    });
 })()
-var filterCategory = [];
+
+
+
 
 function initMap() {
     var uluru = {lat: 50.464756, lng: 30.522190};
@@ -220,13 +219,4 @@ function initMap() {
     });
 }
 
-function filter(element, category) {
-    var list = $(element);
-    list.map(function (i, cat) {
-        if( filterCategory.includes($(cat).data('category')) ){
-            $(cat).show();
-        }else {
-            $(cat).hide();
-        }
-    });
-}
+

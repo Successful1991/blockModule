@@ -1,0 +1,52 @@
+.pagination{
+  &__arrow{
+    @include flexCenter();
+    margin: auto 8px;
+    height: auto;
+    cursor: pointer;
+    svg{
+      fill: $mc2;
+    }
+    &--right{
+      transform: rotate(180deg);
+    }
+  }
+}
+.dots{
+  display: flex;
+  &__element{
+    @include flexCenter();
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: background 0.3s linear;
+    margin: 0 5px;
+    cursor: pointer;
+    color: $mc2;
+    &:hover{
+      background: #fafbfc;
+    }
+    @include to(480px) {
+      height: 30px;
+      width: 30px;
+    }
+    &.active{
+      background: #F4F5F6;
+      color: $mc3;
+      pointer-events: none;
+    }
+    a{
+      color: $mc2;
+      text-decoration: none;
+    }
+  }
+  &__place{
+    @include flexCenter();
+    color: $mc2;
+    @include to(480px) {
+      height: 30px;
+      width: 20px;
+    }
+  }
+}

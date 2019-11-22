@@ -1,6 +1,7 @@
 .works{
   @extend .padding-wrap;
   padding-bottom: 40px;
+  transition: all 0.3s linear;
   @extend .main;
   &__title{
     @extend .main__title;
@@ -10,6 +11,7 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0 -15px;
+    transition: all 0.3s linear;
   }
   &__link{
     display: flex;
@@ -119,20 +121,21 @@
   &__filters{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: calc(100% + 20px);
     height: auto;
     margin: 0 -10px 30px;
   }
   &-filter{
     &__remove{
+      position: relative;
       display: none;
       height: 8px;
       width: 8px;
       margin-left: 5px;
-      background: url("../images/icon/close.svg")no-repeat center/cover;
-      fill: #FCBD99;
-      &.active{
-        display: inline-block;
+      background: transparent;
+      border: none;
+      span{
+        border: 1px solid #FCBD99;
       }
     }
     &__elem{
@@ -148,50 +151,10 @@
       &.active{
        background: $mc2;
         color: $wc;
+        .works-filter__remove{
+          display: inline-block;
+        }
       }
-    }
-  }
-}
-.pagination{
-  &__arrow{
-    @include flexCenter();
-    margin: 0 8px;
-    svg{
-      fill: $mc2;
-    }
-    &--right{
-      transform: rotate(180deg);
-    }
-  }
-}
-.dots{
-  display: flex;
-  &__element{
-    @include flexCenter();
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    overflow: hidden;
-    transition: background 0.3s linear;
-    margin: 0 5px;
-    @include to(480px) {
-      height: 30px;
-      width: 30px;
-    }
-    &.active{
-      background: #F4F5F6;
-    }
-    a{
-      color: $mc2;
-      text-decoration: none;
-    }
-  }
-  &__place{
-    @include flexCenter();
-    color: $mc2;
-    @include to(480px) {
-      height: 30px;
-      width: 20px;
     }
   }
 }
