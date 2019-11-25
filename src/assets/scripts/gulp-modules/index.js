@@ -28,6 +28,13 @@
         vertical: true,
         slidesToShow: 3,
         slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    vertical: false,
+                }
+            }]
 
     });
     var t = $('.js-single-work__slider--big').slick({
