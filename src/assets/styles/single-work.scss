@@ -1,0 +1,125 @@
+.single-work{
+  @extend .padding-wrap;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 75px;
+  @extend .main;
+  &__title{
+    @extend .main__title;
+    padding: 10px;
+  }
+  &__slider{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 150px;
+    height: 100%;
+    padding: 10px 25px;
+    background: #FBFBFB;
+    &--wrap{
+      display: flex;
+      position: relative;
+      width: 550px;
+    }
+    img{
+      padding: 5px;
+    }
+    &--shadow{
+      position: absolute;
+      top: 35px;
+      left: 30px;
+      width: 90px;
+      height: calc(100% - 70px);
+      padding: 10px 25px;
+      background: linear-gradient(180deg, rgba(251,251,251,0.2) 0,rgba(251,251,251,0.2) 33.3%,rgba(251,251,251,0.4) 33.3%,rgba(251,251,251,0.4) 66.6%,rgba(251,251,251,0.6) 66.6%,rgba(251,251,251,0.6) 100%);
+      z-index: 50;
+      pointer-events: none;
+    }
+    &--photo{
+      height: 100%;
+      width: calc(100% - 150px);
+    }
+  }
+  &__info{
+    display: inline-block;
+    width: 475px;
+    &-title{
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    .line--hor{
+      display: inline-block;
+      width: 30px;
+      vertical-align: middle;
+      margin-right: 7px;
+      height: 0;
+      border-bottom:2px solid $mc2;
+    }
+    svg{
+      width: 17px;
+      height: 40px;
+    }
+  }
+  &__table{
+    background: #F4F5F6;
+    tr{
+      td{
+        &:nth-child(1){
+          padding-left: 25px;
+        }
+        &:nth-child(2){
+          width: 50%;
+          text-align: center;
+        }
+        &:nth-child(3){
+          width: 50%;
+          text-align: center;
+        }
+      }
+      &:nth-child(2n){
+        td{
+          &:nth-last-child(1){
+            background: #FBFBFB;
+          }
+        }
+      }
+
+    }
+  }
+  &__description{
+    position: relative;
+    padding: 40px 45px 40px 65px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1.8em;
+    p{
+      margin-bottom: 15px;
+    }
+    &:before{
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 35px;
+      width: 0;
+      height: 30%;
+      border-right: 2px solid $mc2;
+    }
+  }
+  &__button{
+    display: inline-block;
+    height: 20px;
+    width: 100%;
+    padding: 5px;
+    border: none;
+    background: transparent;
+
+    svg{
+      height: 100%;
+      fill: $mc2;
+    }
+    &--left{
+      transform: rotate(180deg);
+    }
+  }
+}

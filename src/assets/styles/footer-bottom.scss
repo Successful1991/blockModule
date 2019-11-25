@@ -22,12 +22,14 @@
     }
     .footer-bottom__link{
       display: flex;
+		height: 100%;
       color: $text;
       align-items: center;
       text-decoration: none;
       font-size: 12px;
 		&--wrap{
 			@include row-flex();
+			height: 100%;
 			align-items: center;
 			justify-content: flex-end;
 			font-weight: 500;
@@ -35,10 +37,11 @@
 			line-height: 1em;
 			color: $text;
 		}
-      img{
+      svg{
 		margin-right: 10px;
         margin-left: 25px;
         width: 70px;
+		  height: 100%;
       }
     }
 }

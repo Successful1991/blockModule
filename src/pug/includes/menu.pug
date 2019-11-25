@@ -31,9 +31,9 @@
         each list in contact.phone
             if list.href
                 li.menu__bottom__tel
-                    img(src='./assets/images/icon/' + list.img + '.svg' alt=list.img).phone__list--icon
+                    +svg(list.img, 'phone__list--icon')
                     a(href= list.href ).footer-contact__tel= list.name
             else
                 li.menu__bottom__tel
-                    img(src='./assets/images/icon/' + list.img + '.svg' alt=list.img).phone__list--icon
+                    +svg(list.img, 'phone__list--icon')
                     span.footer-contact__tel= list.name

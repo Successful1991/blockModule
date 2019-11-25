@@ -1,0 +1,67 @@
+extends ../layout/main
+block variable
+    -
+        var table = [
+        {svg:'house',name: 'Тип здания', desc: 'Модульный дом'},
+        {svg:'area',name: 'Площадь', desc: '54 м2 (9х6)'},
+        {svg:'floors',name: 'Этажность', desc: '1'},
+        {svg:'location',name: 'Локация', desc: 'Обуховский район'},
+        {svg:'human',name: 'Клиент', desc: 'Частное лицо'},
+        {svg:'calendar',name: 'Дата монтажа', desc: 'Июнь 2019'}
+        ];
+
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/index.js')
+block content
+    section.single-work
+        h1.main__title.single-works__title Модульные операторские (3шт) для солнечных электростанций
+        include includes/breadcrumb
+        .single-work__slider--wrap
+            .single-work__slider--shadow
+            .single-work__slider.js-single-work__slider
+                img(src='./assets/images/main/obj4.jpg')
+                img(src='./assets/images/main/obj3.jpg')
+                img(src='./assets/images/main/obj2.jpg')
+                img(src='./assets/images/main/obj1.jpg')
+                img(src='./assets/images/main/obj2.jpg')
+            .single-work__slider--photo.js-single-work__slider--big
+                img(src='./assets/images/main/obj4.jpg')
+                img(src='./assets/images/main/obj3.jpg')
+                img(src='./assets/images/main/obj2.jpg')
+                img(src='./assets/images/main/obj1.jpg')
+                img(src='./assets/images/main/obj2.jpg')
+        .single-work__info
+            p.single-work__info-title
+                span.line--hor
+                |ИНФОРМАЦИЯ О ПРОЕКТе
+            table.single-work__table
+                each el in table
+                    tr
+                        td
+                            +svg( el.svg )
+                        td= el.name
+                        td= el.desc
+        .single-work__description
+            p Нами по заказу ТОВ «Солен енерджи», ТОВ «Широке солар парк» и ПП «Нацпрод» изготовлены и поставлены 3 модульные операторские для солнечных электростанций расположенных в различных локациях Запорожской области.
+            p Здания выполнены в классе "Премиум+, габариты - ДШВ 7.5х6х2.5м. Каждое здание монтируется их 3х блок контейнеров полной заводской готовности в течении 1 дня.
+            p Наружной обшивкой операторских служит высококачественный металлический сайдинг "Доска с микрорибером” с матовым покрытием в цвете Графит.
+            p Модульные операторские предназначены для комфортного размещение инженеров, обеспечивающих бесперебойное, круглогодичное наблюдение и обслуживание солнечных электростанций.
+            p Для удобства сотрудников в таком модульном здании предусмотрена кухня, санузел с душевой и большая комната для операторов 30м2.
+
+
+
+
+block footer
+    footer.footer
+        include ../includes/footer-top
+        include ../includes/footer-middle
+        include ../includes/footer-bottom
+
+block header
+    header.header
+        include ../includes/header.pug

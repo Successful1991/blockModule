@@ -17,9 +17,33 @@
         $('.menu').removeClass('active');
     });
 
+
     $(".js-hover").hover(
         function(){$(this).toggleClass('hover')}
     );
+    $('.js-single-work__slider').slick({
+        infinite: true,
+        prevArrow: '<button type="button" class="slick-prev single-work__button single-work__button--left"><svg viewBox="0 0 9 5" xmlns="http://www.w3.org/2000/svg"> <path d="M8.4853 0.707107L7.7782 0L4.24263 3.53557L0.707107 4.65512e-05L0 0.707153L4.24264 4.94979L4.94975 4.24269L4.94974 4.24268L8.4853 0.707107Z"/> </svg></button>',
+        nextArrow: '<button type="button" class="slick-next single-work__button single-work__button--right"><svg viewBox="0 0 9 5" xmlns="http://www.w3.org/2000/svg"> <path d="M8.4853 0.707107L7.7782 0L4.24263 3.53557L0.707107 4.65512e-05L0 0.707153L4.24264 4.94979L4.94975 4.24269L4.94974 4.24268L8.4853 0.707107Z"/> </svg></button>',
+        vertical: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+
+    });
+    var t = $('.js-single-work__slider--big').slick({
+        infinite: false,
+        arrows: false,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    });
+
+    $('.js-single-work__slider img').on('click', function () {
+        var index = $(this).data('slick-index');
+        t[0].slick.slickGoTo(index);
+    });
+
+
 
     $('.js-sl').slick({
         dots: false,

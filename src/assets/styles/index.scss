@@ -178,10 +178,11 @@
     background: $mc3;
     border: none;
     transition: background 0.2s linear;
-    span{
+    svg{
       display: inline-block;
       height: 15px;
       width: 15px;
+      fill: $wc;
     }
     &:hover{
       background: $mc2;
@@ -190,12 +191,11 @@
       height: 50px;
       width: 50px;
     }
-    &--left{
-      background: url('../images/icon/arrow-white.svg')no-repeat center;
+    &--left svg{
+      transform: rotate(90deg);
     }
-    &--right{
-      background: url('../images/icon/arrow-white.svg')no-repeat center;
-      transform: rotate(180deg);
+    &--right svg{
+      transform: rotate(-90deg);
     }
   }
 }
@@ -458,7 +458,7 @@
       height: 40px;
       width: 40px;
     }
-    img{
+    svg{
       max-height: 80%;
       max-width: 80%;
     }
@@ -847,6 +847,9 @@
   &:hover{
     color: $mc2;
     text-decoration: underline;
+    .index-work__text:before{
+      transform: translate(0,-100%)rotate(90deg);
+    }
   }
   @include to(768px){
     width: calc(50% - 10px);
@@ -858,7 +861,6 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 2em;
-
     @include to(480px) {
       line-height: 1.5em;
     }
@@ -870,6 +872,8 @@
       width: 10px;
       height: 0;
       border: 1px solid #F85A00;
+      transform-origin: left top;
+      transition: all 0.3s linear;
     }
   }
   &__img{
@@ -944,10 +948,22 @@
       width: 100%;
     }
     &__button{
+      @include flexCenter();
       height: 50px;
       width: 50px;
       cursor: pointer;
-      background: url(../images/icon/arrowDown.svg) no-repeat center/ 14px;
+      transition: background 0.2s;
+      svg{
+        width: 13px;
+        height: 100%;
+        fill: $mc3;
+      }
+      &:hover{
+        background-color: $mc2;
+        svg{
+          fill: $wc;
+        }
+      }
       &--left{
         transform: translate(-150%, -100%)rotate(90deg);
         @include to(480px) {

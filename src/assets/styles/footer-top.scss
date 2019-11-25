@@ -16,6 +16,9 @@
     padding: 30px 0 0;
   }
   &__logo{
+    svg{
+      height: 40px;
+    }
   }
   &__quote{
     display: flex;

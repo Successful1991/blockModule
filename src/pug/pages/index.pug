@@ -12,19 +12,19 @@ block content
 	section.main
 		.first-screen
 			a(href="#").first-screen__link.first-screen__location
-				img(src="./assets/images/icon/Map.svg").first-screen__location--img
+				+svg('Map', 'first-screen__location--img' )
 			a(href="#").first-screen__link.first-screen__mail
-				img(src="./assets/images/icon/E-mail.svg").first-screen__mail--img
+				+svg('E-mail', 'first-screen__mail--img' )
 			.first-screen__mouse
 				span.first-screen__mouse--text Смотреть сайт
-				img(src="./assets/images/icon/mouse.svg").first-screen__mouse--img
+				+svg('mouse', 'first-screen__mouse--img' )
 			.first-screen__messages
 				span.first-screen__messages--text Месседжеры
 				//a(href='viber://add?number=380950000000').first-screen__messages--viber   для мобилок
 				a(href='viber://chat?number=+380950000000').first-screen__messages--viber
-					img(src="./assets/images/icon/viber.svg").first-screen__img
+					+svg('viber', 'first-screen__img' )
 				a(href='https://telegram.me/').first-screen__messages--telegram
-					img(src="./assets/images/icon/telegram.svg").first-screen__img
+					+svg('telegram', 'first-screen__img' )
 			.first-screen__slider
 				.sl.js-sl
 					.sl__element
@@ -48,10 +48,10 @@ block content
 							.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
 							a(href='#').sl__element--title Реализованные проекты
 				.sl__buttons
-					button(type="button").sl__button
-						span.sl__button--left
-					button(type="button").sl__button
-						span.sl__button--right
+					button(type="button").sl__button.sl__button--left
+						+svg('arrow')
+					button(type="button").sl__button.sl__button--right
+						+svg('arrow')
 
 		.make
 			h3.make__title.main__title Мы производим
@@ -61,7 +61,8 @@ block content
 						img(src='./assets/images/main/make/angar.jpg' alt='angar')
 					.card__hover
 						.card__hover--wrap
-							img(src="./assets/images/logo-m.svg").card__hover--logo
+							+svg('logo-m', 'card__hover--logo' )
+							//img(src="./assets/images/logo-m.svg").card__hover--logo
 							p.card__hover--text Смотреть объекты
 					.card__desc Ангары
 				a(href='#').card.card-2.js-hover
@@ -69,7 +70,7 @@ block content
 						img(src='./assets/images/main/make/san-block.jpg' alt='Санитарные блоки')
 					.card__hover
 						.card__hover--wrap
-							img(src="./assets/images/logo-m.svg").card__hover--logo
+							+svg('logo-m', 'card__hover--logo' )
 							p.card__hover--text Смотреть объекты
 					.card__desc Санитарные блоки
 				a(href='#').card.card-3.js-hover
@@ -77,7 +78,7 @@ block content
 						img(src='./assets/images/main/make/module-build.jpg' alt='Модульные здания')
 					.card__hover
 						.card__hover--wrap
-							img(src="./assets/images/logo-m.svg").card__hover--logo
+							+svg('logo-m', 'card__hover--logo' )
 							p.card__hover--text Смотреть объекты
 					.card__desc Модульные здания
 				a(href='#').card.card-4.js-hover
@@ -85,7 +86,7 @@ block content
 						img(src='./assets/images/main/make/house.jpg' alt='house')
 					.card__hover
 						.card__hover--wrap
-							img(src="./assets/images/logo-m.svg").card__hover--logo
+							+svg('logo-m', 'card__hover--logo' )
 							p.card__hover--text Смотреть объекты
 					.card__desc Дома: сборные, модульные, дачные
 				a(href='#').card.card-5.js-hover
@@ -93,7 +94,7 @@ block content
 						img(src='./assets/images/main/make/offices.jpg' alt='Модульные офисы')
 					.card__hover
 						.card__hover--wrap
-							img(src="./assets/images/logo-m.svg").card__hover--logo
+							+svg('logo-m', 'card__hover--logo' )
 							p.card__hover--text Смотреть объекты
 					.card__desc Модульные офисы
 				a(href='#').card.card-6.js-hover
@@ -101,7 +102,7 @@ block content
 						img(src='./assets/images/main/make/security-post.jpg' alt='Посты охраны')
 					.card__hover
 						.card__hover--wrap
-							img(src="./assets/images/logo-m.svg").card__hover--logo
+							+svg('logo-m', 'card__hover--logo' )
 							p.card__hover--text Смотреть объекты
 					.card__desc Посты охраны
 				a(href='#').card.card-7.js-hover
@@ -109,7 +110,7 @@ block content
 						img(src='./assets/images/main/make/trade-house.jpg' alt='trade-house')
 					.card__hover
 						.card__hover--wrap
-							img(src="./assets/images/logo-m.svg").card__hover--logo
+							+svg('logo-m', 'card__hover--logo' )
 							p.card__hover--text Смотреть объекты
 					.card__desc Торговые павильоны
 				a(href='#').card.card-8.js-hover
@@ -117,7 +118,7 @@ block content
 						img(src='./assets/images/main/make/hotels.jpg' alt='hotels')
 					.card__hover
 						.card__hover--wrap
-							img(src="./assets/images/logo-m.svg").card__hover--logo
+							+svg('logo-m', 'card__hover--logo' )
 							p.card__hover--text Смотреть объекты
 					.card__desc Общежития и отели
 				a(href='#').card.card-9.js-hover
@@ -125,7 +126,7 @@ block content
 						img(src='./assets/images/main/make/admin-house.jpg' alt='admin-house')
 					.card__hover
 						.card__hover--wrap
-							img(src="./assets/images/logo-m.svg").card__hover--logo
+							+svg('logo-m', 'card__hover--logo' )
 							p.card__hover--text Смотреть объекты
 					.card__desc Административно бытовые здания
 			a(href='#').button-xl.make__button Смотреть все категории
@@ -134,7 +135,7 @@ block content
 				p.advantages__title.main__title Почему именно мы
 				.advantages__element
 					.advant__img
-						img(src='./assets/images/icon/Group.svg')
+						+svg('Group')
 					.advant__content
 						p.advant__title ОПЫТ
 						ul.advant__list
@@ -143,7 +144,7 @@ block content
 							li.advant__elem Мы постоянно оптимизируем свою технологию, внедряя лучшие решения, представленные на рынке БМЗ
 				.advantages__element
 					.advant__img
-						img(src='./assets/images/icon/Group2.svg')
+						+svg('Group2')
 					.advant__content
 						p.advant__title НАШИ ВОЗМОЖНОСТИ:
 						ul.advant__list
@@ -152,7 +153,7 @@ block content
 							li.advant__elem Мы строим здания до Зх этажей любых размеров в любое время года
 				.advantages__element
 					.advant__img
-						img(src='./assets/images/icon/Group3.svg')
+						+svg('Group3')
 					.advant__content
 						p.advant__title НАШИ ИЗДЕЛИЯ
 						ul.advant__list
@@ -161,7 +162,7 @@ block content
 							li.advant__elem Обязательный контроль качества на всех этапах- от проекта до монтажа
 				.advantages__element
 					.advant__img
-						img(src='./assets/images/icon/Group4.svg')
+						+svg('Group4')
 					.advant__content
 						p.advant__title ГАРАНТИИ и СЕРВИС
 						ul.advant__list
@@ -276,7 +277,6 @@ block content
 						.stage__name Монтаж на участке
 						.stage__time 1 дня
 						.stage__number 8
-					//.stage__line--hor.line__hor8
 		.index-works
 			.index-works__top
 				.main__title.index-works__title Реализованные объекты
@@ -312,22 +312,24 @@ block content
 			.index-clients__title.main__title Наши клиенты
 			.index-clients-slider.js-index-clients-slider
 				.index-clients-slider__element
-					img(src='./assets/images/logos/Logo.svg').index-clients__img
+					+svg('Logo','index-clients__img')
 				.index-clients-slider__element
-					img(src='./assets/images/smarto.svg').index-clients__img
+					+svg('smarto','index-clients__img')
 				.index-clients-slider__element
-					img(src='./assets/images/logos/Logo.svg').index-clients__img
+					+svg('Logo','index-clients__img')
 				.index-clients-slider__element
-					img(src='./assets/images/smarto.svg').index-clients__img
+					+svg('smarto','index-clients__img')
 				.index-clients-slider__element
-					img(src='./assets/images/logos/Logo.svg').index-clients__img
+					+svg('Logo','index-clients__img')
 				.index-clients-slider__element
-					img(src='./assets/images/smarto.svg').index-clients__img
+					+svg('smarto','index-clients__img')
 				.index-clients-slider__element
-					img(src='./assets/images/logos/Logo.svg').index-clients__img
+					+svg('Logo','index-clients__img')
 			.index-clients-slider__buttons
 				.index-clients-slider__button.index-clients-slider__button--left
+					+svg('arrow')
 				.index-clients-slider__button.index-clients-slider__button--right
+					+svg('arrow')
 
 block footer
 	footer.footer

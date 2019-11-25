@@ -1,5 +1,6 @@
 a(href="/" class="logo")
-	img(src="./assets/images/logo.svg" alt="logo" title="")
+	+svg('Logo')
+	//img(src="./assets/images/logo.svg" alt="logo" title="")
 ul.top-menu
 	each list in menu
 		if list.href
@@ -13,14 +14,17 @@ ul.top-menu
 					each el in list.nested
 						li.top-menu__nested--item
 							a(href= el.href).top-menu__nested--link= el.name
-				img(src='./assets/images/icon/arrowDown.svg').top-menu__arrow
+				+svg( 'arrow' ,'top-menu__arrow')
+				//img(src='./assets/images/icon/arrowDown.svg').top-menu__arrow
 .top-menu__phone.js-hover
 	.phone__list--arrow
-		img(src='./assets/images/icon/arrowDown.svg' alt='arrow').top-menu__arrow
+		+svg('arrow','top-menu__arrow')
+		//img(src='./assets/images/icon/arrowDown.svg' alt='arrow').top-menu__arrow
 	ul.phone__list
 		each tel in contact.phone
 			li.phone__list__tel
-				img(src='./assets/images/icon/' + tel.img + '.svg' alt=tel.img).phone__list--icon
+				+svg( tel.img ,'phone__list--icon')
+				//img(src='./assets/images/icon/' + tel.img + '.svg' alt=tel.img).phone__list--icon
 				a(href= tel.href ).phone__list--number= tel.name
 ul.lang-list
 	li.lang-list__item
