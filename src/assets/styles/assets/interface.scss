@@ -8,6 +8,7 @@
 	z-index: 30;
 	.page__content {
 		display: flex;
+		flex-direction: column;
 		flex-grow: 1;
 		padding-top: 72px;
 	}
@@ -288,4 +289,20 @@
 .wrap1200{
 	margin: 0 auto;
 	max-width: 1200px;
+	padding-left: 0;
+	padding-right: 0;
+	@include to(1290px){
+		padding-left: 45px;
+		padding-right: 45px;
+	}
+}
+
+.captcha{
+	width: 220px;
+	height: 70px;
+	background: #eeeeee;
+	margin: 20px 10px 0 0;
+	@include to(670px) {
+		margin: 10px auto 0;
+	}
 }

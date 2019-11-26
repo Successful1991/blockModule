@@ -978,6 +978,9 @@
       }
     }
   }
+  &__img{
+    max-height: 100%;
+  }
 }
 .main .index-clients-slider__element{
   @include flexCenter();

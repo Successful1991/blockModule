@@ -1,11 +1,12 @@
 let filterCategory = [];
 let filterAllElements = [];
-let filterElements = [];
+// let filterElements = [];
 (function () {
     $('.js-filter').on('click', filterAddCategory);
     $('.js-works-filter__remove').on('click', filterRemove);
     addFilter('.js-filter__category');
-    checkedPage(1);
+    paginationInit({wrap: '.news__pagination',dots: true,dotsAmount: 3,dotsLast: true,arrow: true,extremeArrow: true, elementInPage: 8});
+    // checkedPage(1);
 })();
 
 function addFilter(clas){
@@ -16,6 +17,7 @@ function addFilter(clas){
         });
         filterElements.push(el);
     });
+
 }
 function filterAddCategory(e) {
     var elem = $(e.target);
@@ -25,9 +27,7 @@ function filterAddCategory(e) {
         elem.addClass('active');
         filterCategory.push( elem.data('category') );
     }
-
     filter(filterAllElements);
-
 }
 function filterRemove() {
     var elem =  $(this).closest('.works-filter__elem'),
@@ -43,7 +43,6 @@ function filter(element) {
     element.map(function (cat) {
         if(filterCategory.length > 0) {
             $(cat.data).hide();
-            // filterElements.push(cat.data);
             if( filterCategory.includes(cat.category) ){
                 $(cat.data).show();
                 filterElements.push(cat.data);

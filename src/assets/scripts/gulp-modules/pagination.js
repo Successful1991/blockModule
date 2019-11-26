@@ -1,19 +1,17 @@
-let dotsAmount = 0;
+var dotsAmount = 0;
+var elementInPage = 8;
+var currentPage = 1;
+var filterElements = [];
+
 (function () {
     $('.js-pagination').on('click', function (e) {
         e.target.dataset.page ? checkedPage(e.target.dataset.page) : checkedPage($(e.target).closest('.pagination__arrow').data('page'));
     });
-    paginationInit({
-        wrap: '.news__pagination',
-        dots: true,
-        dotsAmount: 3,
-        dotsLast: true,
-        arrow: true,
-        extremeArrow: true
-    });
 })();
 
 function paginationInit(conf) {
+    elementInPage = conf.elementInPage || 8;
+    filterElements = filterElements.length === 0 ? $(conf.el) : filterElements;
     var defaults = {
         wrap: conf.wrap||'.pagination',
         clickClass : 'js-pagination',
@@ -28,16 +26,15 @@ function paginationInit(conf) {
     if(defaults.dots) {
         $(defaults.wrap).append(createDots(defaults.dotsAmount,defaults.dotsLast ) );
     }
-
     if(defaults.arrow) {
         $(defaults.wrap).prepend(createArrow(['pagination__arrow--left','disabled'], "prev", 1));
         $(defaults.wrap).append(createArrow(['pagination__arrow--right'], "next", 1));
     }
-
     if(defaults.extremeArrow) {
         $(defaults.wrap).prepend(createArrow(['pagination__arrow--left','disabled'], "first", 2));
         $(defaults.wrap).append(createArrow(['pagination__arrow--right'], "last", 2));
     }
+    checkedPage(currentPage);
 }
 
 function createDots(amount) {
@@ -65,18 +62,14 @@ function createDot(index, data){
     el.innerHTML = data;
     return el
 }
-
-var elementInPage = 8;
-var currentPage = 1;
 function pagination(page) {
-    filterElements.map(function (el, i) {
+    $(filterElements).each(function (i, el) {
        if(i+1 > page * elementInPage - elementInPage && i+1 <= page * elementInPage) {
             $(el).show();
        } else {
            $(el).hide();
        }
     });
-
 }
 
 function checkedPage(pages) {

@@ -1,0 +1,47 @@
+extends ../layout/main
+block variable
+    -
+        var catalog = [
+        {link: '#',url:'./assets/images/catalog/1.jpg',text: 'Дома: сборные, модульные, дачные'},
+        {link: '#',url:'./assets/images/catalog/2.jpg',text: 'КИОСКИ И ЛАРЬКИ'},
+        {link: '#',url:'./assets/images/catalog/3.jpg',text: 'Торговые павильоны'},
+        {link: '#',url:'./assets/images/catalog/4.jpg',text: 'Модульные здания'},
+        {link: '#',url:'./assets/images/catalog/5.jpg',text: 'Модульные офисы'},
+        {link: '#',url:'./assets/images/catalog/6.jpg',text: 'Общежития и отели'},
+        {link: '#',url:'./assets/images/catalog/7.jpg',text: 'БЛОК КОНТЕЙНЕРЫ (БЫТОВКИ/СТРОИТЕЛЬНЫЕ ВАГОНЧИКИ)'},
+        {link: '#',url:'./assets/images/catalog/8.jpg',text: 'Посты охраны'},
+        {link: '#',url:'./assets/images/catalog/9.jpg',text: 'БЫТОВКИ ДАЧНЫЕ'},
+        {link: '#',url:'./assets/images/catalog/10.jpg',text: 'Санитарные блоки'},
+        {link: '#',url:'./assets/images/catalog/11.jpg',text: 'АНГАРЫ'},
+        {link: '#',url:'./assets/images/catalog/12.jpg',text: 'АБК — Административно бытовые здания'}
+        ];
+block meta
+    title= 'Contact'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/index.js')
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrUcTar2ARlRKSogEQVIlWaPnmVIM_xVE&callback=initMap")
+
+block content
+    section.catalog
+        h1.main__title.catalog__title Каталог
+        include includes/breadcrumb
+        .catalog__list
+            each el in catalog
+                a(href=el.link).catalog__element
+                    img(src=el.url).catalog__img
+                    span.catalog__text= el.text
+
+
+
+block footer
+    footer.footer
+        include ../includes/footer-top
+        include ../includes/footer-middle
+        include ../includes/footer-bottom
+
+block header
+    header.header
+        include ../includes/header.pug

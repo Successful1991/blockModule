@@ -19,21 +19,21 @@ block content
                 each el in contact.phone
                     if el.message
                         li.contact__element.mobile__order-1
-                            img(src='./assets/images/icon/' + el.img + '.svg' alt=el.img).contact__list--icon
+                            +svg(el.img, 'contact__list--icon')
                             .contact__wrap
                                 a(href= el.href ).contact__tel= el.name
                                 if el.message.telegram
                                     .contact__message
                                         a(href='https://telegram.me/+380988534040').first-screen__messages--telegram
-                                            img(src="./assets/images/icon/telegram.svg").first-screen__img
+                                            +svg('telegram', 'first-screen__img')
                                             span Telegram
                                         a(href='viber://chat?number=+380988534040').first-screen__messages--viber
-                                            img(src="./assets/images/icon/viber.svg").first-screen__img
+                                            +svg('viber', 'first-screen__img')
                                             span Viber
 
                     else
                         li.contact__element
-                            img(src='./assets/images/icon/' + el.img + '.svg' alt=el.img).contact__list--icon
+                            +svg( el.img, 'contact__list--icon')
                             a(href= el.href ).contact__tel= el.name
             ul.contact__list.contact__list--address
                 each el in contact.address
@@ -53,7 +53,7 @@ block content
                 input(type='text' placeholder='Имя:*').form__input
                 span.form__info
                 // обязательно
-                input(type='tel' placeholder='Телефон:*').form__input
+                input(type='mail' placeholder='E-mail:*').form__input
                 span.form__info
 
                 textarea(placeholder='Сообщение:').form__input.form__textarea

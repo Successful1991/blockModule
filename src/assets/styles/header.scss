@@ -13,17 +13,22 @@
 	background-color: $wc;
 	@include to(768px){
 		padding: 10px 20px;
+		justify-content: flex-end;
 	}
 	@include to(480px){
 		padding: 5px 20px;
 	}
 	.logo{
-		height: 100%;
+		height: auto;
 		overflow: hidden;
 		svg{
 			height: 40px;
+			width: 190px;
 		}
+		@include to(768px){
+			margin-right:auto;
 		}
+	}
 	.row{
 		justify-content: space-between;
 	}
@@ -106,7 +111,7 @@
 		align-items: center;
 		height: 100%;
 		margin: 0 0 0 auto;
-		@include to(480px) {
+		@include to(768px) {
 			display: none;
 		}
 		&.hover{

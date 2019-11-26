@@ -122,7 +122,6 @@
 .form{
   display: flex;
   flex-wrap: wrap;
-  //flex-direction: column;
   width: 50%;
   margin: 0 30px;
   padding: 24px 34px;
@@ -168,14 +167,5 @@
     font-size: 10px;
     color: red;
     padding: 0 20px;
-  }
-}
-.captcha{
-  width: 220px;
-  height: 70px;
-  background: #eeeeee;
-  margin: 6px 10px 0 0;
-  @include to(670px) {
-    margin: 6px auto 0;
   }
 }

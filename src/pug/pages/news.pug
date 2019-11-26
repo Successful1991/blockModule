@@ -8,6 +8,11 @@ block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
     script(src='./assets/scripts/index.js')
+    script(src='./assets/scripts/pagination.js')
+    script
+        | (function(){
+        | paginationInit({wrap: '.news__pagination',dots: true,dotsAmount: 3,dotsLast: true,arrow: true,extremeArrow: true, elementInPage: 10, el:'.news__element'});
+        | })();
 block content
     section.news
         h1.news__title Новости

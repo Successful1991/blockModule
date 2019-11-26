@@ -5,3 +5,6 @@ single-news
 contact
 catalog-group
 table (для popup in page catalog-group-single тех.характеристики and page 'tehnology')
+works
+single-work
+blog

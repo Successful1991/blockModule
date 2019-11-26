@@ -54,6 +54,7 @@
     margin: 0 auto;
     padding: ($padding-wrap - 16px);
     max-width: 1200px;
+    transition: all 0.2s linear;
     @include to(768px) {
       padding: ($padding-wrap--small - 8px);
     }

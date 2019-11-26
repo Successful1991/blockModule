@@ -8,6 +8,11 @@ block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
     script(src='./assets/scripts/index.js')
+    script(src='./assets/scripts/pagination.js')
+    script
+        | (function(){
+        | paginationInit({wrap: '.news__pagination',dots: true,dotsAmount: 3,dotsLast: true,arrow: true,extremeArrow: true, elementInPage: 9, el:'.ct-group__element'});
+        | })();
 block content
     section.ct-group
         h1.main__title.ct-group__title Дачные домики
@@ -154,7 +159,37 @@ block content
                     .ct-group__list--text.ct-group__price
                         span.text--bold Стоимость:
                         |от 185000 грн.
-        //include includes/pagination
+            li.ct-group__element
+                a.ct-group__element--link
+                    .ct-group__list--title Дачный домик ДДМ1
+                    .ct-group__list--img
+                        img(src='assets/images/product/Rectangle2.jpg')
+                        img(src='assets/images/product/Rectangle2-back.jpg').ct-group__list--hover
+                    .ct-group__list--text.ct-group__dimensions
+                        span.text--bold Габариты Д/Ш:
+                        |от 6х5м до 9х6м
+                    .ct-group__list--text.ct-group__area
+                        span.text--bold Площадь:
+                        |45 м2
+                    .ct-group__list--text.ct-group__price
+                        span.text--bold Стоимость:
+                        |от 185000 грн.
+            li.ct-group__element
+                a.ct-group__element--link
+                    .ct-group__list--title Дачный домик ДДМ1
+                    .ct-group__list--img
+                        img(src='assets/images/product/Rectangle2.jpg')
+                        img(src='assets/images/product/Rectangle2-back.jpg').ct-group__list--hover
+                    .ct-group__list--text.ct-group__dimensions
+                        span.text--bold Габариты Д/Ш:
+                        |от 6х5м до 9х6м
+                    .ct-group__list--text.ct-group__area
+                        span.text--bold Площадь:
+                        |45 м2
+                    .ct-group__list--text.ct-group__price
+                        span.text--bold Стоимость:
+                        |от 185000 грн.
+        include includes/pagination
         p.main__title.ct-group__title.marg--title Не подошли наши типовые планировки?
         a(href='#').button-xl Расчитать свой проект
     section.ct-desc

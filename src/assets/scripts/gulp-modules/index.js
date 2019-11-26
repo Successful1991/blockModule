@@ -1,6 +1,5 @@
 @@include('./libs.js')
-@@include('./pagination.js')
-@@include('./filter.js')
+
 
 (function () {
 
@@ -33,6 +32,9 @@
                 breakpoint: 768,
                 settings: {
                     vertical: false,
+                    arrows: false,
+                    slidesToShow: 3,
+
                 }
             }]
 
@@ -49,7 +51,9 @@
         var index = $(this).data('slick-index');
         t[0].slick.slickGoTo(index);
     });
-
+    $('.js-drop').on('click','.drop__head', function () {
+        $(this).closest('.faq__drop').toggleClass('active');
+    });
 
 
     $('.js-sl').slick({
