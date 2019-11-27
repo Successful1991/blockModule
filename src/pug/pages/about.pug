@@ -1,0 +1,35 @@
+extends ../layout/main
+block variable
+
+block meta
+    title= 'Contact'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/index.js')
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrUcTar2ARlRKSogEQVIlWaPnmVIM_xVE&callback=initMap")
+
+block content
+    section.about
+        h1.main__title.about__title Немного о компании
+        include includes/breadcrumb
+        .about__first-screen
+             .about__first-screen--description
+                 .about__first-screen--title Успешно работаем с 2005 года
+                 p Сегодня у нас два производственных цеха в г. Славутич и в Киеве, а так же офис продаж в центре г. Киев
+                 a(href='#').button-xl.about__first-screen--button НАШИ РАБОТЫ
+             .about__first-screen--bg
+
+
+
+
+block footer
+    footer.footer
+        include ../includes/footer-top
+        include ../includes/footer-middle
+        include ../includes/footer-bottom
+
+block header
+    header.header
+        include ../includes/header.pug

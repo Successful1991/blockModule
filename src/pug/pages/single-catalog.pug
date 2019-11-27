@@ -1,0 +1,44 @@
+extends ../layout/main
+block variable
+
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/index.js')
+block content
+    section.single-catalog
+        h1.main__title.single-catalog__title Технологии
+        include includes/breadcrumb
+        .single-catalog__top
+            .single-catalog__slider
+                .single-catalog__slider--big
+                    img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
+                    img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
+                    img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
+                    img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
+                    img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
+                    img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
+                .single-catalog__slider--small
+                    img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
+                    img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
+                    img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
+                    img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
+                    img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
+                    img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
+            .single-catalog__date
+            .single-catalog__tabs
+            .single-catalog__buttons
+
+
+block footer
+    footer.footer
+        include ../includes/footer-top
+        include ../includes/footer-middle
+        include ../includes/footer-bottom
+
+block header
+    header.header
+        include ../includes/header.pug

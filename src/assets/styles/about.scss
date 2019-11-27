@@ -1,0 +1,47 @@
+.about{
+  &__first-screen{
+    position: relative;
+    display: flex;
+    width: 100%;
+    padding: 70px 45px;
+    background: url("../images/product/country_house.jpg")no-repeat center /cover;
+    min-height: 30vw;
+    &--description{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 50%;
+      min-width: 200px;
+      z-index: 5;
+      color: $wc;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 1.8em;
+    }
+    &--title{
+      font-weight: 400;
+      font-size: 48px;
+      line-height: 1.1em;
+      margin-bottom: 30px;
+    }
+    p{
+      margin-bottom: 30px;
+      max-width: 285px;
+    }
+    &--button{
+      margin: 0;
+    }
+    &--bg{
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      background: linear-gradient(90deg, #293044 0%, rgba(41, 48, 68, 0) 100%);
+    }
+  }
+  .breadcrumb{
+    padding: 20px 45px;
+  }
+}

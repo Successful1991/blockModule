@@ -1,9 +1,8 @@
 .products{
   position: relative;
-  width: 900px;
-  height: 80vh;
-  overflow-y: auto;
-  padding: 50px 85px 60px;
+  width: 100%;
+  height: 100%;
+  padding: 0;
   display: flex;
   flex-direction: column;
   &__title{
@@ -30,6 +29,10 @@
       padding: 13px 20px 20px;
       img{
         width: 100%;
+      }
+      &:hover{
+        background: $mc3;
+        color: $wc;
       }
     }
     &--bg1{
@@ -78,7 +81,7 @@
       &--bg{
         position: absolute;
         top: 0;
-        right: 0;
+        right: -1px;
         height: 100%;
         display: flex;
         width: 240px;
@@ -103,10 +106,13 @@
     }
   }
   &__text{
+    display: inline-block;
+    max-width: 900px;
+    width: 100%;
     font-weight: 500;
     font-size: 14px;
     line-height: 1.8em;
-    margin: 32px 0 0;
+    margin: 32px auto 0;
   }
 }
 .product{
@@ -116,6 +122,10 @@
   line-height: 1.8em;
   font-weight: 400;
   z-index: 5;
+  @include to(768px){
+    font-size: 12px;
+    line-height: 1.6em;
+  }
   &__elements{
     border: 1px solid #BCC1C8;
     &:nth-last-child(1){
@@ -126,12 +136,22 @@
     display: flex;
     padding: 20px 0 20px 40px;
     border-bottom: 1px solid #BCC1C8;
+    span{
+      color: $mc2;
+    }
+    &:hover{
+      background: $mc3;
+      color: $wc;
+      .minus{
+        fill: $wc;
+      }
+    }
   }
   &__value{
     @include flexCenter();
     width: 80px;
     flex-shrink: 0;
-    img{
+    svg{
       max-width: 40%;
     }
   }
@@ -141,5 +161,42 @@
       padding: 20px 0 20px 40px;
 
     }
+  }
+  &__description{
+    flex: 1 1 auto;
+    padding: 0 15% 0 0;
+  }
+  &__tooltip{
+    position: relative;
+    display: inline;
+    z-index: 55;
+    svg{
+      width: 10px;
+      height: 10px;
+    }
+    &--text{
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      padding: 10px;
+      width: 200px;
+      background: $grayBorder;
+      color: $mc3;
+      border-radius: 10px;
+      visibility: hidden;
+      pointer-events: none;
+      z-index: 555;
+    }
+    &:hover{
+      .product__tooltip--text{
+          visibility: visible;
+      }
+    }
+  }
+  .plus{
+    fill: $mc2;
+  }
+  .minus{
+    fill: $mc3;
   }
 }

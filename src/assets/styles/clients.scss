@@ -21,6 +21,7 @@
   width: calc(25% - 30px);
   height: 170px;
   margin: 15px;
+  padding: 20px;
   background: $bg-col-1;
   @include to(768px) {
     width: calc(33.33% - 30px);

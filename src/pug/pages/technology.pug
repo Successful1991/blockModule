@@ -1,0 +1,25 @@
+extends ../layout/main
+block variable
+
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/index.js')
+block content
+    section.technology
+        h1.main__title.technology__title Технологии
+        include includes/breadcrumb
+        include includes/table
+
+block footer
+    footer.footer
+        include ../includes/footer-top
+        include ../includes/footer-middle
+        include ../includes/footer-bottom
+
+block header
+    header.header
+        include ../includes/header.pug

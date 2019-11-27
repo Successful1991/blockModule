@@ -3,8 +3,22 @@ index (главная)
 news
 single-news
 contact
+catalog
 catalog-group
+clients
 table (для popup in page catalog-group-single тех.характеристики and page 'tehnology')
 works
 single-work
 blog
+faq
+
+
+
+
+не сделаные
+
+about
+delivery
+tehnology
+single-catalog
+popup

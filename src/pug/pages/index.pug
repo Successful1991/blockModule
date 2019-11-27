@@ -1,6 +1,17 @@
 extends ../layout/main
 block variable
-	
+	-
+		var list = [
+			{link: '#', img: 'house', alt: 'Дома: сборные, модульные, дачные'},
+			{link: '#', img: 'module-build', alt: 'Модульные здания'},
+			{link: '#', img: 'trade-house', alt: 'Торговые павильоны'},
+			{link: '#', img: 'security-post', alt: 'Посты охраны'},
+			{link: '#', img: 'san-block', alt: 'Санитарные блоки'},
+			{link: '#', img: 'admin-house', alt: 'АБК'},
+			{link: '#', img: 'angar', alt: 'Ангары'},
+			{link: '#', img: 'offices', alt: 'Модульные офисы'},
+			{link: '#', img: 'hotels', alt: 'Общежития и отели'}
+		];
 block meta
 	title= 'Home'
 	meta(name='description', content='')
@@ -56,79 +67,80 @@ block content
 		.make
 			h3.make__title.main__title Мы производим
 			.make__gallery
-				a(href='#').card.card-1.js-hover
-					.card__img
-						img(src='./assets/images/main/make/angar.jpg' alt='angar')
-					.card__hover
-						.card__hover--wrap
-							+svg('logo-m', 'card__hover--logo' )
-							//img(src="./assets/images/logo-m.svg").card__hover--logo
-							p.card__hover--text Смотреть объекты
-					.card__desc Ангары
-				a(href='#').card.card-2.js-hover
-					.card__img
-						img(src='./assets/images/main/make/san-block.jpg' alt='Санитарные блоки')
-					.card__hover
-						.card__hover--wrap
-							+svg('logo-m', 'card__hover--logo' )
-							p.card__hover--text Смотреть объекты
-					.card__desc Санитарные блоки
-				a(href='#').card.card-3.js-hover
-					.card__img
-						img(src='./assets/images/main/make/module-build.jpg' alt='Модульные здания')
-					.card__hover
-						.card__hover--wrap
-							+svg('logo-m', 'card__hover--logo' )
-							p.card__hover--text Смотреть объекты
-					.card__desc Модульные здания
-				a(href='#').card.card-4.js-hover
-					.card__img
-						img(src='./assets/images/main/make/house.jpg' alt='house')
-					.card__hover
-						.card__hover--wrap
-							+svg('logo-m', 'card__hover--logo' )
-							p.card__hover--text Смотреть объекты
-					.card__desc Дома: сборные, модульные, дачные
-				a(href='#').card.card-5.js-hover
-					.card__img
-						img(src='./assets/images/main/make/offices.jpg' alt='Модульные офисы')
-					.card__hover
-						.card__hover--wrap
-							+svg('logo-m', 'card__hover--logo' )
-							p.card__hover--text Смотреть объекты
-					.card__desc Модульные офисы
-				a(href='#').card.card-6.js-hover
-					.card__img
-						img(src='./assets/images/main/make/security-post.jpg' alt='Посты охраны')
-					.card__hover
-						.card__hover--wrap
-							+svg('logo-m', 'card__hover--logo' )
-							p.card__hover--text Смотреть объекты
-					.card__desc Посты охраны
-				a(href='#').card.card-7.js-hover
-					.card__img
-						img(src='./assets/images/main/make/trade-house.jpg' alt='trade-house')
-					.card__hover
-						.card__hover--wrap
-							+svg('logo-m', 'card__hover--logo' )
-							p.card__hover--text Смотреть объекты
-					.card__desc Торговые павильоны
-				a(href='#').card.card-8.js-hover
-					.card__img
-						img(src='./assets/images/main/make/hotels.jpg' alt='hotels')
-					.card__hover
-						.card__hover--wrap
-							+svg('logo-m', 'card__hover--logo' )
-							p.card__hover--text Смотреть объекты
-					.card__desc Общежития и отели
-				a(href='#').card.card-9.js-hover
-					.card__img
-						img(src='./assets/images/main/make/admin-house.jpg' alt='admin-house')
-					.card__hover
-						.card__hover--wrap
-							+svg('logo-m', 'card__hover--logo' )
-							p.card__hover--text Смотреть объекты
-					.card__desc Административно бытовые здания
+				each el,i in list
+					a(href= el.link class='card card-'+ (i+1) +' js-hover')
+						.card__img
+							img(src='./assets/images/main/make/'+ el.img +'.jpg' alt= el.alt)
+						.card__hover
+							.card__hover--wrap
+								+svg('logo-m', 'card__hover--logo' )
+								//img(src="./assets/images/logo-m.svg").card__hover--logo
+								p.card__hover--text Смотреть объекты
+						.card__desc= el.alt
+				//a(href='#').card.card-2.js-hover
+				//	.card__img
+				//		img(src='./assets/images/main/make/san-block.jpg' alt='Санитарные блоки')
+				//	.card__hover
+				//		.card__hover--wrap
+				//			+svg('logo-m', 'card__hover--logo' )
+				//			p.card__hover--text Смотреть объекты
+				//	.card__desc Санитарные блоки
+				//a(href='#').card.card-3.js-hover
+				//	.card__img
+				//		img(src='./assets/images/main/make/module-build.jpg' alt='Модульные здания')
+				//	.card__hover
+				//		.card__hover--wrap
+				//			+svg('logo-m', 'card__hover--logo' )
+				//			p.card__hover--text Смотреть объекты
+				//	.card__desc Модульные здания
+				//a(href='#').card.card-4.js-hover
+				//	.card__img
+				//		img(src='./assets/images/main/make/house.jpg' alt='house')
+				//	.card__hover
+				//		.card__hover--wrap
+				//			+svg('logo-m', 'card__hover--logo' )
+				//			p.card__hover--text Смотреть объекты
+				//	.card__desc Дома: сборные, модульные, дачные
+				//a(href='#').card.card-5.js-hover
+				//	.card__img
+				//		img(src='./assets/images/main/make/offices.jpg' alt='Модульные офисы')
+				//	.card__hover
+				//		.card__hover--wrap
+				//			+svg('logo-m', 'card__hover--logo' )
+				//			p.card__hover--text Смотреть объекты
+				//	.card__desc Модульные офисы
+				//a(href='#').card.card-6.js-hover
+				//	.card__img
+				//		img(src='./assets/images/main/make/security-post.jpg' alt='Посты охраны')
+				//	.card__hover
+				//		.card__hover--wrap
+				//			+svg('logo-m', 'card__hover--logo' )
+				//			p.card__hover--text Смотреть объекты
+				//	.card__desc Посты охраны
+				//a(href='#').card.card-7.js-hover
+				//	.card__img
+				//		img(src='./assets/images/main/make/trade-house.jpg' alt='trade-house')
+				//	.card__hover
+				//		.card__hover--wrap
+				//			+svg('logo-m', 'card__hover--logo' )
+				//			p.card__hover--text Смотреть объекты
+				//	.card__desc Торговые павильоны
+				//a(href='#').card.card-8.js-hover
+				//	.card__img
+				//		img(src='./assets/images/main/make/hotels.jpg' alt='hotels')
+				//	.card__hover
+				//		.card__hover--wrap
+				//			+svg('logo-m', 'card__hover--logo' )
+				//			p.card__hover--text Смотреть объекты
+				//	.card__desc Общежития и отели
+				//a(href='#').card.card-9.js-hover
+				//	.card__img
+				//		img(src='./assets/images/main/make/admin-house.jpg' alt='admin-house')
+				//	.card__hover
+				//		.card__hover--wrap
+				//			+svg('logo-m', 'card__hover--logo' )
+				//			p.card__hover--text Смотреть объекты
+				//	.card__desc Административно бытовые здания
 			a(href='#').button-xl.make__button Смотреть все категории
 		.advantages--wrap
 			.advantages
@@ -312,19 +324,26 @@ block content
 			.index-clients__title.main__title Наши клиенты
 			.index-clients-slider.js-index-clients-slider
 				.index-clients-slider__element
-					+svg('Logo','index-clients__img')
+					a(href='#').index-clients__link
+						+svg('Logo','index-clients__img')
 				.index-clients-slider__element
-					+svg('smarto','index-clients__img')
+					a(href='#').index-clients__link
+						+svg('smarto','index-clients__img')
 				.index-clients-slider__element
-					+svg('Logo','index-clients__img')
+					a(href='#').index-clients__link
+						+svg('Logo','index-clients__img')
 				.index-clients-slider__element
-					+svg('smarto','index-clients__img')
+					a(href='#').index-clients__link
+						+svg('smarto','index-clients__img')
 				.index-clients-slider__element
-					+svg('Logo','index-clients__img')
+					a(href='#').index-clients__link
+						+svg('Logo','index-clients__img')
 				.index-clients-slider__element
-					+svg('smarto','index-clients__img')
+					a(href='#').index-clients__link
+						+svg('smarto','index-clients__img')
 				.index-clients-slider__element
-					+svg('Logo','index-clients__img')
+					a(href='#').index-clients__link
+						+svg('Logo','index-clients__img')
 			.index-clients-slider__buttons
 				.index-clients-slider__button.index-clients-slider__button--left
 					+svg('arrow')
