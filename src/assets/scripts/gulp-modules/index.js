@@ -39,7 +39,7 @@
             }]
 
     });
-    var t = $('.js-single-work__slider--big').slick({
+    var singleWorkSlider = $('.js-single-work__slider--big').slick({
         infinite: false,
         arrows: false,
         dots: false,
@@ -49,12 +49,52 @@
 
     $('.js-single-work__slider img').on('click', function () {
         var index = $(this).data('slick-index');
-        t[0].slick.slickGoTo(index);
+        singleWorkSlider[0].slick.slickGoTo(index);
     });
     $('.js-drop').on('click','.drop__head', function () {
         $(this).closest('.faq__drop').toggleClass('active');
     });
 
+
+
+    $('.js-single-catalog__slider').slick({
+        infinite: true,
+        prevArrow: '<button type="button" class="slick-prev single-catalog__slider-button single-catalog__slider-button--left"><svg viewBox="0 0 9 5" xmlns="http://www.w3.org/2000/svg"> <path d="M8.4853 0.707107L7.7782 0L4.24263 3.53557L0.707107 4.65512e-05L0 0.707153L4.24264 4.94979L4.94975 4.24269L4.94974 4.24268L8.4853 0.707107Z"/> </svg></button>',
+        nextArrow: '<button type="button" class="slick-next single-catalog__slider-button single-catalog__slider-button--right"><svg viewBox="0 0 9 5" xmlns="http://www.w3.org/2000/svg"> <path d="M8.4853 0.707107L7.7782 0L4.24263 3.53557L0.707107 4.65512e-05L0 0.707153L4.24264 4.94979L4.94975 4.24269L4.94974 4.24268L8.4853 0.707107Z"/> </svg></button>',
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    vertical: false,
+                    arrows: false,
+                    slidesToShow: 3,
+
+                }
+            }]
+
+    });
+    var singlecatalogSlider = $('.js-single-catalog__slider--big').slick({
+        infinite: false,
+        arrows: false,
+        dots: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    });
+    $('.js-single-catalog__slider img').on('click', function () {
+        var index = $(this).data('slick-index');
+        singlecatalogSlider[0].slick.slickGoTo(index);
+    });
+
+    $('.js-tabs__catalog').on('click',function (e) {
+        if(e.target.dataset.category !== undefined){
+            $('.js-tabs__catalog .active').removeClass('active');
+            $(e.target).addClass('active');
+            $('[data-type = '+e.target.dataset.category+']').addClass('active');
+        }
+        console.log(e.target.dataset.category)
+    });
 
     $('.js-sl').slick({
         dots: false,
@@ -85,9 +125,12 @@
             }
         }]
     });
+
     $('.js-form__close').on('click', function (e) {
         $(this.closest('form')).addClass('hidden');
     });
+
+
 })()
 
 

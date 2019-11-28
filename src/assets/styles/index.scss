@@ -754,7 +754,7 @@
 .index-works{
   display: flex;
   flex-wrap: wrap;
-  padding: 40px 30px 40%;
+  padding: 40px 30px 40% 0;
   background: url("../images/main/work__bg.jpg")no-repeat center bottom /cover;
   @include to(480px) {
     padding: 30px 20px 20%;
@@ -800,8 +800,14 @@
     line-height: 1.3em;
   }
 }
+.works__prewiev{
+  @extend .wrap1200;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 0 30px 0;
+}
 .index-work{
-  width: calc(25% - 30px);
+  width: calc(33.33% - 30px);
   margin: 0 15px;
   text-decoration: none;
   color: $textDark;
@@ -822,6 +828,7 @@
     font-weight: 500;
     font-size: 12px;
     line-height: 2em;
+    text-transform: uppercase;
     @include to(480px) {
       line-height: 1.5em;
     }

@@ -1,6 +1,75 @@
 extends ../layout/main
 block variable
-
+    -
+        var additional = [
+        {name:'Кондиционер-сплит',price:7500},
+        {name:'Вытяжной вентилятор',price:600},
+        {name:'Конвектор 1.5 кВт',price:1400},
+        {name:'Обшивка виниловым сайдингом поверх плиты ОСБ',price:850},
+        {name:'Обшивка фасадными панелями под камень-кирпич',price:2000},
+        {name:'Обшивка металическим сайдингом',price:360},
+        {name:'Вытяжной вентилятор',price:5600},
+        {name:'Обшивка фасадными панелями под камень-кирпич',price:2000},
+        {name:'Обшивка металическим сайдингом',price:360},
+        {name:'Вытяжной вентилятор',price:5600}
+        ];
+        var complete = [
+        {img:'./assets/images/icon/1.svg',name:'Электрический ввод',amount:1},
+        {img:'./assets/images/icon/2.svg',name:'Щиток с автоматическими выключателями',amount:5},
+        {img:'./assets/images/icon/3.svg',name:'Светильник наружного освещения',amount:7},
+        {img:'./assets/images/icon/4.svg',name:'Светильник внутреннего освещения',amount:2},
+        {img:'./assets/images/icon/5.svg',name:'Розетка 220В',amount:4},
+        {img:'./assets/images/icon/6.svg',name:'Выключатель освещения',amount:8},
+        {img:'./assets/images/icon/7.svg',name:'Водонагреватель',amount:12},
+        {img:'./assets/images/icon/5.svg',name:'Розетка 220В',amount:4},
+        {img:'./assets/images/icon/6.svg',name:'Выключатель освещения',amount:8},
+        {img:'./assets/images/icon/7.svg',name:'Водонагреватель',amount:12}
+        ];
+        var list = [
+        {
+            size: '7000х5000х2500',
+            data: [
+                {size: '7000х5000х2500', classes: 'Эконом', price: '222500', code: 'ДДС75М3'},
+                {size: '7000х5000х2500', classes: 'Стандарт', price: '222500', code: 'ДДС75М3'},
+                {size: '7000х5000х2500', classes: 'Премиум', price: '200500', code: 'ДДС75М3'}
+            ]
+        },
+        {
+            size: '8000x5000x2500',
+            data: [
+                {size: '8000x5000x2500', classes: 'Стандарт', price: '222500', code: 'ДДС75М3'},
+                {size: '8000x5000x2500', classes: 'Премиум', price: '222500', code: 'ДДС75М3'}
+            ]
+        },
+        {
+            size: '9000x5000x2500',
+            data: [
+            {size: '9000x5000x2500', classes: 'Стандарт', price: '222500', code: 'ДДС75М3'},
+            {size: '9000x5000x2500', classes: 'Премиум', price: '222500', code: 'ДДС75М3'}
+            ]
+        },
+        {
+            size: '7000х6000х2500',
+            data: [
+            {size: '7000х6000х2500', classes: 'Стандарт', price: '222500', code: 'ДДС75М3'},
+            {size: '7000х6000х2500', classes: 'Премиум', price: '222500', code: 'ДДС75М3'}
+            ]
+        },
+        {
+            size: '8000x5000x2500',
+            data: [
+                {size: '8000x5000x2500', classes: 'Стандарт', price: '222500', code: 'ДДС75М3'},
+                {size: '8000x5000x2500', classes: 'Премиум', price: '222500', code: 'ДДС75М3'}
+            ]
+        },
+        {
+        size: '9000x5000x2500',
+        data: [
+        {size: '9000x5000x2500', classes: 'Стандарт', price: '222500', code: 'ДДС75М3'},
+        {size: '9000x5000x2500', classes: 'Премиум', price: '222500', code: 'ДДС75М3'}
+        ]
+        }
+        ];
 block meta
     title= 'Home'
     meta(name='description', content='')
@@ -14,14 +83,14 @@ block content
         include includes/breadcrumb
         .single-catalog__top
             .single-catalog__slider
-                .single-catalog__slider--big
+                .single-catalog__slider--big.js-single-catalog__slider--big
                     img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
                     img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
                     img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
                     img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
                     img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
                     img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
-                .single-catalog__slider--small
+                .single-catalog__slider--small.js-single-catalog__slider
                     img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
                     img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
                     img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
@@ -29,9 +98,82 @@ block content
                     img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
                     img(src='./assets/images/product/Rectangle2.jpg').single-catalog__img
             .single-catalog__date
-            .single-catalog__tabs
+                p Срок сборки и монтажа
+                    span - от 18 дней
+                p Гарантия
+                    span - 1 год
+            .single-catalog__tabs.js-tabs__catalog
+                .tabs__buttons
+                    button(type='button' data-category='description').tabs__button.active Описание
+                    button(type='button' data-category='complete').tabs__button Комплектация
+                    button(type='button' data-category='additional').tabs__button Дополнительные опции
+                .tabs__contents
+                    .tabs__content.tabs__content--description.active(data-type='description')
+                        p Модульный дачный домик ДДМ3 помещает в себе две комнаты, гостиную, кухню и санузел. В данной планировке кухня может быть как в едином пространстве с гостиной, так и отделена перегородкой с дверью (см. план-схемы). Утепленный сборный садовый дом пригоден для комфортного круглогодичного жилья. Домик ДДМ3 оборудован: душевой кабиной, унитазом, рукомойником, водонагревателем (80л), вытяжным вентилятором, розетками, Led светильниками, 5-ю поворотно откидными окнами, 4-мя межкомнатными мдф и наружной стальной утепленной дверью. Сборный дачный дом так же можно эксплуатировать в качестве всесезонного мобильного офиса.
+                    .tabs__content.tabs__content--complete(data-type='complete')
+                        table.table
+                            tr.table__row
+                                th
+                                th
+                                th Наименование
+                                th Количество
+                            each el,i in complete
+                                tr.table__row
+                                    td.table__td.table__td--first= i + '.'
+                                    td.table__td.table__td--img
+                                        img(src= el.img)
+                                    td.table__td= el.name
+                                    td.table__td.table__td--last= el.amount +'шт.'
+                    .tabs__content.tabs__content--additional(data-type='additional')
+                        table.table
+                            tr.table__row
+                                th
+                                th Наименование
+                                th ЦЕНА (грн.)
+                            each el,i in additional
+                                tr.table__row
+                                    td.table__td.table__td--first= i+'.'
+                                    td.table__td= el.name
+                                    td.table__td.table__td--last= el.price
             .single-catalog__buttons
-
+                a(href="#").single-catalog__button.button__orange.js-single-catalog__form Получить коммерческое предложение
+                a(href="#").single-catalog__button.js-single-catalog__delivery Доставка
+                a(href="#").single-catalog__button.js-single-catalog__table Технические характеристики
+        .table.table-big
+               ul.table-big__row.table-big__title
+                    li.table-big__td Размер (мм)
+                    li.table-big__td Класс
+                        a(href="./technology.html") *в чем разница?
+                    li.table-big__td Цена (грн.)
+                    li.table-big__td Код изделия
+               ul.table-big__content
+                   each types in list
+                        li
+                            each el in types.data
+                                ul.table-big__row
+                                    li.table-big__td= types.size
+                                    li.table-big__td= el.classes
+                                    li.table-big__td= el.price
+                                    li.table-big__td= el.code
+        .works__prewiev
+            .index-works__top
+                .main__title.index-works__title Реализованные объекты
+                a(href='#').button-xl.index-works__button Больше объектов
+            a(href='#').index-work
+                .index-work__img
+                    img(src='./assets/images/main/obj1.jpg')
+                    .index-work__data 2019-08-15
+                .index-work__text Модульные операторские (3шт) для солнечных электростанций
+            a(href='#').index-work
+                .index-work__img
+                    img(src='./assets/images/main/obj2.jpg')
+                    .index-work__data 2019-08-15
+                .index-work__text Модульный дом 8.5х6м для отдыха с комфортом.
+            a(href='#').index-work
+                .index-work__img
+                    img(src='./assets/images/main/obj3.jpg')
+                    .index-work__data 2019-08-15
+                .index-work__text Быстровозводимое административно-бытовое здание для ТзОВ «УКРАЇНСЬКІ СИСТЕМИ СОЛАР»
 
 block footer
     footer.footer

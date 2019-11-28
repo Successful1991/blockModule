@@ -111,9 +111,10 @@
 		display: flex;
 		align-items: center;
 		height: 100%;
-		margin: 0 0 0 auto;
+		margin: 0 auto;
 		@include to(768px) {
 			display: none;
+			margin: 0 0 0 auto;
 		}
 		&.hover{
 			.phone__list__tel{
@@ -126,6 +127,7 @@
 	&__arrow{
 		display: inline-block;
 		width: 10px;
+		height: 10px;
 	}
 	&__nested{
 		position: absolute;
