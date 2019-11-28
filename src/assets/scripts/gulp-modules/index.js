@@ -130,7 +130,9 @@
         $(this.closest('form')).addClass('hidden');
     });
 
-
+    $('.js-single-catalog__table').on('click', function (e) {
+        $('.js-popup').addClass('active');
+    })
 })()
 
 

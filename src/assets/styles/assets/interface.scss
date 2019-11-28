@@ -103,7 +103,7 @@
 	cursor: pointer;
 	text-decoration: none;
 	overflow: hidden;
-	transition: background 0.2s linear;
+	transition: background 0.4s linear;
 	z-index: 2;
 	&:hover{
 		transition: all 0.4s;
@@ -304,5 +304,33 @@
 	margin: 20px 10px 0 0;
 	@include to(670px) {
 		margin: 10px auto 0;
+	}
+}
+
+.popup{
+	@include flexCenter();
+	width: 80%;
+	max-width: 900px;
+	height: 80%;
+	background: $wc;
+	padding: 45px 85px;
+	&-wrap{
+		position: fixed;
+		top: 0;
+		left: 0;
+		@include flexCenter();
+		background: rgba(153, 153, 153, 0.7);
+		height: 100%;
+		width: 100%;
+		z-index: 1050;
+		pointer-events: none;
+		visibility: hidden;
+		&.active{
+			pointer-events: auto;
+			visibility: visible;
+		}
+	}
+	.products{
+		overflow: hidden auto;
 	}
 }
