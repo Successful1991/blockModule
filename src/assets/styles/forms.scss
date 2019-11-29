@@ -53,6 +53,7 @@ form{
     flex-wrap: wrap;
     max-width: 540px;
     margin: 0 auto;
+    background: $wc;
     padding: 24px 34px 34px;
     box-shadow: 0 40px 40px rgba(41, 48, 68, 0.25);
     & textarea{

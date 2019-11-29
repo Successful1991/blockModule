@@ -9,6 +9,7 @@
 	// };
 	// loader();
 
+    // burger
     $('.js-burger').on('click', function () {
         $('.menu').addClass('active');
     });
@@ -20,6 +21,9 @@
     $(".js-hover").hover(
         function(){$(this).toggleClass('hover')}
     );
+
+
+    // slider init start
     $('.js-single-work__slider').slick({
         infinite: true,
         prevArrow: '<button type="button" class="slick-prev single-work__button single-work__button--left"><svg viewBox="0 0 9 5" xmlns="http://www.w3.org/2000/svg"> <path d="M8.4853 0.707107L7.7782 0L4.24263 3.53557L0.707107 4.65512e-05L0 0.707153L4.24264 4.94979L4.94975 4.24269L4.94974 4.24268L8.4853 0.707107Z"/> </svg></button>',
@@ -51,11 +55,6 @@
         var index = $(this).data('slick-index');
         singleWorkSlider[0].slick.slickGoTo(index);
     });
-    $('.js-drop').on('click','.drop__head', function () {
-        $(this).closest('.faq__drop').toggleClass('active');
-    });
-
-
 
     $('.js-single-catalog__slider').slick({
         infinite: true,
@@ -85,15 +84,6 @@
     $('.js-single-catalog__slider img').on('click', function () {
         var index = $(this).data('slick-index');
         singlecatalogSlider[0].slick.slickGoTo(index);
-    });
-
-    $('.js-tabs__catalog').on('click',function (e) {
-        if(e.target.dataset.category !== undefined){
-            $('.js-tabs__catalog .active').removeClass('active');
-            $(e.target).addClass('active');
-            $('[data-type = '+e.target.dataset.category+']').addClass('active');
-        }
-        console.log(e.target.dataset.category)
     });
 
     $('.js-sl').slick({
@@ -126,16 +116,58 @@
         }]
     });
 
+
+    $('.js-about-top__slider').slick({
+        infinite: true,
+        speed: 1000,
+        prevArrow: '<button type="button" class="slick-prev about-top__slider-button about-top__slider-button--left"><svg viewBox="0 0 9 5" xmlns="http://www.w3.org/2000/svg"> <path d="M8.4853 0.707107L7.7782 0L4.24263 3.53557L0.707107 4.65512e-05L0 0.707153L4.24264 4.94979L4.94975 4.24269L4.94974 4.24268L8.4853 0.707107Z"/> </svg></button>',
+        nextArrow: '<button type="button" class="slick-next about-top__slider-button about-top__slider-button--right"><svg viewBox="0 0 9 5" xmlns="http://www.w3.org/2000/svg"> <path d="M8.4853 0.707107L7.7782 0L4.24263 3.53557L0.707107 4.65512e-05L0 0.707153L4.24264 4.94979L4.94975 4.24269L4.94974 4.24268L8.4853 0.707107Z"/> </svg></button>',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        fade: true
+    });
+
+    $('.js-about-photo__slider').slick({
+        infinite: true,
+        speed: 1000,
+        prevArrow: '<button type="button" class="slick-prev about-photo__slider-button about-photo__slider-button--left"><svg viewBox="0 0 9 5" xmlns="http://www.w3.org/2000/svg"> <path d="M8.4853 0.707107L7.7782 0L4.24263 3.53557L0.707107 4.65512e-05L0 0.707153L4.24264 4.94979L4.94975 4.24269L4.94974 4.24268L8.4853 0.707107Z"/> </svg></button>',
+        nextArrow: '<button type="button" class="slick-next about-photo__slider-button about-photo__slider-button--right"><svg viewBox="0 0 9 5" xmlns="http://www.w3.org/2000/svg"> <path d="M8.4853 0.707107L7.7782 0L4.24263 3.53557L0.707107 4.65512e-05L0 0.707153L4.24264 4.94979L4.94975 4.24269L4.94974 4.24268L8.4853 0.707107Z"/> </svg></button>',
+        slidesToShow: 3,
+        slidesToScroll: 3,
+    });
+
+
+
+
+
+    // slider init end
+
+    $('.js-drop').on('click','.drop__head', function () {
+        $(this).closest('.faq__drop').toggleClass('active');
+    });
+
+    $('.js-tabs__catalog').on('click',function (e) {
+        if(e.target.dataset.category !== undefined){
+            $('.js-tabs__catalog .active').removeClass('active');
+            $(e.target).addClass('active');
+            $('[data-type = '+e.target.dataset.category+']').addClass('active');
+        }
+    });
+
     $('.js-form__close').on('click', function (e) {
-        $(this.closest('form')).addClass('hidden');
+        $(this.closest('.popup-wrap')).removeClass('active');
     });
 
     $('.js-single-catalog__table').on('click', function (e) {
+        e.preventDefault();
         $('.js-popup').addClass('active');
-    })
+    });
+
+    $('.js-form__project').on('click', function(e){
+        e.preventDefault();
+        $('.js-popup__project').addClass('active');
+    });
 })()
-
-
 
 
 function initMap() {

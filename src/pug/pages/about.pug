@@ -8,7 +8,6 @@ block head
     link(rel='stylesheet', href="./assets/styles/main.min.css")
 block scripts
     script(src='./assets/scripts/index.js')
-    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrUcTar2ARlRKSogEQVIlWaPnmVIM_xVE&callback=initMap")
 
 block content
     section.about
@@ -20,9 +19,114 @@ block content
                  p Сегодня у нас два производственных цеха в г. Славутич и в Киеве, а так же офис продаж в центре г. Киев
                  a(href='#').button-xl.about__first-screen--button НАШИ РАБОТЫ
              .about__first-screen--bg
+        .about__description
+            h3 Постоянно повышаем качесто продукции и конкурентное преимущество
+            p Стратегическая цель компании — постоянно повышать качество, тщательно изучая мировой рынок быстровозводимых зданий и тенденций развития технологических особенностей строительных материалов.
+            ul
+                li За время нашей деятельности мы собрали штат профессиональных сотрудников, разработали уникальную технологию сборки конструкций, что позволило добиться отличного соотношения цены и качества, а также высокой производительности.
+                li Продукция изготавливается только из высококачественных, проверенных строительных материалов, на которые имеются сертификаты соответствия, гигиенические сертификаты и заключения, а также сертификаты пожарной безопасности.
+        .about-top__slider.js-about-top__slider
+            .about-top-slide
+                img(src='./assets/images/about/БМЗ.jpg').about-top-slide__img
+                .about-top-slide__content
+                    h3.about-top-slide__content--title Наша продукция условно делится на два сектора
+                    p.about-top-slide__content--p БЛОК-КОНТЕЙНЕРЫ
+                    p.about-top-slide__content--desc конструции, состоящие из одного модуля
+                    p.about-top-slide__content--text Бытовки, подсобные помещения, строительные вагончики, киоски, ларьки, дачные домики, хозблоки,  блокпосты охраны, холодные склады, санузлы и т.д.
+                    a.about-top-slide__content--link Читать подробнее
+            .about-top-slide
+                img(src='./assets/images/about/БМЗ.jpg').about-top-slide__img
+                .about-top-slide__content
+                    h3.about-top-slide__content--title Наша2 продукция условно делится на два сектора
+                    p.about-top-slide__content--p БЛОК-КОНТЕЙНЕРЫ
+                    p.about-top-slide__content--desc конструции, состоящие из одного модуля
+                    p.about-top-slide__content--text Бытовки, подсобные помещения, строительные вагончики, киоски, ларьки, дачные домики, хозблоки,  блокпосты охраны, холодные склады, санузлы и т.д.
+                    a.about-top-slide__content--link Читать подробнее
+        .about__create-price
+            .create-price__desc
+                h3 Что влияет на цену?
+                p Более подробную информацию о стоимости модульных конструкций Вы сможете увидеть на странице "проекты и цены”.
+                a(href='#') Читать подробнее
+            .create-price__img
+                img(src='./assets/images/about/Rectangle62.jpg')
+            .create-price__list
+                .create-price__el
+                    .create-price__number 1
+                    .create-price__title покупательная способность населения
+                .create-price__el
+                    .create-price__number 2
+                    .create-price__title расходы на содержание производственных цехов
+                .create-price__el
+                    .create-price__number 3
+                    .create-price__title фонд заработной платы и ДРУГОЕ
+        h2.about__title.about__title--margin Хотите узнать стоимость вашего проекта?
+        a(href='#').button-xl.about__button.js-form__project РасСчитать свой проект
+        .about__advantage-wrap
+            .about__advantage
+                h3.about__title.about__grid-col-3  Преимущества быстровозводимых зданий компании "БлокМодуль”
+                .about__advantage--elem
+                    img(src='./assets/images/icon/icon-3-buildings.png')
+                    p Безграничный выбор планировочных решений и вариантов для кризисных ситуаций
+                .about__advantage--bort
+                    p ШИРОКИЙ ВЫБОР планировок
+                    span.about__advantage--line
+                .about__advantage--elem
+                    img(src='./assets/images/icon/icon-villa.png')
+                    p Возможны проекты, интересные с  архитектурно-дизайнерской точки зрения
+                .about__advantage--elem
+                    img(src='./assets/images/icon/icon-sofa.png')
+                    p Широкие возможности при оборудовании интерьера, различные варианты цветов и материалов
+                .about__advantage--bort
+                    p Разнообразие дизайна
+                    span.about__advantage--line
+                .about__advantage--elem
+                    img(src='./assets/images/icon/icon-logo.png')
+                    p Интерьер, экстерьер  и оснащение, приспосабливаемые к имиджу заказчика (фирменные цвета, логотипы и т.д.)
+                .about__advantage--elem
+                    img(src='./assets/images/icon/icon-house.png')
+                    p Прочная,  устойчивая каркасная конструкция (штабелируемость стандартных модулей – до 3 этажей, модифицированных – до 5 этажей)
+                .about__advantage--bort
+                    p надежность и функциональность
+                    span.about__advantage--line
+                .about__advantage--elem
+                    img(src='./assets/images/icon/icon-electricity.png')
+                    p Готовность к немедленному применению (изначальное оснащение электропроводкой,  освещением, системой отопления, кондиционером и т.д.)
+                .about__advantage--elem
+                    img(src='./assets/images/icon/icon-truck.png')
+                    p Мобильность – простота погрузки и транспортировки
+                .about__advantage--bort
+                    p мобильность и легкость
+                    span.about__advantage--line
+                .about__advantage--elem
+                    img(src='./assets/images/icon/icon-cleaning.png')
+                    p Лёгкий и не требующий больших затрат уход
 
 
-
+        .about-photo
+            h3.about__title Фото с производства
+            .about-photo__desc Мы рады Вас видеть на нашей производственной площадке в г. Славутич (Киевская обл.) в любое удобное для Вас время.  Приезд желательно согласовывать заранее.
+            .about-photo__slider.js-about-photo__slider
+                .about-photo__slider--img
+                    img(src='./assets/images/about/work-1.jpg')
+                .about-photo__slider--img
+                    img(src='./assets/images/about/work-2.jpg')
+                .about-photo__slider--img
+                    img(src='./assets/images/about/work-3.jpg')
+                .about-photo__slider--img
+                    img(src='./assets/images/about/work-2.jpg')
+        .about__response
+            p.about__title Отзывы
+            span Дорогие посетители, мы хотим быть максимально открытыми с Вами, и поэтому все отзывы Вы можете прочесть на нашей страничке в сервисе Google maps.
+            a(href='#') Читать отзывы
+        .about__last-screen
+            .about__last-screen--description
+                .about__last-screen--title Мы готовы рассмотреть любые предложения и выполнить Ваш индивидуальный заказ в оптимальные для обеих сторон сроки.
+                p Быстровозводимые мобильные здания, компании «БлокМодуль»  эстетичны, практичны и комфортны независимо от месторасположения, времени года и сферы применения.
+                a(href='#').button-xl.about__last-screen--button.js-form__project РасСчитать свой проект
+            .about__last-screen--bg
+    .popup-wrap.js-popup__project
+        .popup
+            include includes/forms
 
 block footer
     footer.footer

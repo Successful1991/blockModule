@@ -103,6 +103,7 @@
 	cursor: pointer;
 	text-decoration: none;
 	overflow: hidden;
+	text-transform: uppercase;
 	transition: background 0.4s linear;
 	z-index: 2;
 	&:hover{
@@ -312,7 +313,6 @@
 	width: 80%;
 	max-width: 900px;
 	height: 80%;
-	background: $wc;
 	padding: 45px 85px;
 	&-wrap{
 		position: fixed;
