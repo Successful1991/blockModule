@@ -206,6 +206,8 @@
 
 .make {
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0 45px 45px;
   @include to(480px) {
     padding: 0 0 30px;

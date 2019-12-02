@@ -1,0 +1,158 @@
+extends ../layout/main
+block variable
+
+block meta
+    title= 'Home'
+    meta(name='description', content='')
+block head
+    link(rel='stylesheet', href="./assets/styles/main.min.css")
+block scripts
+    script(src='./assets/scripts/index.js')
+block content
+    section.delivery
+        h1.delivery__title Доставка и монтаж
+        include includes/breadcrumb
+        .delivery__price
+            .delivery__price--desc
+                h3 Доставка и монтаж модульного здания
+                p Доставка блок-контейнеров на площадку Заказчика осуществляется при помощи грузового авто транспорта с нашего склада в  г. Славутич. Стоимость доставки не входит в цену изделий и просчитывается индивидуально, в зависимости от расположения площадки для установки.
+                p При расчете стоимости в первую очередь учитывается удаленность месторасположения площадки Заказчика от нашего склада в г. Славутич.  К примеру, погрузка и доставка стандартного блок-контейнера 6000х2500х2500мм по Киевской области обойдется 4500грн. Разгрузка блок-контейнера осуществляется силами Заказчика.
+            .delivery__price--img
+                img(src='./assets/images/delivery/1.jpg')
+            .delivery__price--car
+                img(src='./assets/images/delivery/car.png')
+            .delivery__price--text
+                h3 Стоимость доставки
+                p Стоимость доставки не входит в цену изделий и просчитывается индивидуально в зависимости от расположения площадки для установки. Для свободного перемещения по территории Украины, габарит перевозимого модуля не должен:
+                ul.delivery__price--list
+                    li по ширине
+                        span превышать 2,5м.
+                    li по длине
+                        span не больше 9м.
+                    li по высоте
+                        span не больше 2,5м.
+            .delivery__price--info При больших размерах, компанией  «БлокМодуль» оформляется специальное разрешение на провоз негабаритных грузов, что увеличивает конечную стоимость доставки.
+            .delivery__price--bg
+        .delivery__reminders
+            h3.delivery__reminders--title Исходя из многолетнего опыта, хотим предупредить о нескольких важных моментах
+            ul.reminders__list
+                li.reminders__el
+                    .reminders__img
+                        +svg('car')
+                    p подъездные пути должны соответствовать габаритам и техническим возможностям автомобиля
+                li.reminders__el
+                    .reminders__img
+                        +svg('road')
+                    p перемещению не должны мешать слишком узкие подъездные дороги (ширина не менее 3м) и дороги с рыхлым покрытием
+                li.reminders__el
+                    .reminders__img
+                        +svg('noun_Power Lines')
+                    p не должно быть низко висящих над дорогой и местом выгрузки ветки деревьев и электро провода
+                li.reminders__el
+                    .reminders__img
+                        +svg('bridge')
+                    p опасны слишком крутые повороты и низко расположенные мосты и т.д.
+            p.reminders__desc При отсутствии возможности подъезда на площадку, повторная доставка оплачивается Заказчиком. По желанию, Заказчик может организовать доставку продукции собственными силами, приняв ее непосредственно на производственной площадке компании «БлокМодуль».
+        .delivery__base--wrap
+            .delivery__base
+                .delivery__base--title Фундамент для блок контейнера либо модульного дома
+                .delivery__base--desc
+                    p Модульное здание или блок-контейнер устанавливается на тщательно спланированный фундамент. Наиболее распространенными видами фундаментов для модульных домов либо зданий являются: блоки фбс, винтовые сваи, фундамент блочный и фундамент ленточный. Для установки своих изделий мы рекомендуем последние два (лента либо столбики) т.к. у данных видов наилучшее соотношение показателя цена/качество.
+                    p Следует заметить что ленточный фундамент несколько предпочтительней столбчатого в силу лучшего распределения нагрузки по периметру, в следствии чего вибро устойчивость здания возрастает, с другой стороны расход цемента на ленточный фундамент выше, как следствие выше и его цена.
+        .delivery__requirements
+            .requirements__title Основные требования к фундаменту:
+            ul.requirements__list
+                li.requirements__el
+                    .requirements__el--number 1
+                    .requirements__el--title минимальная высота над уровнем земли
+                        span 150мм
+                li.requirements__el
+                    .requirements__el--number 2
+                    .requirements__el--title минимальное заглубление фундамента
+                        span 300мм
+                li.requirements__el
+                    .requirements__el--number 3
+                    .requirements__el--title выдержан горизонтальный уровень: погрешность не более
+                        span 0.5мм
+            .requirements__desc Рекомендуем уплотнить землю под фундаментом подушкой из песка либо щебня слоем 200 мм.
+        .delivery__schemes
+            .delivery__schemes--title Схемы двух видов фундаментов для стандартного блок контейнера 6х2.5м:
+            .schemes__el
+                .schemes__img
+                    img(src='./assets/images/delivery/fund-lent-6h25.png')
+                h3.about-top-slide__content--p Рисунок 1
+                p.about-top-slide__content--desc блок-контейнер 6х2.5м
+                p.about-top-slide__content--text.schemes__text ленточный фундамент (полоса по центру не обязательна, но желательна, для большей устойчивости пола)
+            .schemes__el
+                .schemes__img
+                    img(src='./assets/images/delivery/fund-stolb-6h25.png')
+                h3.about-top-slide__content--p Рисунок 2
+                p.about-top-slide__content--desc блок-контейнер 6х2.5м
+                p.about-top-slide__content--text.schemes__text столбчатый фундамент из восьми блоков 300х300мм
+        .delivery__installation--wrap
+            .installation
+                .installation__left
+                    .installation__title Монтаж модульных домов, зданий и блок-контейнеров
+                    .installation--line В случае заказа, с учетом сложной планировки модуля либо многомодульного дома / здания, на место установки выезжает наша монтажная бригада. По окончанию выгрузки, специалисты  нашей компании производят монтаж модульного здания или дома на участке Заказчика, а также предоставят рекомендации по его дальнейшей эксплуатации/обслуживанию.
+                .installation__img
+                    img(src='./assets/images/delivery/2.jpg')
+                .installation__text.installation--line На место установки блок-контейнера или модульного здания, состоящего из нескольких блок-контейнеров (модулей), скомпонованных по длине, высоте и ширине, заранее подводятся сети электроснабжения, водоснабжения, канализация и интернет.
+        .delivery__bans
+            .bans__left Монтаж следует начинать только после приемки оснований фундаментов.
+            .bans__right
+                .bans__title Перед выгрузкой каждого блок-контейнера следует выполнить следующие подготовительные работы:
+                ul
+                    li очистить конструктивные элементы от грязи, снега и наледи;
+                    li проверить правильность и надежность строповки.
+                p Строповка производится за 4 проушины, расположенные по углам в верхней части каждого блок контейнера.
+            .bans__info
+                +svg('error')
+                span Запрещается перемещать блок-контейнер волоком при помощи автотранспорта!
+        .installation-stages
+            h3.installation-stages__title Этапы монтажа модульного дома
+            p.installation-stages__top--text Организация монтажа модульного здания либо дома состоит из следующих процессов:
+            .installation-stages__list
+                .installation-stages__el
+                    .installation-stages__number 1
+                    p Подъем модулей при помощи автокрана либо манипулятора с платформы автомобиля;
+                .installation-stages__el
+                    .installation-stages__number 2
+                    p Установка модулей на фундамент;
+                .installation-stages__el
+                    .installation-stages__number 3
+                    p Удаление транспортировочной пленки, заглушек и пр. защитных элементов;
+                .installation-stages__el
+                    .installation-stages__number 4
+                    p Крепеж модулей между собой при помощи болтовых стяжек на величину зазора 6-10 мм;
+                .installation-stages__el
+                    .installation-stages__number 5
+                    p Устранение мостиков холода в стыках между модулями;
+                .installation-stages__el
+                    .installation-stages__number 6
+                    p Закрытие наружных и внутренних стыковочных швов при помощи притворных планок и нащельников;
+                .installation-stages__el
+                    .installation-stages__number 7
+                    p Распаковка и установка сантехнического и климатического оборудования, мебели;
+                .installation-stages__el
+                    .installation-stages__number 8
+                    p Подключение здания ко всем, заранее подведенным инженерным коммуникациям (электричество, вода, канализация и т.д.);
+                .installation-stages__el
+                    .installation-stages__number 9
+                    p Электросеть между контейнерами соединяется с помощью кабельных перемычек между клемниками;
+                .installation-stages__el
+                    .installation-stages__number 10
+                    p Регулировка окон, дверей.
+
+            p.installation-stages__bottom--text Демонтаж модульного здания либо дома производится в порядке обратном монтажу. Мы позаботимся о том, чтоб доставка и монтаж дома либо офиса оказались для Вас не сложней организации дня рождения.
+
+
+
+block footer
+    footer.footer
+        include ../includes/footer-top
+        include ../includes/footer-middle
+        include ../includes/footer-bottom
+
+block header
+    header.header
+        include ../includes/header.pug
