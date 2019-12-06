@@ -1,39 +1,47 @@
 .menu
-    .menu__top
-        p меню
-        p каталог
-        button(type='button').menu__close.js-menu__close
-            span.menu__close--line
-            span.menu__close--line
+    button(type='button').menu__close.js-menu__close
+        span.menu__close--line
+        span.menu__close--line
     .menu__middle
+        p меню
         ul.menu__list
             each list in menu.about.nested
                 if list.bottom
-                    li.footer-menu__list
-                        a("href"=list.href).footer-menu__list--item= list.name
+                    li.footer-catalog__list
+                        a("href"=list.href).footer-catalog__list--item= list.name
             if menu.works.bottom
-                li.footer-menu__list
-                    a("href"=menu.works.href).footer-menu__list--item= menu.works.name
+                li.footer-catalog__list
+                    a("href"=menu.works.href).footer-catalog__list--item= menu.works.name
             each list in menu.infoCenter.nested
                 if list.bottom
-                    li.footer-menu__list
-                        a("href"=list.href).footer-menu__list--item= list.name
+                    li.footer-catalog__list
+                        a("href"=list.href).footer-catalog__list--item= list.name
             if menu.contact.bottom
-                li.footer-menu__list
-                     a("href"=menu.contact.href).footer-menu__list--item= menu.contact.name
-        .menu__middle--line
+                li.footer-catalog__list
+                    a("href"=menu.contact.href).footer-catalog__list--item= menu.contact.name
+    .menu__middle
+        p каталог
         ul.menu__list
             each list in menu.catalog.nested
                 if list.bottom
                     li.footer-catalog__list
                         a("href"=list.href).footer-catalog__list--item= list.name
-    ul.menu__bottom
-        each list in contact.phone
-            if list.href
-                li.menu__bottom__tel
-                    +svg(list.img, 'phone__list--icon')
-                    a(href= list.href ).footer-contact__tel= list.name
-            else
-                li.menu__bottom__tel
-                    +svg(list.img, 'phone__list--icon')
-                    span.footer-contact__tel= list.name
+    .menu__middle
+        p Наши контакты
+        .menu__list
+            ul
+                each list in contact.phone
+                    if list.href
+                        li.menu-catalog__tel
+                            a(href= list.href ).footer-contact__tel= list.name
+                    else
+                        li.menu-catalog__tel
+                            span.footer-contact__tel= list.name
+            ul
+                each list in contact.address
+                    if list.href
+                        li.menu-catalog__tel
+                            a(href= list.href ).footer-contact__tel= list.name
+                    else
+                        li.menu-catalog__tel
+                            span.footer-contact__tel= list.name

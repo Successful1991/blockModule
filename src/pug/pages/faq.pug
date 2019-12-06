@@ -54,18 +54,18 @@ block content
         form.form__project
             legend.form__title Остались вопросы?
             // обязательно
-            input(type='text' placeholder='Имя:*').form__input
+            input(type='text' placeholder='Имя:*').form__input.js-form__input
             span.form__info
             // обязательно
-            input(type='tel' placeholder='Телефон:*').form__input
-            span.form__info
-
-            // обязательно
-            input(type='email' placeholder='E-mail:*').form__input
+            input(type='tel' placeholder='Телефон:*').form__input.js-form__input
             span.form__info
 
             // обязательно
-            textarea(placeholder='Суть вопроса:*').form__input.form__input--big
+            input(type='email' placeholder='E-mail:*').form__input.js-form__input
+            span.form__info
+
+            // обязательно
+            textarea(placeholder='Суть вопроса:*').form__input.form__input--big.js-form__input
             span.form__info
 
             label.form__file
@@ -75,7 +75,7 @@ block content
                 input(type='file' value='value')
             img(src='./assets/images/newCaptchaAnchor.gif').captcha
 
-            button(type='submit' value='отправить').form__submit.button-xxxl отправить
+            button(type='submit' value='отправить').js-form__submit.form__submit.button-xxxl отправить
 
 
 

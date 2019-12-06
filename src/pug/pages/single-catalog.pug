@@ -102,6 +102,47 @@ block content
                     span - от 18 дней
                 p Гарантия
                     span - 1 год
+
+            .accordeon-container
+                .accordeon-item
+                    .accordeon-item__title.transformed
+                        span Описание
+                        +svg('arrow')
+                    .accordeon-open-block.accordeon-opened Модульный дачный домик ДДМ3 помещает в себе две комнаты, гостиную, кухню и санузел. В данной планировке кухня может быть как в едином пространстве с гостиной, так и отделена перегородкой с дверью (см. план-схемы). Утепленный сборный садовый дом пригоден для комфортного круглогодичного жилья. Домик ДДМ3 оборудован: душевой кабиной, унитазом, рукомойником, водонагревателем (80л), вытяжным вентилятором, розетками, Led светильниками, 5-ю поворотно откидными окнами, 4-мя межкомнатными мдф и наружной стальной утепленной дверью. Сборный дачный дом так же можно эксплуатировать в качестве всесезонного мобильного офиса.
+                .accordeon-item
+                    .accordeon-item__title
+                        span Комплектация
+                        +svg('arrow')
+                    .accordeon-open-block
+                        table.table
+                            tr.table__row
+                                th
+                                th
+                                th Наименование
+                                th Количество
+                            each el,i in complete
+                                tr.table__row
+                                    td.table__td.table__td--first= i + '.'
+                                    td.table__td.table__td--img
+                                        img(src= el.img)
+                                    td.table__td= el.name
+                                    td.table__td.table__td--last= el.amount + 'шт.'
+
+                .accordeon-item
+                    .accordeon-item__title
+                        span Дополнительные опции
+                        +svg('arrow')
+                    .accordeon-open-block
+                        table.table
+                            tr.table__row
+                                th
+                                th Наименование
+                                th ЦЕНА (грн.)
+                            each el,i in additional
+                                tr.table__row
+                                    td.table__td.table__td--first= i + '.'
+                                    td.table__td= el.name
+                                    td.table__td.table__td--last= el.price
             .single-catalog__tabs.js-tabs__catalog
                 .tabs__buttons
                     button(type='button' data-category='description').tabs__button.active Описание
@@ -136,8 +177,8 @@ block content
                                     td.table__td= el.name
                                     td.table__td.table__td--last= el.price
             .single-catalog__buttons
-                a(href="#").single-catalog__button.button__orange.js-single-catalog__form Получить коммерческое предложение
-                a(href="#").single-catalog__button.js-single-catalog__delivery Доставка
+                a(href="#").single-catalog__button.button__orange.js-form__comers Получить коммерческое предложение
+                a(href="./delivery.html").single-catalog__button.js-single-catalog__delivery Доставка
                 a(href="#").single-catalog__button.js-single-catalog__table Технические характеристики
         .table.table-big
                ul.table-big__row.table-big__title
@@ -158,18 +199,18 @@ block content
         .works__prewiev
             .index-works__top
                 .main__title.index-works__title Реализованные объекты
-                a(href='#').button-xl.index-works__button Больше объектов
-            a(href='#').index-work
+                a(href='./works.html').button-xl.index-works__button Больше объектов
+            a(href='./single-work.html').index-work
                 .index-work__img
                     img(src='./assets/images/main/obj1.jpg')
                     .index-work__data 2019-08-15
                 .index-work__text Модульные операторские (3шт) для солнечных электростанций
-            a(href='#').index-work
+            a(href='./single-work.html').index-work
                 .index-work__img
                     img(src='./assets/images/main/obj2.jpg')
                     .index-work__data 2019-08-15
                 .index-work__text Модульный дом 8.5х6м для отдыха с комфортом.
-            a(href='#').index-work
+            a(href='./single-work.html').index-work
                 .index-work__img
                     img(src='./assets/images/main/obj3.jpg')
                     .index-work__data 2019-08-15
@@ -180,7 +221,8 @@ block content
         .popup-wrap.js-popup
             .popup
                 include includes/table
-
+        .popup-wrap.js-form--comers
+            include includes/form-commercial
 block footer
     footer.footer
         include ../includes/footer-top

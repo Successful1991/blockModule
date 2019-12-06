@@ -107,7 +107,7 @@
 	transition: background 0.4s linear;
 	z-index: 2;
 	&:hover{
-		transition: all 0.4s;
+		transition: transform 0.4s ease-in;
 		&:after{
 			transform: translate(-50%, -50%)scale(1);
 		}
@@ -126,7 +126,7 @@
 		color: $textLight;
 		overflow: hidden;
 		z-index: -2;
-		transition: all 0.4s;
+		transition: transform 0.4s;
 	}
 	&:after{
 		content: '';
@@ -140,7 +140,7 @@
 		border-radius: 50%;
 		overflow: hidden;
 		z-index: -1;
-		transition: all 0.4s;
+		transition: transform 0.4s;
 		transform: translate(-50%, -50%)scale(0);
 	}
 }
@@ -153,11 +153,18 @@
 	@extend .button;
 	height: 50px;
 	width: 255px;
+	@include to(767px){
+		height: 40px;
+		width: 200px;
+	}
 }
 .button-xxxl{
 	@extend .button;
 	height: 50px;
 	width: 100%;
+	@include to(767px){
+		height: 40px;
+	}
 }
 // LINK HOVER
 .hover-underline {
@@ -290,9 +297,7 @@
 .wrap1200{
 	margin: 0 auto;
 	max-width: 1200px;
-	padding-left: 0;
-	padding-right: 0;
-	@include to(1290px){
+	@include from(1290px){
 		padding-left: 45px;
 		padding-right: 45px;
 	}
@@ -309,11 +314,14 @@
 }
 
 .popup{
+	position: relative;
 	@include flexCenter();
 	width: 80%;
 	max-width: 900px;
 	height: 80%;
 	padding: 45px 85px;
+	background: $wc;
+	overflow-y: auto;
 	&-wrap{
 		position: fixed;
 		top: 0;
@@ -331,6 +339,10 @@
 		}
 	}
 	.products{
-		overflow: hidden auto;
+		//overflow: hidden auto;
 	}
+}
+
+.g-recaptcha{
+	margin-top: 20px;
 }

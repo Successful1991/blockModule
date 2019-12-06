@@ -17,17 +17,18 @@ block content
              .about__first-screen--description
                  .about__first-screen--title Успешно работаем с 2005 года
                  p Сегодня у нас два производственных цеха в г. Славутич и в Киеве, а так же офис продаж в центре г. Киев
-                 a(href='#').button-xl.about__first-screen--button НАШИ РАБОТЫ
+                 a(href='./works.html').button-xl.about__first-screen--button НАШИ РАБОТЫ
              .about__first-screen--bg
-        .about__description
-            h3 Постоянно повышаем качесто продукции и конкурентное преимущество
-            p Стратегическая цель компании — постоянно повышать качество, тщательно изучая мировой рынок быстровозводимых зданий и тенденций развития технологических особенностей строительных материалов.
-            ul
-                li За время нашей деятельности мы собрали штат профессиональных сотрудников, разработали уникальную технологию сборки конструкций, что позволило добиться отличного соотношения цены и качества, а также высокой производительности.
-                li Продукция изготавливается только из высококачественных, проверенных строительных материалов, на которые имеются сертификаты соответствия, гигиенические сертификаты и заключения, а также сертификаты пожарной безопасности.
+        .about__description--wrap
+            .about__description
+                h3 Постоянно повышаем качесто продукции и конкурентное преимущество
+                p Стратегическая цель компании — постоянно повышать качество, тщательно изучая мировой рынок быстровозводимых зданий и тенденций развития технологических особенностей строительных материалов.
+                ul
+                    li За время нашей деятельности мы собрали штат профессиональных сотрудников, разработали уникальную технологию сборки конструкций, что позволило добиться отличного соотношения цены и качества, а также высокой производительности.
+                    li Продукция изготавливается только из высококачественных, проверенных строительных материалов, на которые имеются сертификаты соответствия, гигиенические сертификаты и заключения, а также сертификаты пожарной безопасности.
         .about-top__slider.js-about-top__slider
             .about-top-slide
-                img(src='./assets/images/about/БМЗ.jpg').about-top-slide__img
+                img(src='./assets/images/about/BM3.jpg').about-top-slide__img
                 .about-top-slide__content
                     h3.about-top-slide__content--title Наша продукция условно делится на два сектора
                     p.about-top-slide__content--p БЛОК-КОНТЕЙНЕРЫ
@@ -35,7 +36,7 @@ block content
                     p.about-top-slide__content--text Бытовки, подсобные помещения, строительные вагончики, киоски, ларьки, дачные домики, хозблоки,  блокпосты охраны, холодные склады, санузлы и т.д.
                     a.about-top-slide__content--link Читать подробнее
             .about-top-slide
-                img(src='./assets/images/about/БМЗ.jpg').about-top-slide__img
+                img(src='./assets/images/about/BM3.jpg').about-top-slide__img
                 .about-top-slide__content
                     h3.about-top-slide__content--title Наша2 продукция условно делится на два сектора
                     p.about-top-slide__content--p БЛОК-КОНТЕЙНЕРЫ
@@ -46,7 +47,7 @@ block content
             .create-price__desc
                 h3 Что влияет на цену?
                 p Более подробную информацию о стоимости модульных конструкций Вы сможете увидеть на странице "проекты и цены”.
-                a(href='#') Читать подробнее
+                a(href='./catalog.html') Читать подробнее
             .create-price__img
                 img(src='./assets/images/about/Rectangle62.jpg')
             .create-price__list
@@ -60,7 +61,7 @@ block content
                     .create-price__number 3
                     .create-price__title фонд заработной платы и ДРУГОЕ
         h2.about__title.about__title--margin Хотите узнать стоимость вашего проекта?
-        a(href='#').button-xl.about__button.js-form__project РасСчитать свой проект
+        a(href='#').button-xl.about__button.js-form__project Расчитать свой проект
         .about__advantage-wrap
             .about__advantage
                 h3.about__title.about__grid-col-3  Преимущества быстровозводимых зданий компании "БлокМодуль”
@@ -123,10 +124,8 @@ block content
                 .about__last-screen--title Мы готовы рассмотреть любые предложения и выполнить Ваш индивидуальный заказ в оптимальные для обеих сторон сроки.
                 p Быстровозводимые мобильные здания, компании «БлокМодуль»  эстетичны, практичны и комфортны независимо от месторасположения, времени года и сферы применения.
                 a(href='#').button-xl.about__last-screen--button.js-form__project РасСчитать свой проект
-            .about__last-screen--bg
-    .popup-wrap.js-popup__project
-        .popup
-            include includes/forms
+    .popup-wrap.js-form--project
+        include includes/forms
 
 block footer
     footer.footer

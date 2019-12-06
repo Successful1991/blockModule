@@ -5,7 +5,7 @@ let filterAllElements = [];
     $('.js-filter').on('click', filterAddCategory);
     $('.js-works-filter__remove').on('click', filterRemove);
     addFilter('.js-filter__category');
-    paginationInit({wrap: '.news__pagination',dots: true,dotsAmount: 3,dotsLast: true,arrow: true,extremeArrow: true, elementInPage: 8});
+    paginationInit({wrap: '.js-pagination',dots: true,dotsAmount: 3,dotsLast: true,arrow: true,extremeArrow: true, elementInPage: 8});
     // checkedPage(1);
 })();
 

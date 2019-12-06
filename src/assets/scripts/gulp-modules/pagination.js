@@ -5,7 +5,7 @@ var filterElements = [];
 
 (function () {
     $('.js-pagination').on('click', function (e) {
-        e.target.dataset.page ? checkedPage(e.target.dataset.page) : checkedPage($(e.target).closest('.pagination__arrow').data('page'));
+        e.target.dataset.page ? checkedPage(e.target.dataset.page, e) : checkedPage($(e.target).closest('.pagination__arrow').data('page'), e);
     });
 })();
 
@@ -34,6 +34,7 @@ function paginationInit(conf) {
         $(defaults.wrap).prepend(createArrow(['pagination__arrow--left','disabled'], "first", 2));
         $(defaults.wrap).append(createArrow(['pagination__arrow--right'], "last", 2));
     }
+
     checkedPage(currentPage);
 }
 
@@ -63,6 +64,7 @@ function createDot(index, data){
     return el
 }
 function pagination(page) {
+    $('html,body').animate( {scrollTop: $('.js-pagination__list').offset().top}, 0 );
     $(filterElements).each(function (i, el) {
        if(i+1 > page * elementInPage - elementInPage && i+1 <= page * elementInPage) {
             $(el).show();

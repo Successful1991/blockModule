@@ -21,6 +21,7 @@
 
 html{
 	font-size: 14px;
+	overflow-x: hidden;
 	@include to(768px){
 		font-size: 10px;
 	}

@@ -2,7 +2,6 @@
 
 
 (function () {
-
     $("body").fadeIn(800);
 	// var loader = function () {
 	// 	$(".loader-wrap").delay(500).fadeOut(500);
@@ -16,7 +15,6 @@
     $('.js-menu__close').on('click', function () {
         $('.menu').removeClass('active');
     });
-
 
     $(".js-hover").hover(
         function(){$(this).toggleClass('hover')}
@@ -33,11 +31,15 @@
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 1199,
                 settings: {
                     vertical: false,
-                    arrows: false,
-                    slidesToShow: 3,
+
+                }
+            }, {
+                breakpoint: 767,
+                settings: {
+                    vertical: true,
 
                 }
             }]
@@ -64,14 +66,13 @@
         slidesToScroll: 1,
         responsive: [
             {
-                breakpoint: 768,
+                breakpoint: 1024,
                 settings: {
                     vertical: false,
-                    arrows: false,
                     slidesToShow: 3,
-
                 }
-            }]
+            },
+            ]
 
     });
     var singlecatalogSlider = $('.js-single-catalog__slider--big').slick({
@@ -104,7 +105,7 @@
         slidesToShow: 5,
         slidesToScroll: 1,
         responsive: [{
-            breakpoint: 769,
+            breakpoint: 992,
             settings: {
                 slidesToShow: 3
             }
@@ -134,14 +135,27 @@
         nextArrow: '<button type="button" class="slick-next about-photo__slider-button about-photo__slider-button--right"><svg viewBox="0 0 9 5" xmlns="http://www.w3.org/2000/svg"> <path d="M8.4853 0.707107L7.7782 0L4.24263 3.53557L0.707107 4.65512e-05L0 0.707153L4.24264 4.94979L4.94975 4.24269L4.94974 4.24268L8.4853 0.707107Z"/> </svg></button>',
         slidesToShow: 3,
         slidesToScroll: 3,
+        responsive: [{
+            breakpoint: 767,
+            settings: {
+                slidesToShow: 1
+            }
+        }]
+    });
+
+    $('.js-scroll__up').on('click',function () {
+       $('window, html').animate({'scrollTop':'0'},900)
+    });
+    let accordeonList = document.querySelectorAll('.accordeon-item');
+    accordeonList.forEach(item => {
+        item.addEventListener('click', () => {
+            item.querySelector('.accordeon-open-block').classList.toggle('accordeon-opened');
+            item.querySelector('.accordeon-item__title').classList.toggle('transformed');
+        })
     });
 
 
-
-
-
     // slider init end
-
     $('.js-drop').on('click','.drop__head', function () {
         $(this).closest('.faq__drop').toggleClass('active');
     });
@@ -165,8 +179,17 @@
 
     $('.js-form__project').on('click', function(e){
         e.preventDefault();
-        $('.js-popup__project').addClass('active');
+        $('.js-form--project').addClass('active');
     });
+    $('.js-form__comers').on('click', function(e){
+        e.preventDefault();
+        $('.js-form--comers').addClass('active');
+    });
+
+    $('.js-form__submit').on('click',function (e) {
+        e.preventDefault();
+        ajax_form(e,"POST","/wp-content/themes/block-module/inc/application/form.php");
+    })
 })()
 
 
@@ -331,4 +354,92 @@ function initMap() {
     });
 }
 
+
+function ajax_form(e,methods,url) {
+    event.preventDefault();
+    var form = $(e.target).closest("form");
+    var str = form.serialize();
+
+    var errors = false; // по умолчанию ошибок в форме нет
+
+    $(form).find('.js__form__input ').each(function() {
+        errors = validateForm(this);
+    });
+    $(".js__form__input").on("mouseup",delMessageErrorForm);
+
+    if ( !errors) {
+        $.ajax({
+            method: methods,
+            url: url,
+            data: str,
+            beforeSend: function() {
+                $(form).find('button > span').text('Отправка...') // замена текста в кнопке при отправке
+            },
+            error: function(){
+                $(form).find('button > span').text('Ошибка отправки!');// замена текста в кнопке при отправке в случае
+            }
+        })
+            .done(function (data) {
+                console.log($(form));
+
+                var data = JSON.parse(data);
+
+                // success();
+                successSendMesage();
+
+
+
+                if (data.result){
+
+                    //$(e).find('.result-text').removeClass('error');
+                    $(form)[0].reset();
+
+
+
+                } else {
+
+                    //$(e).find('.result-text').addClass('error');
+                }
+
+                if (data.message){
+
+                    $(form).find('.result-text').fadeIn();
+                    $(form).find('.result-text').html(data.message);
+                    setTimeout(function(){$(e).find('.result-text').fadeOut();},20000)
+                }
+
+
+            });
+    }
+}
+
+function validateForm(self) {
+
+    var regular = new RegExp('^[a-zA-Zа-яА-Я\'][a-zA-Zа-яА-Я-\' ]+[a-zA-Zа-яА-Я\']?$');
+    console.log($(self).val());
+
+
+
+    if (( $(self).attr('type') === 'tel' && $(self).val().length <5) ||
+        ( $(self).attr('type') !== 'tel' && $.trim ( $(self).val() ).length < 2) ||
+        ( $(self).attr('type') !== 'tel' && !regular.test($(self).val()) )  ){
+        var errorMessage = $(self).next().data("errormessage"); // добавляем в input сообщение об ошибке из dataAttr и class
+        $(self).next().text(errorMessage);
+        $(self).addClass('js-no-valid');
+        return true
+    }
+    return false
+}
+function delMessageErrorForm() {
+    var defaultMessage = $(this).next().data("defaultmessage"); // при клике на input убираем сообщение и class
+    $(this).next().text('');
+    $(this).removeClass('js-no-valid');
+}
+function successSendMesage(){
+    $('.send__success').addClass('.active');
+    setTimeout(function () {
+        $('.popup-wrap').removeClass('active');
+        $('.send__success').removeClass('.active');
+    },2000);
+}
 

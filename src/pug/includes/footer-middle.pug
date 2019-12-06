@@ -16,6 +16,7 @@
             if menu.contact.bottom
                 li.footer-menu__list
                     a("href"=menu.contact.href).footer-menu__list--item= menu.contact.name
+    .footer-middle__line
     .footer-middle__catalog
         p.footer-middle__menu--title Каталог
         ul.footer-catalog
@@ -23,6 +24,7 @@
                 if list.bottom
                     li.footer-catalog__list
                         a("href"=list.href).footer-catalog__list--item= list.name
+    .footer-middle__line
     .footer-middle__contact
         p.footer-middle__menu--title Наши контакты
             ul.footer-contact.phone__list
@@ -39,4 +41,8 @@
                                 if el.title
                                     span.footer-contact__tel= el.title
                                 span.footer-contact__tel= el.name
-
+    .footer-middle__icons
+        a(href='viber://chat?number=+380950000000').first-screen__mobile--icon
+            +svg('viber', 'first-screen__img' )
+        a(href='https://telegram.me/').first-screen__mobile--icon
+            +svg('telegram', 'first-screen__img' )

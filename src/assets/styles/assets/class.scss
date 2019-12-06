@@ -57,8 +57,11 @@
 
 .padding-wrap{
   padding: 0 $padding-wrap;
-  @include to(768px) {
+  @include to(1024px) {
     padding: 0 $padding-wrap--small;
+  }
+  @include to(767px) {
+    padding: 0 10px;
   }
 }
 

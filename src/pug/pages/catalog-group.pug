@@ -21,11 +21,11 @@ block content
             .ct-group__first-screen--description
                 .ct-group__first-screen--title Дачные домики
                 p Дачный домик на базе вагончика любой планировки от 5 000 грн/кв. м.
-                a(href='#').button-xl.ct-group__first-screen--button Расчитать свой проект
+                a(href='#').button-xl.ct-group__first-screen--button.js-form__project Расчитать свой проект
             .ct-group__first-screen--bg
-        ul.ct-group__list
+        ul.ct-group__list.js-pagination__list
             li.ct-group__element
-                a.ct-group__element--link
+                a(href='./single-catalog.html').ct-group__element--link
                     .ct-group__list--title Дачный домик ДДМ1
                     .ct-group__list--img
                         img(src='assets/images/product/Rectangle2.jpg')
@@ -40,7 +40,7 @@ block content
                         span.text--bold Стоимость:
                         |от 185000 грн.
             li.ct-group__element
-                a.ct-group__element--link
+                a(href='./single-catalog.html').ct-group__element--link
                     .ct-group__list--title Дачный домик ДДМ1
                     .ct-group__list--img
                         img(src='assets/images/product/Rectangle2.jpg')
@@ -55,7 +55,7 @@ block content
                         span.text--bold Стоимость:
                         |от 185000 грн.
             li.ct-group__element
-                a.ct-group__element--link
+                a(href='./single-catalog.html').ct-group__element--link
                     .ct-group__list--title Дачный домик ДДМ1
                     .ct-group__list--img
                         img(src='assets/images/product/Rectangle2.jpg')
@@ -70,7 +70,7 @@ block content
                         span.text--bold Стоимость:
                         |от 185000 грн.
             li.ct-group__element
-                a.ct-group__element--link
+                a(href='./single-catalog.html').ct-group__element--link
                     .ct-group__list--title Дачный домик ДДМ1
                     .ct-group__list--img
                         img(src='assets/images/product/Rectangle2.jpg')
@@ -85,7 +85,7 @@ block content
                         span.text--bold Стоимость:
                         |от 185000 грн.
             li.ct-group__element
-                a.ct-group__element--link
+                a(href='./single-catalog.html').ct-group__element--link
                     .ct-group__list--title Дачный домик ДДМ1
                     .ct-group__list--img
                         img(src='assets/images/product/Rectangle2.jpg')
@@ -100,7 +100,7 @@ block content
                         span.text--bold Стоимость:
                         |от 185000 грн.
             li.ct-group__element
-                a.ct-group__element--link
+                a(href='./single-catalog.html').ct-group__element--link
                     .ct-group__list--title Дачный домик ДДМ1
                     .ct-group__list--img
                         img(src='assets/images/product/Rectangle2.jpg')
@@ -115,7 +115,7 @@ block content
                         span.text--bold Стоимость:
                         |от 185000 грн.
             li.ct-group__element
-                a.ct-group__element--link
+                a(href='./single-catalog.html').ct-group__element--link
                     .ct-group__list--title Дачный домик ДДМ1
                     .ct-group__list--img
                         img(src='assets/images/product/Rectangle2.jpg')
@@ -130,7 +130,7 @@ block content
                         span.text--bold Стоимость:
                         |от 185000 грн.
             li.ct-group__element
-                a.ct-group__element--link
+                a(href='./single-catalog.html').ct-group__element--link
                     .ct-group__list--title Дачный домик ДДМ1
                     .ct-group__list--img
                         img(src='assets/images/product/Rectangle2.jpg')
@@ -145,7 +145,7 @@ block content
                         span.text--bold Стоимость:
                         |от 185000 грн.
             li.ct-group__element
-                a.ct-group__element--link
+                a(href='./single-catalog.html').ct-group__element--link
                     .ct-group__list--title Дачный домик ДДМ1
                     .ct-group__list--img
                         img(src='assets/images/product/Rectangle2.jpg')
@@ -160,7 +160,7 @@ block content
                         span.text--bold Стоимость:
                         |от 185000 грн.
             li.ct-group__element
-                a.ct-group__element--link
+                a(href='./single-catalog.html').ct-group__element--link
                     .ct-group__list--title Дачный домик ДДМ1
                     .ct-group__list--img
                         img(src='assets/images/product/Rectangle2.jpg')
@@ -175,7 +175,7 @@ block content
                         span.text--bold Стоимость:
                         |от 185000 грн.
             li.ct-group__element
-                a.ct-group__element--link
+                a(href='./single-catalog.html').ct-group__element--link
                     .ct-group__list--title Дачный домик ДДМ1
                     .ct-group__list--img
                         img(src='assets/images/product/Rectangle2.jpg')
@@ -191,7 +191,7 @@ block content
                         |от 185000 грн.
         include includes/pagination
         p.main__title.ct-group__title.marg--title Не подошли наши типовые планировки?
-        a(href='#').button-xl Расчитать свой проект
+        a(href='#').button-xl.js-form__project Расчитать свой проект
     section.ct-desc
         .ct-desc--wrap
             .ct-desc__content
@@ -204,7 +204,8 @@ block content
             .ct-desc__content
                 h4.ct-desc__title Дачные домики: комфорт и надежность бывают доступными!
                 p Представьте дачный домик, который собирается, как детский конструктор, и его можно перевозить с собой. Такие дома собираются за 10-15 дней, а установка на участке занимает всего несколько часов. Внутри такой домик оборудован всем необходимым для жизни – любители комфорта и эстетики будут полностью удовлетворены!
-            p.ct-desc__title.grid-col-2 Каркасные дачные дома: преимущества очевидны!
+            .ct-desc__content.grid-col-2
+                h4.ct-desc__title Каркасные дачные дома: преимущества очевидны!
             .ct-desc__img.grid-col-2
                 img(src='./assets/images/product/image3.jpg')
             .ct-desc__content.grid-col-2
@@ -225,7 +226,8 @@ block content
                 p Внутри ваша новая «крепость» отделывается бесшовной пластиковой вагонкой или вагонкой МДФ, а пол покрывается линолеумом. В доме можно установить сантехническое и отопительное оборудование, кондиционер, спутниковую антенну и другие инженерные коммуникации.
             .ct-desc__img
                 img(src='./assets/images/product/image6.jpg')
-            p.ct-desc__title.grid-col-2 Знаете, чем выгодно строительство дачных домов из готовых блок-модулей?
+            .ct-desc__content.grid-col-2
+                h4.ct-desc__title Знаете, чем выгодно строительство дачных домов из готовых блок-модулей?
             ul.ct-desc__list
                 li Такие дома не нуждаются в разрешении на строительство.
                 li Вы выбираете любую внешнюю и внутреннюю отделку, планировку и размеры.
@@ -235,6 +237,9 @@ block content
             .ct-desc__content
                 p Если вы желаете купить дачный домик в Киеве или другом городе Украины – покупайте у нас! В наличии дачные дома разных комплектаций, каждая из которых обладает своими особенностями. Мобильный загородный домик от компании «БлокМодуль» - это уникальная возможность решить жилищную проблему и обеспечить себя комфортом не только во время дачной поры.
 
+
+    .popup-wrap.js-form--project
+        include includes/forms
 
 block footer
     footer.footer

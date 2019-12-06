@@ -28,7 +28,7 @@
       text-decoration: none;
       font-size: 12px;
 		&--wrap{
-			@include row-flex();
+			display: flex;
 			height: 100%;
 			align-items: center;
 			justify-content: flex-end;
@@ -42,6 +42,9 @@
         margin-left: 25px;
         width: 70px;
 		  height: 100%;
+		  @include to(767px){
+			  margin-left: 10px;
+		  }
       }
     }
 }

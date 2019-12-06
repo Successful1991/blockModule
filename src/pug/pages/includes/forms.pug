@@ -3,21 +3,21 @@ form.form__project
         //+svg('close', 'form__close')
         span.form__close.js-form__close
     // обязательно
-    input(type='text' placeholder='Имя:*').form__input
+    input(type='text' name='name' placeholder='Имя:*').form__input.js-form__input
     span.form__info
     // обязательно
-    input(type='tel' placeholder='Телефон:*').form__input
+    input(type='tel' name='tel' placeholder='Телефон:*').form__input.js-form__input
     span.form__info
 
     // обязательно
-    input(type='email' placeholder='E-mail:*').form__input
+    input(type='email' name='mail' placeholder='E-mail:*').form__input.js-form__input
     span.form__info
 
     // обязательно
-    input(type='text' placeholder='Регион строительства:*').form__input
+    input(type='text' name='region' placeholder='Регион строительства:*').form__input.js-form__input
     span.form__info
 
-    textarea(placeholder='Укажите назначение здания: желаемые габариты, класс исполнения и необходимое оборудование. Если у Вас свой проект - прикрепите его ниже.').form__input.form__commercial--textarea
+    textarea( name='text' placeholder='Укажите назначение здания: желаемые габариты, класс исполнения и необходимое оборудование. Если у Вас свой проект - прикрепите его ниже.').form__input.form__commercial--textarea
 
     label.form__file
         img(src='assets/images/icon/attach.svg').form__file-img
@@ -26,5 +26,4 @@ form.form__project
         input(type='file' value='value')
     img(src='assets/images/newCaptchaAnchor.gif').captcha
 
-    button(type='submit' value='отправить').form__submit.button-xxxl отправить
-    //input(type='submit' value='отправить').form__submit.button-xxxl
+    button(type='submit' value='отправить').js-form__submit.form__submit.button-xxxl отправить

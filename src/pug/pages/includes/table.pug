@@ -1,6 +1,6 @@
 .products
+    img(src='assets/images/icon/close.svg').products__close.js-form__close
     h1.main__title.products__title Техническое описание и различия по классам наших изделий
-    img(src='assets/images/icon/close.svg').products__close
     .products__view
         .products__view--wrap.products__view--bg1
             p Эконом
@@ -16,9 +16,12 @@
             img(src='assets/images/table/3-1.jpg')
     .products-list__head
         p.main__title.products__title Материалы и оборудование
-        span Эконом
-        span Стандарт
-        span Премиум
+        .products-list__head--span
+            span Эконом
+        .products-list__head--span
+            span Стандарт
+        .products-list__head--span
+            span Премиум
     ul.products-list__body
         li.products-list__body--bg
             .products-list__body--bg-1

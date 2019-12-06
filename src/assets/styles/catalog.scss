@@ -25,7 +25,7 @@
     text-decoration: none;
     transition: all 0.3s linear;
     box-sizing: content-box;
-    @include to(768px){
+    @include to(767px){
       margin-bottom: 10px;
     }
     &:hover{
@@ -50,8 +50,13 @@
     text-align: center;
     text-transform: uppercase;
     background: #F2F3F4;
-    @include to(768px) {
+    @include to(1024px) {
       font-size: 12px;
+      min-height: 60px;
+    }
+    @include to(767px) {
+      font-size: 10px;
+      min-height: 44px;
     }
   }
 }

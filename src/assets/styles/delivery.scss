@@ -16,13 +16,33 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 1.8em;
+    @include to(1024px){
+      font-size: 12px;
+    }
+    @include to(767px){
+      grid-template-columns: 1fr 1fr;
+      font-size: 10px;
+    }
     &--desc{
       max-width: 600px;
       margin: 0 0 0 auto;
       padding: 0 45px 70px;
+      @include to(1024px){
+        padding: 0 20px 40px;
+      }
+      @include to(767px){
+        grid-row: 1;
+        grid-column: 1/ span 2;
+        padding: 0 20px 0;
+      }
     }
     &--img{
       max-width: 600px;
+      @include to(767px){
+        grid-row: 2;
+        grid-column: 1/ span 2;
+        padding: 10px;
+      }
     }
     &--car{
       position: relative;
@@ -33,6 +53,10 @@
       width: 100%;
       flex-shrink: 0;
       margin: 0 0 0 auto;
+      @include to(767px){
+        grid-row: 4;
+        height: 200px;
+       }
       img{
         position: absolute;
         right: 20px;
@@ -40,6 +64,10 @@
         height: 100%;
         width: auto;
         max-width: none;
+        @include to(1024px){
+          bottom: 20%;
+          height: 80%;
+        }
       }
     }
     &--text{
@@ -48,6 +76,11 @@
       max-width: 600px;
       color: $wc;
       padding: 35px 45px 20px 0;
+      @include to(767px){
+        grid-row: 3;
+        grid-column: 1/ span 2;
+        padding: 20px 10px 20px;
+      }
       p{
         color: #D4D6DA;
       }
@@ -60,6 +93,12 @@
       font-size: 14px;
       background: $mc3;
       padding: 0 45px 50px 0;
+      @include to(767px){
+        grid-row: 4;
+        grid-column: 2;
+        font-size: 10px;
+        padding: 0 10px 40px 0;
+      }
     }
     &--list{
       display: flex;
@@ -71,6 +110,10 @@
         line-height: 1.8em;
         margin: 0 0 0 20px;
         text-transform: uppercase;
+        @include to(767px){
+          font-size: 10px;
+          margin: 0 0 0 10px;
+        }
       }
       span{
         display: inline-block;
@@ -85,12 +128,19 @@
       grid-column: 1/ span 2;
       background: $mc3;
       z-index: -1;
+      @include to(767px){
+        grid-row: 3/ span 5;
+        grid-column: 1 / span 2;
+      }
     }
     h3{
       font-weight: 500;
       font-size: 24px;
       line-height: 1.5em;
       margin-bottom: 10px;
+      @include to(1024px){
+        font-size: 18px;
+      }
     }
     p{
       margin-bottom: 15px;
@@ -98,7 +148,14 @@
   }
   &__reminders{
     display: inline-block;
+    width: 100%;
     padding: 80px 45px 55px;
+    @include to(1024px){
+      padding: 60px 20px 50px;
+    }
+    @include to(767px){
+      padding: 20px 10px;
+    }
     &--title{
       max-width: 720px;
       font-weight: 500;
@@ -107,16 +164,33 @@
       text-align: center;
       padding: 0 20px;
       margin: 0 auto;
+      @include to(1024px){
+        font-size: 18px;
+      }
+      @include to(767px){
+        font-size: 12px;
+      }
     }
   }
   &__base{
     display: flex;
     max-width: 1200px;
     width: 100%;
+    margin: 0 auto;
+    @include to(767px){
+      flex-direction: column;
+    }
     &--wrap{
       display: inline-block;
+      width: 100%;
       padding: 50px 45px 160px;
       background: $bg-col-1;
+      @include to(1024px){
+        padding: 50px 20px 120px;
+      }
+      @include to(767px){
+        padding: 30px 10px 90px;
+      }
     }
     &--title{
       max-width: 350px;
@@ -125,11 +199,27 @@
       font-size: 24px;
       line-height: 1.5em;
       padding: 0 20px;
+      @include to(1024px){
+        font-size: 18px;
+        flex: 1 1 0;
+        padding: 0 20px 0 0;
+      }
+      @include to(1024px){
+        padding: 0;
+        margin-bottom: 10px;
+      }
     }
     &--desc{
       font-weight: 500;
       font-size: 14px;
       line-height: 1.8em;
+      @include to(1024px){
+        flex: 2 1 0;
+        font-size: 12px;
+      }
+      @include to(767px){
+        font-size: 10px;
+      }
       p{
         margin-bottom: 20px;
       }
@@ -145,23 +235,50 @@
     background: #fff;
     transform: translateY(-30%);
     box-shadow: 0 10px 40px rgba(41, 48, 68, 0.25);
+    @include to(1024px){
+      width: 85%;
+      padding: 40px 20px 50px;
+      transform: translateY(-10%);
+    }
+    @include to(1024px){
+      width: 85%;
+      padding: 40px 20px 20px;
+      transform: translateY(-20px);
+    }
   }
   &__schemes{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 0 30px 100px;
+    @include to(1024px){
+      padding: 0 20px 60px;
+    }
+    @include to(767px){
+      padding: 0 10px 30px;
+    }
     &--title{
       @extend .main__title;
       max-width: 650px;
       margin: 0 auto 25px;
       text-align: center;
+      @include to(1024px){
+        font-size: 18px;
+      }
+      @include to(767px){
+        font-size: 12px;
+      }
     }
   }
   &__installation{
     &--wrap{
       width: 100%;
       background: $mc3;
+      @include to(767px){
+        padding: 0 10px;
+      }
     }
   }
   &__bans{
@@ -170,6 +287,9 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 0 60px;
+    @include to(767px){
+      padding: 0 0 30px;
+    }
   }
 }
 .reminders{
@@ -180,11 +300,32 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 1.8em;
-    margin: 0 -30px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1200px;
+    @include to(1024px){
+      margin: 0 -10px;
+      padding: 30px 0;
+      font-size: 12px;
+    }
+    @include to(767px){
+      margin: 0;
+      padding: 10px 0;
+      font-size: 10px;
+    }
   }
   &__el{
     flex: 1 1 calc(25% - 30px);
     margin: 0 15px;
+    @include to(1024px){
+      flex: 1 1 calc(25% - 20px);
+      margin: 0 10px;
+    }
+    @include to(767px){
+      display: flex;
+      flex: 1 1 100%;
+      margin: 0 0 10px;
+    }
   }
   &__img{
     @include flexCenter();
@@ -192,6 +333,12 @@
     width: 65px;
     background: $mc2;
     margin-bottom: 15px;
+    @include to(767px){
+      height: 50px;
+      width: 50px;
+      flex: 1 0 50px;
+      margin: 0 10px 0 0;
+    }
     svg{
       height: auto;
       max-height: 80%;
@@ -205,6 +352,12 @@
     max-width: 730px;
     margin: 0 auto;
     text-align: center;
+    @include to(1024px){
+      font-size: 12px;
+    }
+    @include to(767px){
+      font-size: 10px;
+    }
   }
 }
 .requirements{
@@ -212,27 +365,57 @@
     @extend .main__title;
     text-align: center;
     padding: 0 20px;
+    @include to(1024px){
+      font-size: 18px;
+    }
+    @include to(767px){
+      padding: 0;
+    }
   }
   &__desc{
     width: 50%;
     margin: 0 auto;
     text-align: center;
+    @include to(1024px){
+      width: 80%;
+    }
+    @include to(767px){
+      width: 100%;
+      font-size: 10px;
+    }
   }
   &__list{
     display: flex;
     justify-content: space-between;
     padding: 45px 0;
+    margin: 0 -15px;
+    @include to(1024px){
+      padding: 45px 0 20px;
+    }
+    @include to(767px){
+      flex-direction: column;
+      align-items: center;
+      padding: 30px 0 0;
+    }
   }
   &__el{
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 28%;
+    width: 33%;
     padding: 25px 10px 15px;
     margin: 10px;
     background: #fff;
     border: 1px solid #D4D6DA;
+    @include to(1024px){
+      padding: 25px 10px 15px;
+    }
+    @include to(767px){
+      width: 70%;
+      padding: 25px 10px 15px;
+      margin: 0 0 35px;
+    }
     &:before{
       content: '';
       position: absolute;
@@ -241,6 +424,9 @@
       right: -100%;
       width: 100%;
       border-top:  1px solid #D4D6DA;
+      @include to(767px){
+          display: none;
+      }
     }
     &:last-child:before{
       border:  none;
@@ -268,6 +454,12 @@
       font-size: 14px;
       line-height: 1.8em;
       text-align: center;
+      @include to(1024px){
+        font-size: 12px;
+      }
+      @include to(767px){
+        font-size: 10px;
+      }
       span{
         display: block;
         font-weight: 600;
@@ -275,6 +467,12 @@
         line-height: 2em;
         text-align: center;
         text-transform: uppercase;
+        @include to(1024px){
+          font-size: 14px;
+        }
+        @include to(767px){
+          font-size: 18px;
+        }
       }
     }
   }
@@ -283,6 +481,10 @@
   &__el{
     width: calc(50% - 30px);
     margin: 0 15px;
+    @include to(767px){
+      width: 100%;
+      margin: 0;
+    }
   }
   &__img{
     width: 100%;
@@ -290,6 +492,13 @@
   }
   &__text{
     width: 80%;
+    @include to(1024px){
+      font-size: 12px;
+    }
+    @include to(767px){
+      width: 100%;
+      font-size: 10px;
+    }
   }
 }
 .installation{
@@ -305,22 +514,45 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 1.8em;
+  @include to(1024px){
+    font-size: 12px;
+  }
+  @include to(767px){
+    grid-template-columns: 1fr;
+    font-size: 10px;
+  }
   &__title{
     @extend .main__title;
     color: $wc;
     text-align: left;
     margin-bottom: 15px;
+    @include to(1024px){
+      font-size: 18px;
+    }
   }
   &__left{
     grid-row: span 2;
     padding: 65px 45px;
+    @include to(1024px){
+      padding: 45px 20px;
+    }
+    @include to(767px){
+      padding: 15px 0;
+    }
   }
   &__img{
     transform: translateY(-15%);
+    @include to(767px){
+      transform: none;
+      padding: 15px 0;
+    }
   }
   &--line{
     position: relative;
     padding: 0 10% 0 20px;
+    @include to(767px){
+      padding: 0 0 0 20px;
+    }
     &:after{
       content: '';
       position: absolute;
@@ -340,6 +572,9 @@
     line-height: 1.8em;
     text-transform: uppercase;
     margin-bottom: 10px;
+    @include to(767px){
+      font-size: 10px;
+    }
   }
   &__left{
     display: block;
@@ -348,16 +583,35 @@
     background: $bg-col-1;
     font-weight: 500;
     font-size: 24px;
-    line-height: 36px;
+    line-height: 1.5em;
     padding: 60px 65px 60px;
     margin: 0 0 auto 0;
     transform: translate(-5%, -20%);
+    @include to(1024px){
+      padding: 60px 0 50px 40px;
+      font-size: 18px;
+    }
+    @include to(767px){
+      width: 100%;
+      padding: 10px;
+      font-size: 12px;
+      transform: none;
+      background: none;
+    }
   }
   &__right{
     width: 60%;
     flex: 0 0 auto;
     padding: 35px 60px 45px 45px;
     margin-bottom: 10px;
+    @include to(1024px){
+      font-size: 12px;
+    }
+    @include to(767px){
+      width: 100%;
+      padding: 10px;
+      font-size: 10px;
+    }
     ul{
       width: auto;
       padding-left: 20px;
@@ -367,25 +621,38 @@
         font-size: 12px;
         line-height: 2em;
         margin-bottom: 20px;
+        @include to(767px){
+          margin-bottom: 10px;
+          line-height: 1.5em;
+        }
       }
     }
   }
   &__info{
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 80%;
     max-width: 760px;
     margin: 0 auto;
     padding: 20px 30px;
     font-weight: 600;
     font-size: 14px;
+    text-align: center;
     line-height: 1.8em;
     box-shadow: 0 10px 40px rgba(41, 48, 68, 0.25);
+    @include to(767px){
+      font-size: 10px;
+      padding: 10px 20px;
+    }
     svg{
       display: inline-block;
       width: 50px;
       height: 50px;
+      flex: 0 0 50px;
       margin-right: 10px;
+      @include to(767px){
+        margin: 0;
+      }
     }
   }
 
@@ -400,15 +667,31 @@
   &__title{
     @extend .main__title;
     color: $wc;
+    @include to(767px){
+      font-size: 18px;
+    }
   }
   &__list{
     display: grid;
     grid-auto-rows: 1fr;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 20px 80px;
+    grid-gap: 45px 80px;
     padding: 30px 12%;
     max-width: 1200px;
+    width: 100%;
     margin: 0 auto;
+    @include to(1024px){
+      padding: 50px 20px 50px 40px;
+      grid-gap: 40px 60px;
+      font-size: 12px;
+    }
+    @include to(767px){
+      grid-template-columns: calc(50% - 15px) calc(50% - 15px);
+      padding: 50px 10px 50px 30px;
+      grid-gap: 30px;
+      font-size: 10px;
+      line-height: 1.5em;
+    }
   }
   &__el{
     position: relative;
@@ -417,10 +700,13 @@
     justify-content: center;
     width: 100%;
     padding: 10px 30px 15px;
-    margin: 10px;
     color: $mc3;
     background: #fff;
     border: 1px solid #D4D6DA;
+    @include to(767px){
+      padding: 20px 10px;
+      align-items: flex-start;
+    }
   }
   &__number{
     position: absolute;
@@ -436,19 +722,34 @@
     transform: translate(-50%, -50%);
     color: #fff;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     line-height: 1em;
     box-shadow: 0 0 0 7px rgba(248, 90, 0, 0.5);
-
+    @include to(767px){
+      height: 30px;
+      width: 30px;
+    }
   }
   &__top--text{
     max-width: 410px;
     margin: 0 auto;
     text-align: center;
+    @include to(1024px){
+      font-size: 12px;
+    }
+    @include to(767px){
+      display: none;
+    }
   }
   &__bottom--text{
     max-width: 670px;
     margin: 0 auto;
     text-align: center;
+    @include to(1024px){
+      font-size: 12px;
+    }
+    @include to(767px){
+      display: none;
+    }
   }
 }

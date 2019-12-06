@@ -50,16 +50,16 @@ block content
             form.form
                 legend Обратная связь
                 // обязательно
-                input(type='text' placeholder='Имя:*').form__input
+                input(type='text' placeholder='Имя:*').form__input.js-form__input
                 span.form__info
                 // обязательно
-                input(type='mail' placeholder='E-mail:*').form__input
+                input(type='mail' placeholder='E-mail:*').form__input.js-form__input
                 span.form__info
 
                 textarea(placeholder='Сообщение:').form__input.form__textarea
                 span.form__info
                 img(src='assets/images/newCaptchaAnchor.gif').captcha
-                button(type='submit' value='отправить' data-value='отправить'  ).form__submit.button-xl
+                button(type='submit' value='отправить' data-value='отправить'  ).js-form__submit.form__submit.button-xl
 
 block footer
     footer.footer

@@ -4,8 +4,8 @@
   display: flex;
   flex-wrap: wrap;
   padding: 10px $padding-wrap 60px;
-  @include to(768px) {
-    padding: 10px $padding-wrap--small 20px;
+  @include to(767px) {
+    padding: 10px 10px 20px;
   }
   @include from(1200px) {
     padding: 10px 0 60px;
@@ -23,5 +23,17 @@
     line-height: 2em;
     text-transform: uppercase;
     text-align: center;
+    @include to(1024px){
+      font-size: 18px;
+      text-transform: none;
+    }
+    @include to(767px){
+      line-height: 1.5em;
+    }
+  }
+  &__title{
+    @include to(1024px){
+      font-size: 24px;
+    }
   }
 }

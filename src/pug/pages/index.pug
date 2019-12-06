@@ -40,29 +40,33 @@ block content
 				.sl.js-sl
 					.sl__element
 						img(src="./assets/images/main/slider/Rectangle1.jpg" alt='photo').sl__element--img
-						.sl__element--content
-							.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
-							a(href='#').sl__element--title Реализованные проекты
 					.sl__element
 						img(src="./assets/images/main/slider/Rectangle1.jpg" alt='photo').sl__element--img
-						.sl__element--content
-							.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
-							a(href='#').sl__element--title Реализованные проекты
 					.sl__element
 						img(src="./assets/images/main/slider/Rectangle1.jpg" alt='photo').sl__element--img
-						.sl__element--content
-							.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
-							a(href='#').sl__element--title Реализованные проекты
 					.sl__element
 						img(src="./assets/images/main/slider/Rectangle1.jpg" alt='photo').sl__element--img
-						.sl__element--content
-							.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
-							a(href='#').sl__element--title Реализованные проекты
 				.sl__buttons
 					button(type="button").sl__button.sl__button--left
 						+svg('arrow')
 					button(type="button").sl__button.sl__button--right
 						+svg('arrow')
+
+				.sl__element--content
+					.sl__element--text Проектирование, производство и монтаж быстровозводимых зданий различного назначения
+					a(href='#').sl__element--title Реализованные проекты
+
+			.first-screen__mobile
+				a(href='#').first-screen__mobile--icon
+					+svg('E-mail', 'first-screen__mail--img' )
+				a(href='#').first-screen__mobile--icon
+					+svg('Map', 'first-screen__location--img' )
+				span.first-screen__mobile--line
+				a(href='viber://chat?number=+380950000000').first-screen__mobile--icon
+					+svg('viber', 'first-screen__img' )
+				a(href='https://telegram.me/').first-screen__mobile--icon
+					+svg('telegram', 'first-screen__img' )
+
 
 		.make
 			h3.make__title.main__title Мы производим
@@ -293,18 +297,18 @@ block content
 			.works__prewiev
 				.index-works__top
 					.main__title.index-works__title Реализованные объекты
-					a(href='#').button-xl.index-works__button Больше объектов
-				a(href='#').index-work
+					a(href='./works.html').button-xl.index-works__button Больше объектов
+				a(href='./single-work.html').index-work
 					.index-work__img
 						img(src='./assets/images/main/obj1.jpg')
 						.index-work__data 2019-08-15
 					.index-work__text Модульные операторские (3шт) для солнечных электростанций
-				a(href='#').index-work
+				a(href='./single-work.html').index-work
 					.index-work__img
 						img(src='./assets/images/main/obj2.jpg')
 						.index-work__data 2019-08-15
 					.index-work__text Модульный дом 8.5х6м для отдыха с комфортом.
-				a(href='#').index-work
+				a(href='./single-work.html').index-work
 					.index-work__img
 						img(src='./assets/images/main/obj3.jpg')
 						.index-work__data 2019-08-15
@@ -321,25 +325,28 @@ block content
 			.index-clients-slider.js-index-clients-slider
 				.index-clients-slider__element
 					a(href='#').index-clients__link
-						+svg('Logo','index-clients__img')
+						img(src='./assets/images/clients/Bayer.png')
 				.index-clients-slider__element
 					a(href='#').index-clients__link
-						+svg('smarto','index-clients__img')
+						img(src='./assets/images/clients/esu.png')
 				.index-clients-slider__element
 					a(href='#').index-clients__link
-						+svg('Logo','index-clients__img')
+						img(src='./assets/images/clients/Kyivstar.png')
 				.index-clients-slider__element
 					a(href='#').index-clients__link
-						+svg('smarto','index-clients__img')
+						img(src='./assets/images/clients/Naftogaz.png')
 				.index-clients-slider__element
 					a(href='#').index-clients__link
-						+svg('Logo','index-clients__img')
+						img(src='./assets/images/clients/nemiroff.png')
 				.index-clients-slider__element
 					a(href='#').index-clients__link
-						+svg('smarto','index-clients__img')
+						img(src='./assets/images/clients/niko.png')
 				.index-clients-slider__element
 					a(href='#').index-clients__link
-						+svg('Logo','index-clients__img')
+						img(src='./assets/images/clients/novarka.png')
+				.index-clients-slider__element
+					a(href='#').index-clients__link
+						img(src='./assets/images/clients/ukrNafta.png')
 			.index-clients-slider__buttons
 				.index-clients-slider__button.index-clients-slider__button--left
 					+svg('arrow')
